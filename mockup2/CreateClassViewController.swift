@@ -19,5 +19,3 @@ class CreateClassViewController: UIViewController{
     }
 }
 
-// KUKOKUOKU
-// Changes made.

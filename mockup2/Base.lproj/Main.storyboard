@@ -141,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOJ-Mz-sWK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2161" y="1190"/>
+            <point key="canvasLocation" x="701" y="1450"/>
         </scene>
         <!--Feedback for 12.2 Jaakko Math-->
         <scene sceneID="08A-kY-pgl">
@@ -707,7 +707,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pVY-7x-VTw">
-                                        <rect key="frame" x="0.0" y="28" width="368" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="368" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pVY-7x-VTw" id="RIu-Ea-ZXj">
                                             <rect key="frame" x="0.0" y="0.0" width="368" height="43"/>
@@ -780,7 +780,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bND-aL-fSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-903" y="1256"/>
+            <point key="canvasLocation" x="-997" y="1256"/>
         </scene>
         <!--Teacher Signup View Controller-->
         <scene sceneID="NLB-bd-UHP">
