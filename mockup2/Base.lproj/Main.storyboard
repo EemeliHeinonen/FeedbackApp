@@ -85,7 +85,6 @@
         <!--Feedback for 12.2 Jaakko Math-->
         <scene sceneID="08A-kY-pgl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uud-lk-b0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="4sP-fE-z2f" customClass="FeedbackViewController" customModule="mockup2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ftF-0N-2E4"/>
@@ -166,13 +165,14 @@
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="oX3-BL-bk0"/>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uud-lk-b0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4822" y="289"/>
         </scene>
         <!--Student's feedback-->
         <scene sceneID="a8C-Nu-8Cm">
             <objects>
-                <viewController id="jSF-PN-vfB" sceneMemberID="viewController">
+                <viewController id="jSF-PN-vfB" customClass="TeacherFeedbackViewController" customModule="mockup2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bqM-ZY-I2Q"/>
                         <viewControllerLayoutGuide type="bottom" id="syn-jt-sdl"/>
