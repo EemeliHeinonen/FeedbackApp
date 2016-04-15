@@ -20,6 +20,7 @@
 		2B9906401CBD07EB00316010 /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B99063F1CBD07EB00316010 /* CreateClassViewController.swift */; };
 		2B9906421CBD084200316010 /* StudentMainViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9906411CBD084200316010 /* StudentMainViewViewController.swift */; };
 		2B9906441CBD086F00316010 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9906431CBD086F00316010 /* FeedbackViewController.swift */; };
+		BA52EA0C1CC0D13C0084FF8E /* TeacherLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52EA0B1CC0D13C0084FF8E /* TeacherLessonViewController.swift */; };
 		BAD80C9D1CBCFDB900CEAFEB /* TeacherSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD80C9C1CBCFDB900CEAFEB /* TeacherSignupViewController.swift */; };
 		BAD80C9F1CBCFE9900CEAFEB /* StudentSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD80C9E1CBCFE9900CEAFEB /* StudentSignupViewController.swift */; };
 		BAD80CA11CBCFF4C00CEAFEB /* StudentLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD80CA01CBCFF4C00CEAFEB /* StudentLessonViewController.swift */; };
@@ -56,6 +57,7 @@
 		2B99063F1CBD07EB00316010 /* CreateClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateClassViewController.swift; sourceTree = "<group>"; };
 		2B9906411CBD084200316010 /* StudentMainViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentMainViewViewController.swift; sourceTree = "<group>"; };
 		2B9906431CBD086F00316010 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		BA52EA0B1CC0D13C0084FF8E /* TeacherLessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherLessonViewController.swift; sourceTree = "<group>"; };
 		BAD80C9C1CBCFDB900CEAFEB /* TeacherSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherSignupViewController.swift; sourceTree = "<group>"; };
 		BAD80C9E1CBCFE9900CEAFEB /* StudentSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentSignupViewController.swift; sourceTree = "<group>"; };
 		BAD80CA01CBCFF4C00CEAFEB /* StudentLessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLessonViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				2B1704CD1CA0157400CFC720 /* AppDelegate.swift */,
 				2B1704CF1CA0157400CFC720 /* ViewController.swift */,
+				BA52EA0B1CC0D13C0084FF8E /* TeacherLessonViewController.swift */,
 				BAE374521CBFCDCC00EEE9B8 /* StudentFeedbackViewController.swift */,
 				BAE374501CBFCC3600EEE9B8 /* FeedbackListViewController.swift */,
 				2B0BF93A1CBBA93B00F93EE8 /* Beacon.swift */,
