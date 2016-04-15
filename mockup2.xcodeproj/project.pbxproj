@@ -24,7 +24,6 @@
 		BAD80C9F1CBCFE9900CEAFEB /* StudentSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD80C9E1CBCFE9900CEAFEB /* StudentSignupViewController.swift */; };
 		BAD80CA11CBCFF4C00CEAFEB /* StudentLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD80CA01CBCFF4C00CEAFEB /* StudentLessonViewController.swift */; };
 		BAD80CA31CBD004600CEAFEB /* TeacherMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD80CA21CBD004600CEAFEB /* TeacherMainViewController.swift */; };
-		BAE3744F1CBFC64800EEE9B8 /* TeacherLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3744E1CBFC64800EEE9B8 /* TeacherLessonViewController.swift */; };
 		BAE374511CBFCC3600EEE9B8 /* FeedbackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE374501CBFCC3600EEE9B8 /* FeedbackListViewController.swift */; };
 		BAE374531CBFCDCC00EEE9B8 /* StudentFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE374521CBFCDCC00EEE9B8 /* StudentFeedbackViewController.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +60,6 @@
 		BAD80C9E1CBCFE9900CEAFEB /* StudentSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentSignupViewController.swift; sourceTree = "<group>"; };
 		BAD80CA01CBCFF4C00CEAFEB /* StudentLessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLessonViewController.swift; sourceTree = "<group>"; };
 		BAD80CA21CBD004600CEAFEB /* TeacherMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherMainViewController.swift; sourceTree = "<group>"; };
-		BAE3744E1CBFC64800EEE9B8 /* TeacherLessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherLessonViewController.swift; sourceTree = "<group>"; };
 		BAE374501CBFCC3600EEE9B8 /* FeedbackListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackListViewController.swift; sourceTree = "<group>"; };
 		BAE374521CBFCDCC00EEE9B8 /* StudentFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentFeedbackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -241,7 +239,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B1704D01CA0157400CFC720 /* ViewController.swift in Sources */,
-				BAE3744F1CBFC64800EEE9B8 /* TeacherLessonViewController.swift in Sources */,
 				2B1704CE1CA0157400CFC720 /* AppDelegate.swift in Sources */,
 				2B9906441CBD086F00316010 /* FeedbackViewController.swift in Sources */,
 				BAD80CA31CBD004600CEAFEB /* TeacherMainViewController.swift in Sources */,
