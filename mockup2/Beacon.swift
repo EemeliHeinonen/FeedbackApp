@@ -33,7 +33,7 @@ class Beacon: UIViewController, CLLocationManagerDelegate{
         let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown }
         if (knownBeacons.count > 0) {
             let closestBeacon = knownBeacons[0] as CLBeacon
-            print(closestBeacon)
+            //print(closestBeacon)
             beaconCount.text = "There are "+String(knownBeacons.count)+" beacon(s) nearby"
             
         }

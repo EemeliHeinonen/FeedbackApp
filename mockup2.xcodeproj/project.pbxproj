@@ -20,7 +20,19 @@
 		2B9906401CBD07EB00316010 /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B99063F1CBD07EB00316010 /* CreateClassViewController.swift */; };
 		2B9906421CBD084200316010 /* StudentMainViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9906411CBD084200316010 /* StudentMainViewViewController.swift */; };
 		2B9906441CBD086F00316010 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9906431CBD086F00316010 /* FeedbackViewController.swift */; };
-		BA52EA0C1CC0D13C0084FF8E /* TeacherLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52EA0B1CC0D13C0084FF8E /* TeacherLessonViewController.swift */; };
+		BA77B80B1CC65AA100ACAACB /* NetworkOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA77B80A1CC65AA100ACAACB /* NetworkOperations.swift */; };
+		BAA1332D1CC78071004F5070 /* StudentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA1332C1CC78071004F5070 /* StudentParser.swift */; };
+		BACB7ED21CCE185D0094779C /* Topic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7EC81CCE185D0094779C /* Topic+CoreDataProperties.swift */; };
+		BACB7ED31CCE185D0094779C /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7EC91CCE185D0094779C /* Topic.swift */; };
+		BACB7ED41CCE185D0094779C /* Classroom+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7ECA1CCE185D0094779C /* Classroom+CoreDataProperties.swift */; };
+		BACB7ED51CCE185D0094779C /* Classroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7ECB1CCE185D0094779C /* Classroom.swift */; };
+		BACB7ED61CCE185D0094779C /* Lesson+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7ECC1CCE185D0094779C /* Lesson+CoreDataProperties.swift */; };
+		BACB7ED71CCE185D0094779C /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7ECD1CCE185D0094779C /* Lesson.swift */; };
+		BACB7ED81CCE185D0094779C /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7ECE1CCE185D0094779C /* Student+CoreDataProperties.swift */; };
+		BACB7ED91CCE185D0094779C /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7ECF1CCE185D0094779C /* Student.swift */; };
+		BACB7EDA1CCE185D0094779C /* Teacher+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7ED01CCE185D0094779C /* Teacher+CoreDataProperties.swift */; };
+		BACB7EDB1CCE185D0094779C /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7ED11CCE185D0094779C /* Teacher.swift */; };
+		BACB7EDD1CCE1CBC0094779C /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7EDC1CCE1CBC0094779C /* CoreDataHandler.swift */; };
 		BAD80C9D1CBCFDB900CEAFEB /* TeacherSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD80C9C1CBCFDB900CEAFEB /* TeacherSignupViewController.swift */; };
 		BAD80C9F1CBCFE9900CEAFEB /* StudentSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD80C9E1CBCFE9900CEAFEB /* StudentSignupViewController.swift */; };
 		BAD80CA11CBCFF4C00CEAFEB /* StudentLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD80CA01CBCFF4C00CEAFEB /* StudentLessonViewController.swift */; };
@@ -58,6 +70,19 @@
 		2B9906411CBD084200316010 /* StudentMainViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentMainViewViewController.swift; sourceTree = "<group>"; };
 		2B9906431CBD086F00316010 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		BA52EA0B1CC0D13C0084FF8E /* TeacherLessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherLessonViewController.swift; sourceTree = "<group>"; };
+		BA77B80A1CC65AA100ACAACB /* NetworkOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperations.swift; sourceTree = "<group>"; };
+		BAA1332C1CC78071004F5070 /* StudentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentParser.swift; sourceTree = "<group>"; };
+		BACB7EC81CCE185D0094779C /* Topic+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Topic+CoreDataProperties.swift"; path = "mockup2/CoreDataFolder/Topic+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BACB7EC91CCE185D0094779C /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Topic.swift; path = mockup2/CoreDataFolder/Topic.swift; sourceTree = "<group>"; };
+		BACB7ECA1CCE185D0094779C /* Classroom+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Classroom+CoreDataProperties.swift"; path = "mockup2/CoreDataFolder/Classroom+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BACB7ECB1CCE185D0094779C /* Classroom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Classroom.swift; path = mockup2/CoreDataFolder/Classroom.swift; sourceTree = "<group>"; };
+		BACB7ECC1CCE185D0094779C /* Lesson+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Lesson+CoreDataProperties.swift"; path = "mockup2/CoreDataFolder/Lesson+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BACB7ECD1CCE185D0094779C /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lesson.swift; path = mockup2/CoreDataFolder/Lesson.swift; sourceTree = "<group>"; };
+		BACB7ECE1CCE185D0094779C /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Student+CoreDataProperties.swift"; path = "mockup2/CoreDataFolder/Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BACB7ECF1CCE185D0094779C /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Student.swift; path = mockup2/CoreDataFolder/Student.swift; sourceTree = "<group>"; };
+		BACB7ED01CCE185D0094779C /* Teacher+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Teacher+CoreDataProperties.swift"; path = "mockup2/CoreDataFolder/Teacher+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BACB7ED11CCE185D0094779C /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Teacher.swift; path = mockup2/CoreDataFolder/Teacher.swift; sourceTree = "<group>"; };
+		BACB7EDC1CCE1CBC0094779C /* CoreDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		BAD80C9C1CBCFDB900CEAFEB /* TeacherSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherSignupViewController.swift; sourceTree = "<group>"; };
 		BAD80C9E1CBCFE9900CEAFEB /* StudentSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentSignupViewController.swift; sourceTree = "<group>"; };
 		BAD80CA01CBCFF4C00CEAFEB /* StudentLessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLessonViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +112,16 @@
 		2B1704C11CA0157400CFC720 = {
 			isa = PBXGroup;
 			children = (
+				BACB7EC81CCE185D0094779C /* Topic+CoreDataProperties.swift */,
+				BACB7EC91CCE185D0094779C /* Topic.swift */,
+				BACB7ECA1CCE185D0094779C /* Classroom+CoreDataProperties.swift */,
+				BACB7ECB1CCE185D0094779C /* Classroom.swift */,
+				BACB7ECC1CCE185D0094779C /* Lesson+CoreDataProperties.swift */,
+				BACB7ECD1CCE185D0094779C /* Lesson.swift */,
+				BACB7ECE1CCE185D0094779C /* Student+CoreDataProperties.swift */,
+				BACB7ECF1CCE185D0094779C /* Student.swift */,
+				BACB7ED01CCE185D0094779C /* Teacher+CoreDataProperties.swift */,
+				BACB7ED11CCE185D0094779C /* Teacher.swift */,
 				2B1704CC1CA0157400CFC720 /* mockup2 */,
 				2B1704E11CA0157400CFC720 /* mockup2Tests */,
 				2B1704CB1CA0157400CFC720 /* Products */,
@@ -111,6 +146,7 @@
 				BAE374521CBFCDCC00EEE9B8 /* StudentFeedbackViewController.swift */,
 				BAE374501CBFCC3600EEE9B8 /* FeedbackListViewController.swift */,
 				2B0BF93A1CBBA93B00F93EE8 /* Beacon.swift */,
+				BAA1332C1CC78071004F5070 /* StudentParser.swift */,
 				2B56C1F11CA2B148005B231F /* View.xib */,
 				2B1704D11CA0157400CFC720 /* Main.storyboard */,
 				2B3DA3A21CC0CAC100F22CD7 /* TeacherFeedbackViewController.swift */,
@@ -125,6 +161,8 @@
 				2B1704D61CA0157400CFC720 /* LaunchScreen.storyboard */,
 				2B1704D91CA0157400CFC720 /* Info.plist */,
 				BAD80C9C1CBCFDB900CEAFEB /* TeacherSignupViewController.swift */,
+				BA77B80A1CC65AA100ACAACB /* NetworkOperations.swift */,
+				BACB7EDC1CCE1CBC0094779C /* CoreDataHandler.swift */,
 			);
 			path = mockup2;
 			sourceTree = "<group>";
@@ -188,7 +226,7 @@
 				TargetAttributes = {
 					2B1704C91CA0157400CFC720 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = C6BK6X4E8Z;
+						DevelopmentTeam = VQ3548JMP7;
 					};
 					2B1704DD1CA0157400CFC720 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -241,9 +279,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BACB7EDA1CCE185D0094779C /* Teacher+CoreDataProperties.swift in Sources */,
+				BACB7EDD1CCE1CBC0094779C /* CoreDataHandler.swift in Sources */,
 				2B1704D01CA0157400CFC720 /* ViewController.swift in Sources */,
+				BACB7ED31CCE185D0094779C /* Topic.swift in Sources */,
+				BACB7ED61CCE185D0094779C /* Lesson+CoreDataProperties.swift in Sources */,
+				BACB7EDB1CCE185D0094779C /* Teacher.swift in Sources */,
+				BA77B80B1CC65AA100ACAACB /* NetworkOperations.swift in Sources */,
+				BAA1332D1CC78071004F5070 /* StudentParser.swift in Sources */,
 				2B1704CE1CA0157400CFC720 /* AppDelegate.swift in Sources */,
+				BACB7ED51CCE185D0094779C /* Classroom.swift in Sources */,
+				BACB7ED91CCE185D0094779C /* Student.swift in Sources */,
 				2B9906441CBD086F00316010 /* FeedbackViewController.swift in Sources */,
+				BACB7ED41CCE185D0094779C /* Classroom+CoreDataProperties.swift in Sources */,
+				BACB7ED81CCE185D0094779C /* Student+CoreDataProperties.swift in Sources */,
 				BAD80CA31CBD004600CEAFEB /* TeacherMainViewController.swift in Sources */,
 				BAD80CA11CBCFF4C00CEAFEB /* StudentLessonViewController.swift in Sources */,
 				BAE374511CBFCC3600EEE9B8 /* FeedbackListViewController.swift in Sources */,
@@ -254,7 +303,9 @@
 				2B9906421CBD084200316010 /* StudentMainViewViewController.swift in Sources */,
 				BAD80C9F1CBCFE9900CEAFEB /* StudentSignupViewController.swift in Sources */,
 				2B0BF93B1CBBA93B00F93EE8 /* Beacon.swift in Sources */,
+				BACB7ED21CCE185D0094779C /* Topic+CoreDataProperties.swift in Sources */,
 				2B9906401CBD07EB00316010 /* CreateClassViewController.swift in Sources */,
+				BACB7ED71CCE185D0094779C /* Lesson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +438,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = mockup2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fi.metropolia.mockup2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.mockup2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -401,7 +452,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = mockup2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fi.metropolia.mockup2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.mockup2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

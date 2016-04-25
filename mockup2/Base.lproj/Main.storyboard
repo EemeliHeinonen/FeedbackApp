@@ -326,6 +326,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLL-lL-5YJ">
                                 <rect key="frame" x="20" y="119" width="228" height="30"/>
                                 <state key="normal" title="Petri&amp;Peter ETYB304 - Aquarium"/>
+                                <connections>
+                                    <segue destination="Cr4-DZ-l1x" kind="show" id="Pzl-zU-5Pf"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YkB-xq-EMZ">
                                 <rect key="frame" x="20" y="358" width="240" height="145"/>
@@ -376,13 +379,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="97" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vkk-Mx-hW4">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="97" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vkk-Mx-hW4">
                                 <rect key="frame" x="91" y="176" width="140" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jn6-HQ-Omp">
-                                <rect key="frame" x="91" y="229" width="140" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -392,10 +390,14 @@
                     <navigationItem key="navigationItem" id="eIN-Nr-YpO">
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="GHn-Mb-w4U">
                             <connections>
+                                <action selector="submitAction:" destination="BZA-Rq-S8V" id="Yz8-KO-MgC"/>
                                 <segue destination="BYZ-38-t0r" kind="show" id="lbw-b8-PO8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="studentNameOutlet" destination="Vkk-Mx-hW4" id="i3P-AI-Y61"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPJ-aZ-jME" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -598,7 +600,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9p-2F-f3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042" y="2180"/>
+            <point key="canvasLocation" x="1428" y="2254"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tmY-M0-Sid">
@@ -794,13 +796,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="97" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1AP-2q-hcV">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="97" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1AP-2q-hcV">
                                 <rect key="frame" x="91" y="176" width="140" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DfK-P5-So5">
-                                <rect key="frame" x="91" y="229" width="140" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -873,7 +870,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7y1-wF-XcH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1349" y="1190"/>
+            <point key="canvasLocation" x="681" y="1358"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RJc-68-FT3">
@@ -895,9 +892,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ief-xY-Y9C"/>
         <segue reference="xXA-vJ-92q"/>
+        <segue reference="ief-xY-Y9C"/>
         <segue reference="0iw-tC-CIG"/>
-        <segue reference="VIW-fB-9eE"/>
+        <segue reference="lbw-b8-PO8"/>
+        <segue reference="Pzl-zU-5Pf"/>
     </inferredMetricsTieBreakers>
 </document>
