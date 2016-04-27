@@ -144,8 +144,8 @@
 				2B1704CF1CA0157400CFC720 /* ViewController.swift */,
 				BA52EA0B1CC0D13C0084FF8E /* TeacherLessonViewController.swift */,
 				BAE374521CBFCDCC00EEE9B8 /* StudentFeedbackViewController.swift */,
-				BAE374501CBFCC3600EEE9B8 /* FeedbackListViewController.swift */,
 				2B0BF93A1CBBA93B00F93EE8 /* Beacon.swift */,
+				BAE374501CBFCC3600EEE9B8 /* FeedbackListViewController.swift */,
 				BAA1332C1CC78071004F5070 /* StudentParser.swift */,
 				2B56C1F11CA2B148005B231F /* View.xib */,
 				2B1704D11CA0157400CFC720 /* Main.storyboard */,
@@ -226,7 +226,7 @@
 				TargetAttributes = {
 					2B1704C91CA0157400CFC720 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = VQ3548JMP7;
+						DevelopmentTeam = C6BK6X4E8Z;
 					};
 					2B1704DD1CA0157400CFC720 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -438,7 +438,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = mockup2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.mockup2;
+				PRODUCT_BUNDLE_IDENTIFIER = fi.metropolia.mockup2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -452,7 +452,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = mockup2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.mockup2;
+				PRODUCT_BUNDLE_IDENTIFIER = fi.metropolia.mockup2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

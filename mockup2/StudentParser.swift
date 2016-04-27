@@ -13,6 +13,7 @@ import CoreData
 
 class StudentParser: NSObject,NSXMLParserDelegate{
     
+    
     var currentString = ""
     var appDelegate:AppDelegate?
     var managedContext:NSManagedObjectContext?

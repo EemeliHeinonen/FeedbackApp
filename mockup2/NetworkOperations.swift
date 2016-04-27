@@ -11,6 +11,8 @@ import Foundation
 
 class NetworkOperations {
     
+    static let sharedInstance = NetworkOperations()
+
 
     func getStuff(){
         //let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
