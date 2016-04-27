@@ -43,7 +43,8 @@ class CoreDataHandler: UIViewController{
             print("Could not save \(error), \(error.userInfo)")
         }
     }
-    //Save teachers name method
+    
+    //Method for saving teachers name
     
     func saveTeacherName(name: String) {
         //1

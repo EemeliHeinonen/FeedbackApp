@@ -14,7 +14,8 @@ import CoreData
 
 extension Topic {
 
-    @NSManaged var rating: NSNumber?
+    @NSManaged var getItRating: NSNumber?
+    @NSManaged var notGetItRating: NSNumber?
     @NSManaged var topicName: String?
     @NSManaged var relationship: NSManagedObject?
     @NSManaged var relationship1: NSManagedObject?

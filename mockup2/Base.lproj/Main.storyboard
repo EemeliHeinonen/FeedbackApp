@@ -809,6 +809,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="teacherNameOutlet" destination="1AP-2q-hcV" id="2ET-G8-dcv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QQG-v4-5Ri" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

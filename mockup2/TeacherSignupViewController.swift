@@ -1,19 +1,22 @@
 //
-//  ViewController.swift
+//  TeacherSignupViewController.swift
 //  mockup2
 //
 //  Created by Mortti Aittokoski on 21.3.2016.
 //  Copyright © 2016 Mortti Aittokoski. All rights reserved.
 //
 
-//mortin branchiin
 import UIKit
 
 
 class TeacherSignupViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var teacherNameOutlet: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Teacher signup view loaded")
+        teacherNameOutlet.delegate = self
         
     }
     
@@ -22,8 +25,23 @@ class TeacherSignupViewController: UIViewController, UITextFieldDelegate, UINavi
         // Dispose of any resources that can be recreated.
     }
     
-    /*@IBAction func cancel(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }*/
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        print("return painettu")
+        textField.resignFirstResponder()
+        print("done editing")
+        CoreDataHandler.sharedInstance.saveTeacherName(teacherNameOutlet.text!)
+        print("Teacher name saved \(teacherNameOutlet.text)")
+        
+        return true
+    }
     
+    // OIS OIKEEN KIVA JOS JOSKUS SAAATAIS TÄÄ TOIMIMAAN xdddd
+    /*
+     @IBAction func submitAction(sender: AnyObject) {
+     teacherNameOutlet.resignFirstResponder()
+     CoreDataHandler.sharedInstance.saveStudentName(teacherNameOutlet.text!)
+     print("Student name saved \(teacherNameOutlet.text)")
+     }
+     */
 }
+
