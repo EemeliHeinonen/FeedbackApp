@@ -13,7 +13,6 @@ class NetworkOperations {
     
 
     func getStuff(){
-        //let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
     let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
     let session = NSURLSession(configuration: sessionConfiguration)
     
