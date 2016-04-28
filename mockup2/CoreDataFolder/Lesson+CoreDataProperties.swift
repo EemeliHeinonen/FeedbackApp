@@ -17,7 +17,7 @@ extension Lesson {
     @NSManaged var lessonFeedback: String?
     @NSManaged var lessonRating: NSNumber?
     @NSManaged var subject: String?
-    @NSManaged var timeAndDate: NSDate?
+    @NSManaged var time: String?
     @NSManaged var relationship: Classroom?
     @NSManaged var relationship1: NSManagedObject?
     @NSManaged var relationship2: NSSet?

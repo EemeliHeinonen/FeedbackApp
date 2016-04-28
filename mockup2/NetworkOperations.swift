@@ -11,6 +11,7 @@ import Foundation
 
 class NetworkOperations {
     
+    static let sharedInstance = NetworkOperations()
 
     func getStuff(){
     let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -34,6 +35,50 @@ class NetworkOperations {
     
     sessionTask.resume()
 
+    }
+    
+    func postStuff(s: String){
+        
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration)
+        
+        let request = NSMutableURLRequest()
+        request.HTTPMethod = "POST"
+        request.URL = NSURL(string: "http://localhost:8080/WebApplication5/webresources/Students/")
+        request.addValue("application/xml", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/xml", forHTTPHeaderField: "Accept")
+        
+        let body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <student> <name>"+s+"</name> <id>76</id></student>\n"
+        
+        request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let sessionTask = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) -> Void in
+            print("posting done, response = \(response), error = \(error)")
+        })
+        sessionTask.resume()
+        
+    }
+    
+    func postLesson(name: String, time: String){
+        
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration)
+        
+        let request = NSMutableURLRequest()
+        request.HTTPMethod = "POST"
+        request.URL = NSURL(string: "http://localhost:8080/WebApplication5/webresources/Courses/")
+        request.addValue("application/xml", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/xml", forHTTPHeaderField: "Accept")
+        
+        let body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <course> <name>"+name+"</name> <time>"+time+"</time> </course>\n"
+        
+        request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let sessionTask = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) -> Void in
+            print("posting done, response = \(response), error = \(error)")
+        })
+        sessionTask.resume()
+        
     }
 }
 

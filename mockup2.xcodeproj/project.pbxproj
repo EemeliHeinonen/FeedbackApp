@@ -20,6 +20,7 @@
 		2B9906401CBD07EB00316010 /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B99063F1CBD07EB00316010 /* CreateClassViewController.swift */; };
 		2B9906421CBD084200316010 /* StudentMainViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9906411CBD084200316010 /* StudentMainViewViewController.swift */; };
 		2B9906441CBD086F00316010 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9906431CBD086F00316010 /* FeedbackViewController.swift */; };
+		BA73D6CE1CD0CF8500D76253 /* CreateLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73D6CD1CD0CF8500D76253 /* CreateLessonViewController.swift */; };
 		BA77B80B1CC65AA100ACAACB /* NetworkOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA77B80A1CC65AA100ACAACB /* NetworkOperations.swift */; };
 		BAA1332D1CC78071004F5070 /* StudentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA1332C1CC78071004F5070 /* StudentParser.swift */; };
 		BACB7ED21CCE185D0094779C /* Topic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7EC81CCE185D0094779C /* Topic+CoreDataProperties.swift */; };
@@ -71,6 +72,7 @@
 		2B9906411CBD084200316010 /* StudentMainViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentMainViewViewController.swift; sourceTree = "<group>"; };
 		2B9906431CBD086F00316010 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		BA52EA0B1CC0D13C0084FF8E /* TeacherLessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherLessonViewController.swift; sourceTree = "<group>"; };
+		BA73D6CD1CD0CF8500D76253 /* CreateLessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateLessonViewController.swift; sourceTree = "<group>"; };
 		BA77B80A1CC65AA100ACAACB /* NetworkOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperations.swift; sourceTree = "<group>"; };
 		BAA1332C1CC78071004F5070 /* StudentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentParser.swift; sourceTree = "<group>"; };
 		BACB7EC81CCE185D0094779C /* Topic+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Topic+CoreDataProperties.swift"; path = "mockup2/CoreDataFolder/Topic+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				BA77B80A1CC65AA100ACAACB /* NetworkOperations.swift */,
 				BACB7EDC1CCE1CBC0094779C /* CoreDataHandler.swift */,
 				BACB7EDE1CCE35C40094779C /* Parser.swift */,
+				BA73D6CD1CD0CF8500D76253 /* CreateLessonViewController.swift */,
 			);
 			path = mockup2;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				BAD80C9F1CBCFE9900CEAFEB /* StudentSignupViewController.swift in Sources */,
 				2B0BF93B1CBBA93B00F93EE8 /* Beacon.swift in Sources */,
 				BACB7ED21CCE185D0094779C /* Topic+CoreDataProperties.swift in Sources */,
+				BA73D6CE1CD0CF8500D76253 /* CreateLessonViewController.swift in Sources */,
 				2B9906401CBD07EB00316010 /* CreateClassViewController.swift in Sources */,
 				BACB7ED71CCE185D0094779C /* Lesson.swift in Sources */,
 			);

@@ -532,7 +532,7 @@
                                 <segue destination="xku-9A-Onp" kind="show" id="xXA-vJ-92q"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Create class" id="yYj-R5-Avn">
+                        <barButtonItem key="rightBarButtonItem" title="Create lesson" id="yYj-R5-Avn">
                             <connections>
                                 <segue destination="OVw-ad-zqD" kind="show" id="0iw-tC-CIG"/>
                             </connections>
@@ -544,10 +544,10 @@
             </objects>
             <point key="canvasLocation" x="37" y="2126"/>
         </scene>
-        <!--Create a class-->
+        <!--Create a lesson-->
         <scene sceneID="fDs-t8-fuR">
             <objects>
-                <viewController id="OVw-ad-zqD" customClass="CreateClassViewController" customModule="mockup2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OVw-ad-zqD" customClass="CreateLessonViewController" customModule="mockup2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6vZ-8B-Xwm"/>
                         <viewControllerLayoutGuide type="bottom" id="QxO-xj-lfI"/>
@@ -589,7 +589,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Create a class" id="f6D-SX-RUA">
+                    <navigationItem key="navigationItem" title="Create a lesson" id="f6D-SX-RUA">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6Sn-YU-099">
                             <connections>
                                 <segue destination="aB7-4Z-uKx" kind="show" id="4lm-CD-iia"/>
@@ -597,6 +597,14 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="w53-qn-2Hb"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="Classroom" destination="sz8-hY-tPC" id="2qg-Dk-cPK"/>
+                        <outlet property="Subject" destination="aVI-JU-9Af" id="NOl-zz-hxs"/>
+                        <outlet property="classroom" destination="sz8-hY-tPC" id="xJs-bc-dIc"/>
+                        <outlet property="subject" destination="aVI-JU-9Af" id="6Sg-6u-uaB"/>
+                        <outlet property="time" destination="Ins-2z-fqj" id="DBX-NE-KOe"/>
+                        <outlet property="topic1" destination="gcT-RZ-hK4" id="bj8-rF-Vx3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9p-2F-f3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -896,7 +904,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="xXA-vJ-92q"/>
-        <segue reference="ief-xY-Y9C"/>
+        <segue reference="4lm-CD-iia"/>
         <segue reference="0iw-tC-CIG"/>
         <segue reference="lbw-b8-PO8"/>
         <segue reference="Pzl-zU-5Pf"/>
