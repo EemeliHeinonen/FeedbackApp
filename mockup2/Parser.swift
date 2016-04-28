@@ -18,7 +18,7 @@ class Parser: NSObject,NSXMLParserDelegate{
     var managedContext:NSManagedObjectContext?
     var thisTeacher:Teacher?
     var thisTopic:Topic?
-    var currentObj:String
+    var currentObj = ""
     
     func parse (xmlData:NSData) {
         let myParser = NSXMLParser(data: xmlData)
