@@ -14,6 +14,7 @@
 		2B1704D51CA0157400CFC720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B1704D41CA0157400CFC720 /* Assets.xcassets */; };
 		2B1704D81CA0157400CFC720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B1704D61CA0157400CFC720 /* LaunchScreen.storyboard */; };
 		2B1704E31CA0157400CFC720 /* mockup2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1704E21CA0157400CFC720 /* mockup2Tests.swift */; };
+		2B37E21E1CD1F7620061530A /* LessonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B37E21D1CD1F7620061530A /* LessonsTableViewController.swift */; };
 		2B3DA3A31CC0CAC100F22CD7 /* TeacherFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3DA3A21CC0CAC100F22CD7 /* TeacherFeedbackViewController.swift */; };
 		2B4116771CB63C6B00F073C7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B4116751CB63C6B00F073C7 /* Model.xcdatamodeld */; };
 		2B56C1F21CA2B148005B231F /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B56C1F11CA2B148005B231F /* View.xib */; };
@@ -65,6 +66,7 @@
 		2B1704DE1CA0157400CFC720 /* mockup2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mockup2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B1704E21CA0157400CFC720 /* mockup2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockup2Tests.swift; sourceTree = "<group>"; };
 		2B1704E41CA0157400CFC720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B37E21D1CD1F7620061530A /* LessonsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonsTableViewController.swift; sourceTree = "<group>"; };
 		2B3DA3A21CC0CAC100F22CD7 /* TeacherFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherFeedbackViewController.swift; sourceTree = "<group>"; };
 		2B4116761CB63C6B00F073C7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		2B56C1F11CA2B148005B231F /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				2B1704D61CA0157400CFC720 /* LaunchScreen.storyboard */,
 				2B1704D91CA0157400CFC720 /* Info.plist */,
 				BAD80C9C1CBCFDB900CEAFEB /* TeacherSignupViewController.swift */,
+				2B37E21D1CD1F7620061530A /* LessonsTableViewController.swift */,
 				BA77B80A1CC65AA100ACAACB /* NetworkOperations.swift */,
 				BACB7EDC1CCE1CBC0094779C /* CoreDataHandler.swift */,
 				BACB7EDE1CCE35C40094779C /* Parser.swift */,
@@ -295,6 +298,7 @@
 				BAA1332D1CC78071004F5070 /* StudentParser.swift in Sources */,
 				2B1704CE1CA0157400CFC720 /* AppDelegate.swift in Sources */,
 				BACB7ED51CCE185D0094779C /* Classroom.swift in Sources */,
+				2B37E21E1CD1F7620061530A /* LessonsTableViewController.swift in Sources */,
 				BACB7ED91CCE185D0094779C /* Student.swift in Sources */,
 				2B9906441CBD086F00316010 /* FeedbackViewController.swift in Sources */,
 				BACB7ED41CCE185D0094779C /* Classroom+CoreDataProperties.swift in Sources */,

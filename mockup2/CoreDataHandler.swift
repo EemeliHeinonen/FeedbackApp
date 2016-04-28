@@ -15,8 +15,33 @@ class CoreDataHandler: UIViewController{
     
     var appDelegate:AppDelegate?
     var managedContext:NSManagedObjectContext?
+    var people = [NSManagedObject]()
+
     
     //Method for saving students name
+    
+    func coreDataTestFunc(){
+        print("coredatahandler test function is called")
+        
+        //1
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName: "Student")
+        
+        //3
+        do {
+            let results =
+                try managedContext.executeFetchRequest(fetchRequest)
+            people = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+
+    }
     
     func saveStudentName(name: String ) {
         //1

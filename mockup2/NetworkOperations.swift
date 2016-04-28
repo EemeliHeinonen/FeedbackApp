@@ -14,27 +14,29 @@ class NetworkOperations {
     static let sharedInstance = NetworkOperations()
 
     func getStuff(){
-    let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-    let session = NSURLSession(configuration: sessionConfiguration)
-    
-    let sessionTask = session.dataTaskWithURL(NSURL(string: "http://localhost:8080/WebApplication5/")!, completionHandler: { (data, response, error) -> Void in
+        print("getStuff called")
+        //let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration)
         
-        //Define the operation we'd like to run in the operation queue
-        let studentParseOperation = NSBlockOperation(block: {
-            let parser = StudentParser()
-            parser.parse(data!)
-            //self.showTF.text = resultString
+        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://localhost:8080/WebApplication5/webresources/Students/")!, completionHandler: { (data, response, error) -> Void in
+            
+            //Define the operation we'd like to run in the operation queue
+            let studentParseOperation = NSBlockOperation(block: {
+                let parser = StudentParser()
+                parser.parse(data!)
+                //self.showTF.text = resultString
+            })
+            
+            // create a queue and add the operation
+            let queue = NSOperationQueue()
+            queue.maxConcurrentOperationCount=1
+            queue.addOperation(studentParseOperation)
+            
         })
+        //.resume will cause the session task to execute
         
-        // create a queue and add the operation
-        let queue = NSOperationQueue()
-        queue.maxConcurrentOperationCount=1
-        queue.addOperation(studentParseOperation)
-    })
-    //.resume will cause the session task to execute
-    
-    sessionTask.resume()
-
+        sessionTask.resume()
     }
     
     func postStuff(s: String){
