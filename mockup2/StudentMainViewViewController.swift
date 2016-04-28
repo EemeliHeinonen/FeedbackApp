@@ -17,4 +17,6 @@ class StudentMainViewViewController: UIViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-} //kukkuuuu
+    
+    
+}

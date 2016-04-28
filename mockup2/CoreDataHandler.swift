@@ -18,7 +18,7 @@ class CoreDataHandler: UIViewController{
     
     //Method for saving students name
     
-    func saveStudentName(name: String) {
+    func saveStudentName(name: String ) {
         //1
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
