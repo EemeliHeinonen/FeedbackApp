@@ -9,7 +9,7 @@
         <attribute name="lessonFeedback" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lessonRating" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="timeAndDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Classroom" syncable="YES"/>
         <relationship name="relationship1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Teacher" syncable="YES"/>
         <relationship name="relationship2" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" syncable="YES"/>
