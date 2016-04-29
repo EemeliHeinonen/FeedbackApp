@@ -42,6 +42,34 @@ class NetworkOperations {
         
         sessionTask.resume()
     }
+    func getTopics(){
+        //this function gets all students
+        
+        print("getStuff called")
+        
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration)
+        
+        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://localhost:8080/WebApplication5/webresources/Courses/Quantum Mechanics/topics/{topic})")!, completionHandler: { (data, response, error) -> Void in
+            
+            //Define the operation we'd like to run in the operation queue
+            let studentParseOperation = NSBlockOperation(block: {
+                let parser = TopicParser()
+                parser.parse(data!)
+                //self.showTF.text = resultString
+            })
+            
+            // create a queue and add the operation
+            let queue = NSOperationQueue()
+            queue.maxConcurrentOperationCount=1
+            queue.addOperation(studentParseOperation)
+            
+        })
+        //.resume will cause the session task to execute
+        
+        sessionTask.resume()
+    }
+    
     func getLessons(){
         //this function gets all lessons
         
@@ -50,7 +78,7 @@ class NetworkOperations {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfiguration)
         
-        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://localhost:8080/backend2/webresources/Courses/")!, completionHandler: { (data, response, error) -> Void in
+        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://localhost:8080/WebApplication5/webresources/Courses/")!, completionHandler: { (data, response, error) -> Void in
             
             //Define the operation we'd like to run in the operation queue
             let studentParseOperation = NSBlockOperation(block: {

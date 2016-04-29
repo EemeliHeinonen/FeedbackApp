@@ -12,6 +12,7 @@ class StudentLessonViewController: UIViewController, UINavigationControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
     }
     
@@ -19,6 +20,11 @@ class StudentLessonViewController: UIViewController, UINavigationControllerDeleg
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    /*override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }*/
+    //okei vittu tää table paska pitäs olla omas tableviewvontrollerisa ja sit containeriin asadsdsaaddas
     
 }
 

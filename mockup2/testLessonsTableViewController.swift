@@ -9,7 +9,7 @@
 import UIKit
 
 class testLessonsTableViewController: UITableViewController {
-
+    var parentController: StudentMainViewViewController?
     override func viewDidLoad() {
         print("lessontableviewcontroller viewdidload")
         super.viewDidLoad()
@@ -55,6 +55,9 @@ class testLessonsTableViewController: UITableViewController {
         return cell!
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        parentController!.performSegueWithIdentifier("lessonSegue", sender: parentController)
+    }
     
     /*
      // Override to support conditional editing of the table view.

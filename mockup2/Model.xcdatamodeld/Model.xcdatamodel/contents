@@ -15,6 +15,9 @@
         <relationship name="relationship2" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" syncable="YES"/>
         <relationship name="relationship3" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Topic" syncable="YES"/>
     </entity>
+    <entity name="Me" syncable="YES">
+        <attribute name="myName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Student" representedClassName=".Student" syncable="YES">
         <attribute name="studentName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lesson" syncable="YES"/>
@@ -36,5 +39,6 @@
         <element name="Student" positionX="18" positionY="90" width="128" height="90"/>
         <element name="Teacher" positionX="54" positionY="135" width="128" height="75"/>
         <element name="Topic" positionX="27" positionY="99" width="128" height="105"/>
+        <element name="Me" positionX="63" positionY="162" width="128" height="60"/>
     </elements>
 </model>

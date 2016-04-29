@@ -14,9 +14,12 @@ class Beacon: UIViewController, CLLocationManagerDelegate{
     //MARK: Labels
     @IBOutlet weak var beaconCount: UILabel!
     
+    static let sharedInstance = Beacon()
+
     
     let locationManager = CLLocationManager()
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "00000000-0000-0000-0000-000000000000")!, identifier: "ibks 105")
+    
     
     
     override func viewDidLoad() {
@@ -25,6 +28,7 @@ class Beacon: UIViewController, CLLocationManagerDelegate{
         CoreDataHandler.sharedInstance.coreDataTestFunc() //crazy shit
         //NetworkOperations.sharedInstance.getStuff() //crazy shit
         NetworkOperations.sharedInstance.getLessons() //more of that
+        //NetworkOperations.sharedInstance.getTopics() //omg...
         
         locationManager.delegate = self
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse){
@@ -40,7 +44,12 @@ class Beacon: UIViewController, CLLocationManagerDelegate{
             let closestBeacon = knownBeacons[0] as CLBeacon
             //print(closestBeacon)
             beaconCount.text = "There are "+String(knownBeacons.count)+" beacon(s) nearby"
-            
+            if(closestBeacon.major == 60){
+                //classroom = "303"
+            }
+            if(closestBeacon.major == 23){
+                //classroom = "304"
+            }
         }
     }
 
