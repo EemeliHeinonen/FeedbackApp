@@ -13,7 +13,7 @@ class LessonsTableViewController: UITableViewController {
     override func viewDidLoad() {
         print("lessontableviewcontroller viewdidload")
         super.viewDidLoad()
-        title = "\"The List\""
+        title = "\"List Of all Students\""
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
 
