@@ -28,7 +28,7 @@ class Beacon: UIViewController, CLLocationManagerDelegate{
         CoreDataHandler.sharedInstance.coreDataTestFunc() //crazy shit
         //NetworkOperations.sharedInstance.getStuff() //crazy shit
         NetworkOperations.sharedInstance.getLessons() //more of that
-        //NetworkOperations.sharedInstance.getTopics() //omg...
+        NetworkOperations.sharedInstance.getTopics() //omg...
         
         locationManager.delegate = self
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse){

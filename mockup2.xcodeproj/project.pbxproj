@@ -14,6 +14,8 @@
 		2B1704D51CA0157400CFC720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B1704D41CA0157400CFC720 /* Assets.xcassets */; };
 		2B1704D81CA0157400CFC720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B1704D61CA0157400CFC720 /* LaunchScreen.storyboard */; };
 		2B1704E31CA0157400CFC720 /* mockup2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1704E21CA0157400CFC720 /* mockup2Tests.swift */; };
+		2B2C50BF1CD641B10021846D /* StudentTopicsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2C50BE1CD641B10021846D /* StudentTopicsTableController.swift */; };
+		2B2C50C11CD641E30021846D /* StudentTopicsTableCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2C50C01CD641E30021846D /* StudentTopicsTableCellController.swift */; };
 		2B37E21E1CD1F7620061530A /* (students)LessonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B37E21D1CD1F7620061530A /* (students)LessonsTableViewController.swift */; };
 		2B37E2201CD238EC0061530A /* testLessonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B37E21F1CD238EC0061530A /* testLessonsTableViewController.swift */; };
 		2B3DA3A31CC0CAC100F22CD7 /* TeacherFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3DA3A21CC0CAC100F22CD7 /* TeacherFeedbackViewController.swift */; };
@@ -71,6 +73,8 @@
 		2B1704DE1CA0157400CFC720 /* mockup2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mockup2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B1704E21CA0157400CFC720 /* mockup2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockup2Tests.swift; sourceTree = "<group>"; };
 		2B1704E41CA0157400CFC720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B2C50BE1CD641B10021846D /* StudentTopicsTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTopicsTableController.swift; sourceTree = "<group>"; };
+		2B2C50C01CD641E30021846D /* StudentTopicsTableCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTopicsTableCellController.swift; sourceTree = "<group>"; };
 		2B37E21D1CD1F7620061530A /* (students)LessonsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "(students)LessonsTableViewController.swift"; sourceTree = "<group>"; };
 		2B37E21F1CD238EC0061530A /* testLessonsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testLessonsTableViewController.swift; sourceTree = "<group>"; };
 		2B3DA3A21CC0CAC100F22CD7 /* TeacherFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherFeedbackViewController.swift; sourceTree = "<group>"; };
@@ -162,9 +166,7 @@
 				BAE374521CBFCDCC00EEE9B8 /* StudentFeedbackViewController.swift */,
 				2B0BF93A1CBBA93B00F93EE8 /* Beacon.swift */,
 				BAE374501CBFCC3600EEE9B8 /* FeedbackListViewController.swift */,
-				BAA1332C1CC78071004F5070 /* StudentParser.swift */,
-				2BD125501CD2830B00B68B43 /* LessonParser.swift */,
-				2BC7904B1CD3A2DA0083094C /* TopicParser.swift */,
+				2B2C50C21CD6455D0021846D /* Parsers */,
 				2B56C1F11CA2B148005B231F /* View.xib */,
 				2B1704D11CA0157400CFC720 /* Main.storyboard */,
 				2B3DA3A21CC0CAC100F22CD7 /* TeacherFeedbackViewController.swift */,
@@ -178,10 +180,9 @@
 				2B1704D91CA0157400CFC720 /* Info.plist */,
 				BAD80C9C1CBCFDB900CEAFEB /* TeacherSignupViewController.swift */,
 				2B9923FD1CD3724D0074505A /* attendedClassesTableViewController.swift */,
-				2BC790491CD39E7D0083094C /* StudentLessonCellController.swift */,
 				2B37E21D1CD1F7620061530A /* (students)LessonsTableViewController.swift */,
 				2B9906411CBD084200316010 /* StudentMainViewViewController.swift */,
-				BAD80CA01CBCFF4C00CEAFEB /* StudentLessonViewController.swift */,
+				2B2C50BD1CD63F930021846D /* student lesson view */,
 				2B37E21F1CD238EC0061530A /* testLessonsTableViewController.swift */,
 				BA77B80A1CC65AA100ACAACB /* NetworkOperations.swift */,
 				BACB7EDC1CCE1CBC0094779C /* CoreDataHandler.swift */,
@@ -198,6 +199,27 @@
 				2B1704E41CA0157400CFC720 /* Info.plist */,
 			);
 			path = mockup2Tests;
+			sourceTree = "<group>";
+		};
+		2B2C50BD1CD63F930021846D /* student lesson view */ = {
+			isa = PBXGroup;
+			children = (
+				2BC790491CD39E7D0083094C /* StudentLessonCellController.swift */,
+				BAD80CA01CBCFF4C00CEAFEB /* StudentLessonViewController.swift */,
+				2B2C50BE1CD641B10021846D /* StudentTopicsTableController.swift */,
+				2B2C50C01CD641E30021846D /* StudentTopicsTableCellController.swift */,
+			);
+			name = "student lesson view";
+			sourceTree = "<group>";
+		};
+		2B2C50C21CD6455D0021846D /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				BAA1332C1CC78071004F5070 /* StudentParser.swift */,
+				2BD125501CD2830B00B68B43 /* LessonParser.swift */,
+				2BC7904B1CD3A2DA0083094C /* TopicParser.swift */,
+			);
+			name = Parsers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,10 +339,12 @@
 				BACB7ED51CCE185D0094779C /* Classroom.swift in Sources */,
 				2B37E21E1CD1F7620061530A /* (students)LessonsTableViewController.swift in Sources */,
 				BACB7ED91CCE185D0094779C /* Student.swift in Sources */,
+				2B2C50C11CD641E30021846D /* StudentTopicsTableCellController.swift in Sources */,
 				2B9906441CBD086F00316010 /* FeedbackViewController.swift in Sources */,
 				2BD125511CD2830B00B68B43 /* LessonParser.swift in Sources */,
 				BACB7ED41CCE185D0094779C /* Classroom+CoreDataProperties.swift in Sources */,
 				BACB7ED81CCE185D0094779C /* Student+CoreDataProperties.swift in Sources */,
+				2B2C50BF1CD641B10021846D /* StudentTopicsTableController.swift in Sources */,
 				BAD80CA31CBD004600CEAFEB /* TeacherMainViewController.swift in Sources */,
 				BAD80CA11CBCFF4C00CEAFEB /* StudentLessonViewController.swift in Sources */,
 				BAE374511CBFCC3600EEE9B8 /* FeedbackListViewController.swift in Sources */,
