@@ -60,6 +60,23 @@ class testLessonsTableViewController: UITableViewController {
     }
     
     /*
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "lessonSegue"{
+            let topicsViewController = segue.destinationViewController as! StudentTopicsTableController
+            
+            // Get the cell that generated this segue.
+            
+            if let selectedLessonCell = sender as? StudentTopicsTableCellController{
+                let indexPath = tableView.indexPathForCell(selectedLessonCell)!
+                let selectedLesson = CoreDataHandler.sharedInstance.lessons[indexPath.row]
+                topicsViewController. = selectedLesson
+            }
+        }
+    }
+ */
+        
+    
+    /*
      // Override to support conditional editing of the table view.
      override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
      // Return false if you do not want the specified item to be editable.

@@ -18,6 +18,7 @@ class CoreDataHandler: UIViewController{
     var people = [NSManagedObject]()
     var lessons = [NSManagedObject]()
     var topics = [NSManagedObject]()
+    var me = [NSManagedObject]()
 
     
     //Method for saving students name
@@ -146,5 +147,16 @@ class CoreDataHandler: UIViewController{
             print("Could not save \(error), \(error.userInfo)")
         }
     }
-    
+    func test(){
+        print("näin monta lessonia=======")
+        print(lessons.count)
+        
+        for index in 0...lessons.count-1 {
+            let topicString = lessons[index].valueForKey("subject") as? String
+            NetworkOperations.sharedInstance.getTopics(topicString!)
+            
+            print("NYT LÄHTI GET TOPICS TÄLLÄ LESSONILLA ======")
+            print(topicString)
+        }
+    }
 }

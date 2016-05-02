@@ -54,7 +54,7 @@ class TopicParser: NSObject,NSXMLParserDelegate{
             print("did end element course, and appended to thisLesson\(currentString)")
         } else if(elementName == "name") {
             thisTopic?.topicName = currentString
-            print("************** topic \(currentString)")
+            print("************** TOPIC \(currentString)")
             
         }
     }

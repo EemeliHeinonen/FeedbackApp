@@ -62,6 +62,8 @@ class LessonParser: NSObject,NSXMLParserDelegate{
         print ("******************************************* did end document")
         //save the parsed objects to persistent storage
         do {
+            CoreDataHandler.sharedInstance.test()
+
             //try managedContext!.save()
         } catch let error as NSError {
             print("Saving failed with error \(error), \(error.userInfo)")

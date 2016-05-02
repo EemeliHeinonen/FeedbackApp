@@ -23,7 +23,7 @@ class NetworkOperations {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfiguration)
         
-        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://192.168.1.236:8080/WebApplication5/webresources/Students/")!, completionHandler: { (data, response, error) -> Void in
+        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://localhost:8080/WebApplication5/webresources/Students/")!, completionHandler: { (data, response, error) -> Void in
             
             //Define the operation we'd like to run in the operation queue
             let studentParseOperation = NSBlockOperation(block: {
@@ -42,7 +42,7 @@ class NetworkOperations {
         
         sessionTask.resume()
     }
-    func getTopics(){
+    func getTopics(s: String){
         //this function gets all students
         
         print("getTopics called")
@@ -50,7 +50,7 @@ class NetworkOperations {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfiguration)
         
-        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://192.168.1.236:8080/WebApplication5/webresources/Courses/QuantumMechanics/topics/")!, completionHandler: { (data, response, error) -> Void in
+        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://localhost:8080/WebApplication5/webresources/Courses/"+s+"/topics/")!, completionHandler: { (data, response, error) -> Void in
             
             //Define the operation we'd like to run in the operation queue
             let studentParseOperation = NSBlockOperation(block: {
@@ -78,7 +78,7 @@ class NetworkOperations {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfiguration)
         
-        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://192.168.1.236:8080/WebApplication5/webresources/Courses/")!, completionHandler: { (data, response, error) -> Void in
+        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://localhost:8080/WebApplication5/webresources/Courses/")!, completionHandler: { (data, response, error) -> Void in
             
             //Define the operation we'd like to run in the operation queue
             let studentParseOperation = NSBlockOperation(block: {

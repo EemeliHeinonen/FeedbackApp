@@ -13,7 +13,7 @@ class StudentTopicsTableController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "\"List of topics in one lesson\""
-        //tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        //tableView.registerClass(StudentTopicsTableController.self, forCellReuseIdentifier: "Cell")
         
 }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

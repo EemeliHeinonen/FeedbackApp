@@ -12,9 +12,21 @@ class StudentTopicsTableCellController: UITableViewCell{
     
     @IBOutlet weak var topicLabel: UILabel!
     
+    @IBAction func gotItAction(sender: AnyObject) {
+    }
+    
+    @IBAction func didNotGetIt(sender: AnyObject) {
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+
     
 }
