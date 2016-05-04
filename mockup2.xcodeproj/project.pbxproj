@@ -163,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				2B1704CD1CA0157400CFC720 /* AppDelegate.swift */,
-				2B33E9F11CD8B04200C86ADA /* empty classes */,
+				BA898F491CD8B07F0085DDC8 /* Empty classes */,
 				2B0BF93A1CBBA93B00F93EE8 /* Beacon.swift */,
 				2B2C50C21CD6455D0021846D /* Parsers */,
 				2B56C1F11CA2B148005B231F /* View.xib */,
@@ -217,7 +217,7 @@
 			name = Parsers;
 			sourceTree = "<group>";
 		};
-		2B33E9F11CD8B04200C86ADA /* empty classes */ = {
+		BA898F491CD8B07F0085DDC8 /* Empty classes */ = {
 			isa = PBXGroup;
 			children = (
 				2B1704CF1CA0157400CFC720 /* ViewController.swift */,
@@ -230,7 +230,7 @@
 				BAD80CA21CBD004600CEAFEB /* TeacherMainViewController.swift */,
 				2B9923FD1CD3724D0074505A /* attendedClassesTableViewController.swift */,
 			);
-			name = "empty classes";
+			name = "Empty classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
