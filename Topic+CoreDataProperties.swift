@@ -14,7 +14,8 @@ import CoreData
 
 extension Topic {
 
-    @NSManaged var rating: NSNumber?
+    @NSManaged var gotItrating: NSNumber?
+    @NSManaged var notGotItrating: NSNumber?
     @NSManaged var topicName: String?
     @NSManaged var lesson: Lesson?
     @NSManaged var student: Student?

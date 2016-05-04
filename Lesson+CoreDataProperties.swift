@@ -14,13 +14,13 @@ import CoreData
 
 extension Lesson {
 
-    @NSManaged var lessonFeedback: String?
-    @NSManaged var lessonRating: NSNumber?
+    @NSManaged var lessonFeedback: Array<String>?
+    @NSManaged var lessonRating: String?
     @NSManaged var subject: String?
     @NSManaged var time: String?
     @NSManaged var classroom: Classroom?
     @NSManaged var student: NSSet?
-    @NSManaged var teacher: Teacher?
+    @NSManaged var teacher: String?
     @NSManaged var topic: NSSet?
 
 }
