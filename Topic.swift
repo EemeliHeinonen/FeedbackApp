@@ -1,0 +1,17 @@
+//
+//  Topic.swift
+//  mockup2
+//
+//  Created by Mortti Aittokoski on 4.5.2016.
+//  Copyright © 2016 Mortti Aittokoski. All rights reserved.
+//
+
+import Foundation
+import CoreData
+
+
+class Topic: NSManagedObject {
+
+// Insert code here to add functionality to your managed object subclass
+
+}

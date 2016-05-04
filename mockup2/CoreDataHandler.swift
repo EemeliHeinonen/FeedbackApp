@@ -152,11 +152,11 @@ class CoreDataHandler: UIViewController{
         print(lessons.count)
         
         for index in 0...lessons.count-1 {
-            let topicString = lessons[index].valueForKey("subject") as? String
-            NetworkOperations.sharedInstance.getTopics(topicString!)
+            let subjectString = lessons[index].valueForKey("subject") as? String
+            NetworkOperations.sharedInstance.getTopics(subjectString!)
             
             print("NYT LÄHTI GET TOPICS TÄLLÄ LESSONILLA ======")
-            print(topicString)
+            print(subjectString)
         }
     }
 }

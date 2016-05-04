@@ -16,8 +16,9 @@ class TopicParser: NSObject,NSXMLParserDelegate{
     var appDelegate:AppDelegate?
     var managedContext:NSManagedObjectContext?
     var thisTopic:Topic?
+    var thisLesson:Lesson?
     
-    func parse (xmlData:NSData) {
+    func parse (xmlData:NSData, nameoflesson:String) {
         let myParser = NSXMLParser(data: xmlData)
         myParser.delegate = self
         myParser.parse()
@@ -62,6 +63,11 @@ class TopicParser: NSObject,NSXMLParserDelegate{
         print ("******************************************* did end document")
         //save the parsed objects to persistent storage
         do {
+            
+            // valueForKey("subject") as? String
+            // CoreDataHandler.sharedInstance.lessons[indexPath.row]
+            
+            //.setValue(NSSet(object: thisTopic!), forKey:"topic" )
             //try managedContext!.save()
         } catch let error as NSError {
             print("Saving failed with error \(error), \(error.userInfo)")

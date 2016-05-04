@@ -12,7 +12,11 @@ import Foundation
 class NetworkOperations {
     
     static let sharedInstance = NetworkOperations()
+    var url:String
     
+    init(){
+        url = "localhost"
+    }
     
 
     func getStuff(){
@@ -23,7 +27,7 @@ class NetworkOperations {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfiguration)
         
-        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://localhost:8080/WebApplication5/webresources/Students/")!, completionHandler: { (data, response, error) -> Void in
+        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://"+url+":8080/WebApplication5/webresources/Students/")!, completionHandler: { (data, response, error) -> Void in
             
             //Define the operation we'd like to run in the operation queue
             let studentParseOperation = NSBlockOperation(block: {
@@ -50,12 +54,12 @@ class NetworkOperations {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfiguration)
         
-        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://localhost:8080/WebApplication5/webresources/Courses/"+s+"/topics/")!, completionHandler: { (data, response, error) -> Void in
+        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://"+url+":8080/WebApplication5/webresources/Courses/"+s+"/topics/")!, completionHandler: { (data, response, error) -> Void in
             
             //Define the operation we'd like to run in the operation queue
             let studentParseOperation = NSBlockOperation(block: {
                 let parser = TopicParser()
-                parser.parse(data!)
+                parser.parse(data!, nameoflesson: s)
                 //self.showTF.text = resultString
             })
             
@@ -68,6 +72,7 @@ class NetworkOperations {
         //.resume will cause the session task to execute
         
         sessionTask.resume()
+        print("end of get topics")
     }
     
     func getLessons(){
@@ -78,7 +83,7 @@ class NetworkOperations {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfiguration)
         
-        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://localhost:8080/WebApplication5/webresources/Courses/")!, completionHandler: { (data, response, error) -> Void in
+        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://"+url+":8080/WebApplication5/webresources/Courses/")!, completionHandler: { (data, response, error) -> Void in
             
             //Define the operation we'd like to run in the operation queue
             let studentParseOperation = NSBlockOperation(block: {
@@ -106,7 +111,7 @@ class NetworkOperations {
         
         let request = NSMutableURLRequest()
         request.HTTPMethod = "POST"
-        request.URL = NSURL(string: "http://localhost:8080/WebApplication5/webresources/Students/")
+        request.URL = NSURL(string: "http://"+url+":8080/WebApplication5/webresources/Students/")
         request.addValue("application/xml", forHTTPHeaderField: "Content-Type")
         request.addValue("application/xml", forHTTPHeaderField: "Accept")
         
@@ -128,7 +133,7 @@ class NetworkOperations {
         
         let request = NSMutableURLRequest()
         request.HTTPMethod = "POST"
-        request.URL = NSURL(string: "http://localhost:8080/WebApplication5/webresources/Courses/")
+        request.URL = NSURL(string: "http://"+url+":8080/WebApplication5/webresources/Courses/")
         request.addValue("application/xml", forHTTPHeaderField: "Content-Type")
         request.addValue("application/xml", forHTTPHeaderField: "Accept")
         
