@@ -34,6 +34,3 @@ class CreateLessonViewController: UIViewController, UITextFieldDelegate{
     }
     
 }
-
-// KUKOKUOKU
-// Changes made.

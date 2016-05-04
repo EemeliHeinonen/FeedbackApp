@@ -147,5 +147,37 @@ class NetworkOperations {
         sessionTask.resume()
         
     }
+    
+    func gotIt(course: String, topic: String){
+        //this function gets all lessons
+        
+        print("gotIt called")
+        
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration)
+        
+        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://localhost:8080/WebApplication5/webresources/Courses/"+course+"/topics/"+topic+"/gotItRating")!
+)
+        //.resume will cause the session task to execute
+        
+        sessionTask.resume()
+        
+    }
+    
+    func notGotIt(course: String, topic: String){
+        //this function gets all lessons
+        
+        print("notGotIt called")
+        
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration)
+        
+        let sessionTask = session.dataTaskWithURL(NSURL(string: "http://localhost:8080/WebApplication5/webresources/Courses/"+course+"/topics/"+topic+"/notGotItRating")!
+        )
+        //.resume will cause the session task to execute
+        
+        sessionTask.resume()
+        
+    }
 }
 
