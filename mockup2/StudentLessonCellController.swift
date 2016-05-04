@@ -12,9 +12,11 @@ class StudentLessonCellController: UITableViewCell{
     
     @IBOutlet weak var subjectLabel: UILabel!
     @IBAction func gotIt(sender: UIButton) {
+        //NetworkOperations.sharedInstance.gotIt(<#T##course: String##String#>, topic: <#T##String#>)
     }
     
     @IBAction func didntGotIt(sender: UIButton) {
+        //NetworkOperations.sharedInstance.notGotIt(<#T##course: String##String#>, topic: <#T##String#>)
     }
     
     override func awakeFromNib() {
