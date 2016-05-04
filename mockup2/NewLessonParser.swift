@@ -64,6 +64,17 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
             print("************** Topic \(thisTopic?.topicName!) added to \(thisLesson?.subject)'s topics list")
         } else if (elementName == "topicName") {
             thisTopic?.topicName = currentString
+        } else if (elementName == "teacher") {
+            thisLesson?.teacher = currentString
+        }/* else if (elementName == "lessonRatingAvg") {
+            if (currentString != "NaN"){
+            thisLesson?.lessonRating = currentString
+            }
+        } */ else if (elementName == "classroom") {
+          
+        } else if (elementName == "feedback") {
+            thisLesson?.lessonFeedback?.append(currentString)
+            print("\(currentString) Added to lessons feedback list")
         }
     }
     func parserDidEndDocument(parser: NSXMLParser) {
