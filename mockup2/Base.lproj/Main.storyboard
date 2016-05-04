@@ -10,15 +10,15 @@
             <objects>
                 <tableViewController id="Dnk-9V-AR0" customClass="StudentTopicsTableController" customModule="mockup2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="z5b-ls-Max">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="308"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentTopicsTableCellController" id="yZm-ZB-lzp" customClass="StudentTopicsTableCellController" customModule="mockup2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yZm-ZB-lzp" id="o01-R7-Uvh">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEz-DX-8zt">
@@ -75,16 +75,16 @@
                                 <rect key="frame" x="109" y="398" width="102" height="30"/>
                                 <state key="normal" title="Repeat, please"/>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TvO-Mx-EFr">
-                                <rect key="frame" x="20" y="28" width="280" height="308"/>
-                                <connections>
-                                    <segue destination="Lkt-oV-lll" kind="embed" identifier="topicContainerSegue" id="7LM-Gk-C78"/>
-                                </connections>
-                            </containerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSi-yQ-82d">
                                 <rect key="frame" x="116" y="474" width="88" height="30"/>
                                 <state key="normal" title="Help, please"/>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TvO-Mx-EFr">
+                                <rect key="frame" x="20" y="64" width="280" height="308"/>
+                                <connections>
+                                    <segue destination="Dnk-9V-AR0" kind="embed" identifier="topicContainerSegue" id="A86-Uo-F1S"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -94,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJx-hB-iTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1866" y="588"/>
+            <point key="canvasLocation" x="1866" y="620"/>
         </scene>
         <!--ETYB304 - MATH-->
         <scene sceneID="PBG-7f-Hjw">
@@ -1061,20 +1061,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmh-sW-xPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-507" y="1175"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="S7j-Si-z4w">
-            <objects>
-                <viewController id="Lkt-oV-lll" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LwP-7L-h58">
-                        <rect key="frame" x="0.0" y="0.0" width="280" height="308"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j27-TH-unS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2276" y="693"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

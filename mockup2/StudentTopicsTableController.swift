@@ -9,7 +9,8 @@
 import UIKit
 
 class StudentTopicsTableController: UITableViewController {
-    
+    var parentController: StudentLessonViewController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "\"List of topics in one lesson\""

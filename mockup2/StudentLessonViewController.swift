@@ -20,6 +20,12 @@ class StudentLessonViewController: UIViewController, UINavigationControllerDeleg
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "topicContainerSegue"){
+            let destinationCtrl = segue.destinationViewController as! StudentTopicsTableController
+            destinationCtrl.parentController = self
+        }
+    }
     
     /*override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
