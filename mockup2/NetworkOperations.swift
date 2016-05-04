@@ -87,7 +87,7 @@ class NetworkOperations {
             
             //Define the operation we'd like to run in the operation queue
             let studentParseOperation = NSBlockOperation(block: {
-                let parser = LessonParser()
+                let parser = NewLessonParser()
                 parser.parse(data!)
                 //self.showTF.text = resultString
             })

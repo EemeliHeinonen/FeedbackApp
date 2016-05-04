@@ -40,26 +40,30 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
         
         //Create new Lesson object when <course> -tag is found
         if (elementName == "course") {
-            print ("did start element course \(currentString)")
+            print ("did start element course")
             
             thisLesson = NSEntityDescription.insertNewObjectForEntityForName("Lesson", inManagedObjectContext: managedContext!) as? Lesson
+            print("!!!!!!!!!!!!!!!!!!!!!! Created a new Lesson")
         } else if (elementName == "topic") {
             thisTopic = NSEntityDescription.insertNewObjectForEntityForName("Topic", inManagedObjectContext: managedContext!) as? Topic
+            print("!!!!!!!!!!!!!!!!!!!!!! Created a new topic")
         }
     }
     
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        print("elementName= \(elementName)")
         
         if (elementName == "course") {
             CoreDataHandler.sharedInstance.lessons.append(thisLesson!)
-            print("did end element course, and appended to thisLesson\(currentString)")
+            print("!!!!!!!!!!!!!!!!!!!!!! Appended the new lesson \(thisLesson?.subject) to the CoreData List")
             
         } else if(elementName == "courseName") {
             thisLesson?.subject = currentString
-            print("************** subject \(currentString)")
+            print("************** courseName changed to \(currentString)")
         } else if (elementName == "topic") {
-            
+            thisLesson?.topic?.setByAddingObject(thisTopic!)
+            print("************** Topic \(thisTopic?.topicName!) added to \(thisLesson?.subject)'s topics list")
+        } else if (elementName == "topicName") {
+            thisTopic?.topicName = currentString
         }
     }
     func parserDidEndDocument(parser: NSXMLParser) {
