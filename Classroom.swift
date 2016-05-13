@@ -1,5 +1,5 @@
 //
-//  Topic.swift
+//  Classroom.swift
 //  mockup2
 //
 //  Created by Mortti Aittokoski on 13.5.2016.
@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class Topic: NSManagedObject {
+class Classroom: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 

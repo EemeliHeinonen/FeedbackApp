@@ -21,10 +21,6 @@
 		2B3DA3A31CC0CAC100F22CD7 /* TeacherFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3DA3A21CC0CAC100F22CD7 /* TeacherFeedbackViewController.swift */; };
 		2B4116771CB63C6B00F073C7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B4116751CB63C6B00F073C7 /* Model.xcdatamodeld */; };
 		2B56C1F21CA2B148005B231F /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B56C1F11CA2B148005B231F /* View.xib */; };
-		2B5758E81CDA132500A39436 /* Lesson+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5758E41CDA132500A39436 /* Lesson+CoreDataProperties.swift */; };
-		2B5758E91CDA132500A39436 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5758E51CDA132500A39436 /* Lesson.swift */; };
-		2B5758EA1CDA132500A39436 /* Topic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5758E61CDA132500A39436 /* Topic+CoreDataProperties.swift */; };
-		2B5758EB1CDA132500A39436 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5758E71CDA132500A39436 /* Topic.swift */; };
 		2B9906401CBD07EB00316010 /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B99063F1CBD07EB00316010 /* CreateClassViewController.swift */; };
 		2B9906421CBD084200316010 /* StudentMainViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9906411CBD084200316010 /* StudentMainViewViewController.swift */; };
 		2B9906441CBD086F00316010 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9906431CBD086F00316010 /* FeedbackViewController.swift */; };
@@ -32,16 +28,22 @@
 		2BC7904A1CD39E7D0083094C /* StudentLessonCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC790491CD39E7D0083094C /* StudentLessonCellController.swift */; };
 		2BC7904C1CD3A2DA0083094C /* TopicParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7904B1CD3A2DA0083094C /* TopicParser.swift */; };
 		2BD125511CD2830B00B68B43 /* LessonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD125501CD2830B00B68B43 /* LessonParser.swift */; };
+		2BD8FCA11CE5F04E00C849F1 /* Teacher+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8FC951CE5F04E00C849F1 /* Teacher+CoreDataProperties.swift */; };
+		2BD8FCA21CE5F04E00C849F1 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8FC961CE5F04E00C849F1 /* Teacher.swift */; };
+		2BD8FCA31CE5F04E00C849F1 /* Lesson+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8FC971CE5F04E00C849F1 /* Lesson+CoreDataProperties.swift */; };
+		2BD8FCA41CE5F04E00C849F1 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8FC981CE5F04E00C849F1 /* Lesson.swift */; };
+		2BD8FCA51CE5F04E00C849F1 /* Classroom+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8FC991CE5F04E00C849F1 /* Classroom+CoreDataProperties.swift */; };
+		2BD8FCA61CE5F04E00C849F1 /* Classroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8FC9A1CE5F04E00C849F1 /* Classroom.swift */; };
+		2BD8FCA71CE5F04E00C849F1 /* Topic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8FC9B1CE5F04E00C849F1 /* Topic+CoreDataProperties.swift */; };
+		2BD8FCA81CE5F04E00C849F1 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8FC9C1CE5F04E00C849F1 /* Topic.swift */; };
+		2BD8FCA91CE5F04E00C849F1 /* Me+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8FC9D1CE5F04E00C849F1 /* Me+CoreDataProperties.swift */; };
+		2BD8FCAA1CE5F04E00C849F1 /* Me.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8FC9E1CE5F04E00C849F1 /* Me.swift */; };
+		2BD8FCAB1CE5F04E00C849F1 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8FC9F1CE5F04E00C849F1 /* Student+CoreDataProperties.swift */; };
+		2BD8FCAC1CE5F04E00C849F1 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8FCA01CE5F04E00C849F1 /* Student.swift */; };
 		BA4570491CDA167F00ED1C95 /* NewLessonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4570481CDA167F00ED1C95 /* NewLessonParser.swift */; };
 		BA73D6CE1CD0CF8500D76253 /* CreateLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA73D6CD1CD0CF8500D76253 /* CreateLessonViewController.swift */; };
 		BA77B80B1CC65AA100ACAACB /* NetworkOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA77B80A1CC65AA100ACAACB /* NetworkOperations.swift */; };
 		BAA1332D1CC78071004F5070 /* StudentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA1332C1CC78071004F5070 /* StudentParser.swift */; };
-		BACB7ED41CCE185D0094779C /* Classroom+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7ECA1CCE185D0094779C /* Classroom+CoreDataProperties.swift */; };
-		BACB7ED51CCE185D0094779C /* Classroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7ECB1CCE185D0094779C /* Classroom.swift */; };
-		BACB7ED81CCE185D0094779C /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7ECE1CCE185D0094779C /* Student+CoreDataProperties.swift */; };
-		BACB7ED91CCE185D0094779C /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7ECF1CCE185D0094779C /* Student.swift */; };
-		BACB7EDA1CCE185D0094779C /* Teacher+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7ED01CCE185D0094779C /* Teacher+CoreDataProperties.swift */; };
-		BACB7EDB1CCE185D0094779C /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7ED11CCE185D0094779C /* Teacher.swift */; };
 		BACB7EDD1CCE1CBC0094779C /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7EDC1CCE1CBC0094779C /* CoreDataHandler.swift */; };
 		BACB7EDF1CCE35C40094779C /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB7EDE1CCE35C40094779C /* Parser.swift */; };
 		BAD80C9D1CBCFDB900CEAFEB /* TeacherSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD80C9C1CBCFDB900CEAFEB /* TeacherSignupViewController.swift */; };
@@ -81,10 +83,6 @@
 		2B3DA3A21CC0CAC100F22CD7 /* TeacherFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherFeedbackViewController.swift; sourceTree = "<group>"; };
 		2B4116761CB63C6B00F073C7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		2B56C1F11CA2B148005B231F /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
-		2B5758E41CDA132500A39436 /* Lesson+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lesson+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		2B5758E51CDA132500A39436 /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
-		2B5758E61CDA132500A39436 /* Topic+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Topic+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		2B5758E71CDA132500A39436 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		2B99063F1CBD07EB00316010 /* CreateClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateClassViewController.swift; sourceTree = "<group>"; };
 		2B9906411CBD084200316010 /* StudentMainViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentMainViewViewController.swift; sourceTree = "<group>"; };
 		2B9906431CBD086F00316010 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
@@ -92,17 +90,23 @@
 		2BC790491CD39E7D0083094C /* StudentLessonCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLessonCellController.swift; sourceTree = "<group>"; };
 		2BC7904B1CD3A2DA0083094C /* TopicParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicParser.swift; sourceTree = "<group>"; };
 		2BD125501CD2830B00B68B43 /* LessonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonParser.swift; sourceTree = "<group>"; };
+		2BD8FC951CE5F04E00C849F1 /* Teacher+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2BD8FC961CE5F04E00C849F1 /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		2BD8FC971CE5F04E00C849F1 /* Lesson+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lesson+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2BD8FC981CE5F04E00C849F1 /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		2BD8FC991CE5F04E00C849F1 /* Classroom+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Classroom+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2BD8FC9A1CE5F04E00C849F1 /* Classroom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classroom.swift; sourceTree = "<group>"; };
+		2BD8FC9B1CE5F04E00C849F1 /* Topic+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Topic+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2BD8FC9C1CE5F04E00C849F1 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		2BD8FC9D1CE5F04E00C849F1 /* Me+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Me+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2BD8FC9E1CE5F04E00C849F1 /* Me.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Me.swift; sourceTree = "<group>"; };
+		2BD8FC9F1CE5F04E00C849F1 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2BD8FCA01CE5F04E00C849F1 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		BA4570481CDA167F00ED1C95 /* NewLessonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewLessonParser.swift; sourceTree = "<group>"; };
 		BA52EA0B1CC0D13C0084FF8E /* TeacherLessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherLessonViewController.swift; sourceTree = "<group>"; };
 		BA73D6CD1CD0CF8500D76253 /* CreateLessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateLessonViewController.swift; sourceTree = "<group>"; };
 		BA77B80A1CC65AA100ACAACB /* NetworkOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperations.swift; sourceTree = "<group>"; };
 		BAA1332C1CC78071004F5070 /* StudentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentParser.swift; sourceTree = "<group>"; };
-		BACB7ECA1CCE185D0094779C /* Classroom+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Classroom+CoreDataProperties.swift"; path = "mockup2/CoreDataFolder/Classroom+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BACB7ECB1CCE185D0094779C /* Classroom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Classroom.swift; path = mockup2/CoreDataFolder/Classroom.swift; sourceTree = "<group>"; };
-		BACB7ECE1CCE185D0094779C /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Student+CoreDataProperties.swift"; path = "mockup2/CoreDataFolder/Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BACB7ECF1CCE185D0094779C /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Student.swift; path = mockup2/CoreDataFolder/Student.swift; sourceTree = "<group>"; };
-		BACB7ED01CCE185D0094779C /* Teacher+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Teacher+CoreDataProperties.swift"; path = "mockup2/CoreDataFolder/Teacher+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BACB7ED11CCE185D0094779C /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Teacher.swift; path = mockup2/CoreDataFolder/Teacher.swift; sourceTree = "<group>"; };
 		BACB7EDC1CCE1CBC0094779C /* CoreDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		BACB7EDE1CCE35C40094779C /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		BAD80C9C1CBCFDB900CEAFEB /* TeacherSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherSignupViewController.swift; sourceTree = "<group>"; };
@@ -134,16 +138,18 @@
 		2B1704C11CA0157400CFC720 = {
 			isa = PBXGroup;
 			children = (
-				2B5758E41CDA132500A39436 /* Lesson+CoreDataProperties.swift */,
-				2B5758E51CDA132500A39436 /* Lesson.swift */,
-				2B5758E61CDA132500A39436 /* Topic+CoreDataProperties.swift */,
-				2B5758E71CDA132500A39436 /* Topic.swift */,
-				BACB7ECA1CCE185D0094779C /* Classroom+CoreDataProperties.swift */,
-				BACB7ECB1CCE185D0094779C /* Classroom.swift */,
-				BACB7ECE1CCE185D0094779C /* Student+CoreDataProperties.swift */,
-				BACB7ECF1CCE185D0094779C /* Student.swift */,
-				BACB7ED01CCE185D0094779C /* Teacher+CoreDataProperties.swift */,
-				BACB7ED11CCE185D0094779C /* Teacher.swift */,
+				2BD8FC951CE5F04E00C849F1 /* Teacher+CoreDataProperties.swift */,
+				2BD8FC961CE5F04E00C849F1 /* Teacher.swift */,
+				2BD8FC971CE5F04E00C849F1 /* Lesson+CoreDataProperties.swift */,
+				2BD8FC981CE5F04E00C849F1 /* Lesson.swift */,
+				2BD8FC991CE5F04E00C849F1 /* Classroom+CoreDataProperties.swift */,
+				2BD8FC9A1CE5F04E00C849F1 /* Classroom.swift */,
+				2BD8FC9B1CE5F04E00C849F1 /* Topic+CoreDataProperties.swift */,
+				2BD8FC9C1CE5F04E00C849F1 /* Topic.swift */,
+				2BD8FC9D1CE5F04E00C849F1 /* Me+CoreDataProperties.swift */,
+				2BD8FC9E1CE5F04E00C849F1 /* Me.swift */,
+				2BD8FC9F1CE5F04E00C849F1 /* Student+CoreDataProperties.swift */,
+				2BD8FCA01CE5F04E00C849F1 /* Student.swift */,
 				2B1704CC1CA0157400CFC720 /* mockup2 */,
 				2B1704E11CA0157400CFC720 /* mockup2Tests */,
 				2B1704CB1CA0157400CFC720 /* Products */,
@@ -336,41 +342,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BACB7EDA1CCE185D0094779C /* Teacher+CoreDataProperties.swift in Sources */,
+				2BD8FCA91CE5F04E00C849F1 /* Me+CoreDataProperties.swift in Sources */,
 				2B37E2201CD238EC0061530A /* testLessonsTableViewController.swift in Sources */,
+				2BD8FCA81CE5F04E00C849F1 /* Topic.swift in Sources */,
 				BACB7EDD1CCE1CBC0094779C /* CoreDataHandler.swift in Sources */,
 				2B1704D01CA0157400CFC720 /* ViewController.swift in Sources */,
-				BACB7EDB1CCE185D0094779C /* Teacher.swift in Sources */,
 				BA77B80B1CC65AA100ACAACB /* NetworkOperations.swift in Sources */,
 				BAA1332D1CC78071004F5070 /* StudentParser.swift in Sources */,
+				2BD8FCA11CE5F04E00C849F1 /* Teacher+CoreDataProperties.swift in Sources */,
+				2BD8FCA21CE5F04E00C849F1 /* Teacher.swift in Sources */,
 				2BC7904C1CD3A2DA0083094C /* TopicParser.swift in Sources */,
 				2B1704CE1CA0157400CFC720 /* AppDelegate.swift in Sources */,
-				BACB7ED51CCE185D0094779C /* Classroom.swift in Sources */,
 				2B37E21E1CD1F7620061530A /* (students)LessonsTableViewController.swift in Sources */,
-				BACB7ED91CCE185D0094779C /* Student.swift in Sources */,
+				2BD8FCAB1CE5F04E00C849F1 /* Student+CoreDataProperties.swift in Sources */,
 				2B2C50C11CD641E30021846D /* StudentTopicsTableCellController.swift in Sources */,
 				2B9906441CBD086F00316010 /* FeedbackViewController.swift in Sources */,
+				2BD8FCA51CE5F04E00C849F1 /* Classroom+CoreDataProperties.swift in Sources */,
 				2BD125511CD2830B00B68B43 /* LessonParser.swift in Sources */,
-				2B5758E81CDA132500A39436 /* Lesson+CoreDataProperties.swift in Sources */,
-				BACB7ED41CCE185D0094779C /* Classroom+CoreDataProperties.swift in Sources */,
-				2B5758EA1CDA132500A39436 /* Topic+CoreDataProperties.swift in Sources */,
-				BACB7ED81CCE185D0094779C /* Student+CoreDataProperties.swift in Sources */,
 				2B2C50BF1CD641B10021846D /* StudentTopicsTableController.swift in Sources */,
+				2BD8FCAA1CE5F04E00C849F1 /* Me.swift in Sources */,
 				BAD80CA31CBD004600CEAFEB /* TeacherMainViewController.swift in Sources */,
 				BAD80CA11CBCFF4C00CEAFEB /* StudentLessonViewController.swift in Sources */,
+				2BD8FCA31CE5F04E00C849F1 /* Lesson+CoreDataProperties.swift in Sources */,
 				BAE374511CBFCC3600EEE9B8 /* FeedbackListViewController.swift in Sources */,
+				2BD8FCAC1CE5F04E00C849F1 /* Student.swift in Sources */,
 				BAE374531CBFCDCC00EEE9B8 /* StudentFeedbackViewController.swift in Sources */,
-				2B5758EB1CDA132500A39436 /* Topic.swift in Sources */,
 				2B4116771CB63C6B00F073C7 /* Model.xcdatamodeld in Sources */,
 				2B3DA3A31CC0CAC100F22CD7 /* TeacherFeedbackViewController.swift in Sources */,
 				2BC7904A1CD39E7D0083094C /* StudentLessonCellController.swift in Sources */,
 				BA4570491CDA167F00ED1C95 /* NewLessonParser.swift in Sources */,
 				BACB7EDF1CCE35C40094779C /* Parser.swift in Sources */,
+				2BD8FCA61CE5F04E00C849F1 /* Classroom.swift in Sources */,
 				BAD80C9D1CBCFDB900CEAFEB /* TeacherSignupViewController.swift in Sources */,
 				2B9906421CBD084200316010 /* StudentMainViewViewController.swift in Sources */,
 				2B9923FE1CD3724D0074505A /* attendedClassesTableViewController.swift in Sources */,
+				2BD8FCA71CE5F04E00C849F1 /* Topic+CoreDataProperties.swift in Sources */,
+				2BD8FCA41CE5F04E00C849F1 /* Lesson.swift in Sources */,
 				BAD80C9F1CBCFE9900CEAFEB /* StudentSignupViewController.swift in Sources */,
-				2B5758E91CDA132500A39436 /* Lesson.swift in Sources */,
 				2B0BF93B1CBBA93B00F93EE8 /* Beacon.swift in Sources */,
 				BA73D6CE1CD0CF8500D76253 /* CreateLessonViewController.swift in Sources */,
 				2B9906401CBD07EB00316010 /* CreateClassViewController.swift in Sources */,

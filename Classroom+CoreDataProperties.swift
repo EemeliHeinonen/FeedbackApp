@@ -1,5 +1,5 @@
 //
-//  Topic+CoreDataProperties.swift
+//  Classroom+CoreDataProperties.swift
 //  mockup2
 //
 //  Created by Mortti Aittokoski on 13.5.2016.
@@ -12,11 +12,10 @@
 import Foundation
 import CoreData
 
-extension Topic {
+extension Classroom {
 
-    @NSManaged var notGotItRating: NSNumber?
-    @NSManaged var topicName: String?
-    @NSManaged var gotItRating: NSNumber?
-    @NSManaged var lessonRelationship: Lesson?
+    @NSManaged var beaconID: NSNumber?
+    @NSManaged var roomName: String?
+    @NSManaged var lessonRelationship: NSSet?
 
 }

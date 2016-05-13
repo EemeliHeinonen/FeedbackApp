@@ -54,18 +54,19 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
         
         if (elementName == "course") {
             CoreDataHandler.sharedInstance.lessons.append(thisLesson!)
-            print("!!!!!!!!!!!!!!!!!!!!!! Appended the new lesson \(thisLesson?.subject) to the CoreData List")
+            print("!!!!!!!!!!!!!!!!!!!!!! Appended the new lesson \(thisLesson?.lessonName) to the CoreData List")
             
         } else if(elementName == "courseName") {
-            thisLesson?.subject = currentString
+            thisLesson?.lessonName = currentString
             print("************** courseName changed to \(currentString)")
         } else if (elementName == "topic") {
-            thisLesson?.topic?.setByAddingObject(thisTopic!)
-            print("************** Topic \(thisTopic?.topicName!) added to \(thisLesson?.subject)'s topics list")
+            //thisLesson?.topic?.setByAddingObject(thisTopic!)
+            print()
+            //print("************** Topic \(thisTopic?.topicName!) added to \(thisLesson?.subject)'s topics list")
         } else if (elementName == "topicName") {
             thisTopic?.topicName = currentString
         } else if (elementName == "teacher") {
-            thisLesson?.teacher = currentString
+            //thisLesson?.teacher = currentString
         }/* else if (elementName == "lessonRatingAvg") {
             if (currentString != "NaN"){
             thisLesson?.lessonRating = currentString
@@ -73,8 +74,8 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
         } */ else if (elementName == "classroom") {
           
         } else if (elementName == "feedback") {
-            thisLesson?.lessonFeedback?.append(currentString)
-            print("\(currentString) Added to lessons feedback list")
+            //thisLesson?.lessonFeedback?.append(currentString)
+            //print("\(currentString) Added to lessons feedback list")
         }
     }
     func parserDidEndDocument(parser: NSXMLParser) {

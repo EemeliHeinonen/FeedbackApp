@@ -1,5 +1,5 @@
 //
-//  Topic+CoreDataProperties.swift
+//  Student+CoreDataProperties.swift
 //  mockup2
 //
 //  Created by Mortti Aittokoski on 13.5.2016.
@@ -12,11 +12,9 @@
 import Foundation
 import CoreData
 
-extension Topic {
+extension Student {
 
-    @NSManaged var notGotItRating: NSNumber?
-    @NSManaged var topicName: String?
-    @NSManaged var gotItRating: NSNumber?
+    @NSManaged var studentName: String?
     @NSManaged var lessonRelationship: Lesson?
 
 }

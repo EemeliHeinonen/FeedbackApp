@@ -53,7 +53,7 @@ class LessonParser: NSObject,NSXMLParserDelegate{
             
             print("did end element course, and appended to thisLesson\(currentString)")
         } else if(elementName == "courseName") {
-            thisLesson?.subject = currentString
+            thisLesson?.lessonName = currentString
             print("************** subject \(currentString)")
             
         }

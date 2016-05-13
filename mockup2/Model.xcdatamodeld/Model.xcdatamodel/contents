@@ -3,42 +3,41 @@
     <entity name="Classroom" representedClassName=".Classroom" syncable="YES">
         <attribute name="beaconID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="roomName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="lesson" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lesson" syncable="YES"/>
+        <relationship name="lessonRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lesson" inverseName="classroomRelationship" inverseEntity="Lesson" syncable="YES"/>
     </entity>
     <entity name="Lesson" representedClassName=".Lesson" syncable="YES">
         <attribute name="lessonFeedback" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lessonName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lessonRating" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="classroom" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Classroom" syncable="YES"/>
-        <relationship name="student" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" syncable="YES"/>
-        <relationship name="teacher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Teacher" syncable="YES"/>
-        <relationship name="topic" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Topic" inverseName="lesson" inverseEntity="Topic" syncable="YES"/>
+        <relationship name="classroomRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Classroom" inverseName="lessonRelationship" inverseEntity="Classroom" syncable="YES"/>
+        <relationship name="studentRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="lessonRelationship" inverseEntity="Student" syncable="YES"/>
+        <relationship name="teacherRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Teacher" inverseName="lessonRelationship" inverseEntity="Teacher" syncable="YES"/>
+        <relationship name="topicRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Topic" inverseName="lessonRelationship" inverseEntity="Topic" syncable="YES"/>
     </entity>
-    <entity name="Me" syncable="YES">
+    <entity name="Me" representedClassName=".Me" syncable="YES">
         <attribute name="myName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Student" representedClassName=".Student" syncable="YES">
         <attribute name="studentName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="lesson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lesson" syncable="YES"/>
-        <relationship name="topic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Topic" syncable="YES"/>
+        <relationship name="lessonRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lesson" inverseName="studentRelationship" inverseEntity="Lesson" syncable="YES"/>
     </entity>
     <entity name="Teacher" representedClassName=".Teacher" syncable="YES">
         <attribute name="teacherName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="lesson" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lesson" syncable="YES"/>
+        <relationship name="lessonRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lesson" inverseName="teacherRelationship" inverseEntity="Lesson" syncable="YES"/>
     </entity>
     <entity name="Topic" representedClassName=".Topic" syncable="YES">
-        <attribute name="rating" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="gotItRating" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="notGotItRating" optional="YES" attributeType="Integer 16" syncable="YES"/>
         <attribute name="topicName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="lesson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lesson" inverseName="topic" inverseEntity="Lesson" syncable="YES"/>
-        <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" syncable="YES"/>
+        <relationship name="lessonRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lesson" inverseName="topicRelationship" inverseEntity="Lesson" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Classroom" positionX="-288" positionY="29" width="128" height="88"/>
-        <element name="Lesson" positionX="-126" positionY="99" width="128" height="163"/>
+        <element name="Classroom" positionX="-288" positionY="29" width="128" height="90"/>
+        <element name="Lesson" positionX="-126" positionY="99" width="128" height="165"/>
         <element name="Me" positionX="-63" positionY="3" width="128" height="60"/>
-        <element name="Student" positionX="-281" positionY="353" width="128" height="88"/>
-        <element name="Teacher" positionX="97" positionY="108" width="128" height="73"/>
-        <element name="Topic" positionX="52" positionY="320" width="128" height="103"/>
+        <element name="Student" positionX="-281" positionY="353" width="128" height="75"/>
+        <element name="Teacher" positionX="97" positionY="108" width="128" height="75"/>
+        <element name="Topic" positionX="52" positionY="320" width="128" height="105"/>
     </elements>
 </model>

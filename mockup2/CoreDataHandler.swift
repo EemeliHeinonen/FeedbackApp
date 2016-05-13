@@ -154,6 +154,7 @@ class CoreDataHandler: UIViewController{
         for index in 0...lessons.count-1 {
             let subjectString = lessons[index].valueForKey("subject") as? String
             NetworkOperations.sharedInstance.getTopics(subjectString!)
+            // TÄSTÄ JATKETAAN PERJANTAINA
             
             print("NYT LÄHTI GET TOPICS TÄLLÄ LESSONILLA ======")
             print(subjectString)
