@@ -628,11 +628,6 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="M5j-gi-y9f">
-                        <barButtonItem key="leftBarButtonItem" title="Log out" id="QQO-Qc-NaM">
-                            <connections>
-                                <segue destination="a6q-mr-42h" kind="push" id="xXA-vJ-92q"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Create lesson" id="yYj-R5-Avn">
                             <connections>
                                 <segue destination="OVw-ad-zqD" kind="push" id="0iw-tC-CIG"/>
@@ -710,24 +705,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9p-2F-f3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="761.60000000000002" y="2133.7866666666669"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="TVT-kT-LGf">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tAt-FY-yB3" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ODp-MI-EwH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="aB7-4Z-uKx" kind="relationship" relationship="rootViewController" id="iDM-tp-he6"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g1n-Qz-ITq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-357.86666666666667" y="2779.4133333333334"/>
         </scene>
         <!--Test Lessons Table View Controller-->
         <scene sceneID="Bfk-sG-A70">
@@ -906,7 +883,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Brw-KZ-soZ">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Gz3-oa-Z3X"/>
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="qDU-pB-kpa">
                             <connections>
                                 <segue destination="aB7-4Z-uKx" kind="push" id="ief-xY-Y9C"/>
@@ -1063,10 +1039,10 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="PZH-3z-rnJ"/>
-        <segue reference="ief-xY-Y9C"/>
         <segue reference="IjS-yh-hYq"/>
         <segue reference="wTH-iV-7co"/>
         <segue reference="ivz-IZ-5Fy"/>
-        <segue reference="zVJ-Ha-OpD"/>
+        <segue reference="ief-xY-Y9C"/>
+        <segue reference="0iw-tC-CIG"/>
     </inferredMetricsTieBreakers>
 </document>

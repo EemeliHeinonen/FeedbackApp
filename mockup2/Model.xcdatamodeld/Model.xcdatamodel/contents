@@ -32,6 +32,7 @@
         <attribute name="topicName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="lessonRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lesson" inverseName="topicRelationship" inverseEntity="Lesson" syncable="YES"/>
     </entity>
+    <fetchRequest name="FetchRequest" entity="Me" predicateString="myName BEGINSWITH &quot;hermanni&quot;"/>
     <elements>
         <element name="Classroom" positionX="-288" positionY="29" width="128" height="90"/>
         <element name="Lesson" positionX="-126" positionY="99" width="128" height="165"/>

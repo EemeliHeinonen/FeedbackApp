@@ -65,6 +65,9 @@ class testLessonsTableViewController: UITableViewController {
         CoreDataHandler.sharedInstance.getLessonsTopics(currentCell.textLabel!.text!)
         CoreDataHandler.sharedInstance.zetCurrentLesson(currentCell.textLabel!.text!)
         
+        //tähän kohtaam NetworkOperations.sharedInscane laita oppilas luokkaan
+        
+        
         print(currentCell.textLabel!.text)
     }
     

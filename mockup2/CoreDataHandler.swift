@@ -144,7 +144,7 @@ class CoreDataHandler: UIViewController{
 
     }
     
-    func saveStudentName(name: String ) {
+    func saveMyName(name: String ) {
         //1
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
@@ -152,18 +152,24 @@ class CoreDataHandler: UIViewController{
         let managedContext = appDelegate.managedObjectContext
         
         //2
-        let entity =  NSEntityDescription.entityForName("Student",
+        let entity =  NSEntityDescription.entityForName("Me",
                                                         inManagedObjectContext:managedContext)
+        let fetchRequest = NSFetchRequest(entityName: "Me")
+
         
         let student = NSManagedObject(entity: entity!,
                                      insertIntoManagedObjectContext: managedContext)
         
         //3
-        student.setValue(name, forKey: "studentName")
+        student.setValue(name, forKey: "myName")
         
         //4
         do {
             try managedContext.save()
+            let results =
+                try managedContext.executeFetchRequest(fetchRequest)
+            me = results as! [NSManagedObject]
+
             //5
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")

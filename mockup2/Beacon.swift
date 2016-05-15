@@ -56,5 +56,12 @@ class Beacon: UIViewController, CLLocationManagerDelegate{
             }
         }
     }
-
+    
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(CoreDataHandler.sharedInstance.me){
+            
+        }
+    }
+    */
+    
 }

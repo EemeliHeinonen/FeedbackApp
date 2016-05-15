@@ -2,7 +2,7 @@
 //  Lesson+CoreDataProperties.swift
 //  mockup2
 //
-//  Created by Mortti Aittokoski on 13.5.2016.
+//  Created by Mortti Aittokoski on 15.5.2016.
 //  Copyright © 2016 Mortti Aittokoski. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,8 +15,8 @@ import CoreData
 extension Lesson {
 
     @NSManaged var lessonFeedback: String?
-    @NSManaged var lessonRating: NSNumber?
     @NSManaged var lessonName: String?
+    @NSManaged var lessonRating: NSNumber?
     @NSManaged var time: String?
     @NSManaged var classroomRelationship: Classroom?
     @NSManaged var studentRelationship: NSSet?

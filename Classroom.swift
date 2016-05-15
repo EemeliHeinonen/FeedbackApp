@@ -2,7 +2,7 @@
 //  Classroom.swift
 //  mockup2
 //
-//  Created by Mortti Aittokoski on 13.5.2016.
+//  Created by Mortti Aittokoski on 15.5.2016.
 //  Copyright © 2016 Mortti Aittokoski. All rights reserved.
 //
 
