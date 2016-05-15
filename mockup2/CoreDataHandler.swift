@@ -19,7 +19,57 @@ class CoreDataHandler: UIViewController{
     var lessons = [NSManagedObject]()
     var topics = [NSManagedObject]()
     var me = [NSManagedObject]()
-
+    var lessonsTopics = [NSManagedObject]()
+    var currentLesson = ""
+    
+    func zetCurrentLesson(s: String){
+        currentLesson = s
+    }
+    
+    func getCurrentLesson() -> String{
+        return currentLesson
+    }
+    
+    func getLessonsTopics(lessonString: String){
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        // Fetching
+        let fetchRequest = NSFetchRequest(entityName: "Topic")
+        
+        // Create Predicate
+        let predicate = NSPredicate(format: "%K == %@", "lessonRelationship.lessonName", lessonString)
+        fetchRequest.predicate = predicate
+        
+        /*
+        // Add Sort Descriptor
+        let sortDescriptor1 = NSSortDescriptor(key: "last", ascending: true)
+        let sortDescriptor2 = NSSortDescriptor(key: "age", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
+         */
+        
+        // Execute Fetch Request
+        do {
+            let result = try managedContext.executeFetchRequest(fetchRequest)
+            print("?!?!?!??!?!?!?!??!?! result count:\(result.count)")
+            print("?!?!?!??!?!?!?!??!?! result count:\(result)")
+            
+            lessonsTopics = result as! [NSManagedObject]
+            
+            for i in result {
+                if let topicName = i.valueForKey("topicName"){
+                    print("????????????? TÄSSÄ TULEE LESSONIN TOPICNAMET:\(topicName)")
+                }
+            }
+            
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+        
+    }
     
     //Method for saving students name
     func getAllTopics(){
@@ -147,12 +197,13 @@ class CoreDataHandler: UIViewController{
             print("Could not save \(error), \(error.userInfo)")
         }
     }
+    /*
     func test(){
         print("näin monta lessonia=======")
         print(lessons.count)
         
         for index in 0...lessons.count-1 {
-            let subjectString = lessons[index].valueForKey("subject") as? String
+            let subjectString = lessons[index].valueForKey("lessonName") as? String
             NetworkOperations.sharedInstance.getTopics(subjectString!)
             // TÄSTÄ JATKETAAN PERJANTAINA
             
@@ -160,4 +211,5 @@ class CoreDataHandler: UIViewController{
             print(subjectString)
         }
     }
+ */
 }

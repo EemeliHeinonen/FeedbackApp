@@ -50,31 +50,26 @@ class testLessonsTableViewController: UITableViewController {
         let p = CoreDataHandler.sharedInstance.lessons[indexPath.row]
         
         cell!.textLabel!.text =
-            p.valueForKey("subject") as? String
+            p.valueForKey("lessonName") as? String
         
         return cell!
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         parentController!.performSegueWithIdentifier("lessonSegue", sender: parentController)
+        
+        let indexPath = tableView.indexPathForSelectedRow!
+        
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
+        
+        CoreDataHandler.sharedInstance.getLessonsTopics(currentCell.textLabel!.text!)
+        CoreDataHandler.sharedInstance.zetCurrentLesson(currentCell.textLabel!.text!)
+        
+        print(currentCell.textLabel!.text)
     }
     
-    /*
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "lessonSegue"{
-            let topicsViewController = segue.destinationViewController as! StudentTopicsTableController
-            
-            // Get the cell that generated this segue.
-            
-            if let selectedLessonCell = sender as? StudentTopicsTableCellController{
-                let indexPath = tableView.indexPathForCell(selectedLessonCell)!
-                let selectedLesson = CoreDataHandler.sharedInstance.lessons[indexPath.row]
-                topicsViewController. = selectedLesson
-            }
-        }
-    }
- */
-        
+    
+    
     
     /*
      // Override to support conditional editing of the table view.

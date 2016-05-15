@@ -24,7 +24,7 @@ class StudentTopicsTableController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("func tableView return count")
         
-        return CoreDataHandler.sharedInstance.topics.count
+        return CoreDataHandler.sharedInstance.lessonsTopics.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -34,10 +34,11 @@ class StudentTopicsTableController: UITableViewController {
         let cell =
             tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! StudentTopicsTableCellController // needed for cell class
         
-        let p = CoreDataHandler.sharedInstance.topics[indexPath.row]
+        let p = CoreDataHandler.sharedInstance.lessonsTopics[indexPath.row]
         
         /*cell!.textLabel!.text =
             p.valueForKey("topicName") as? String*/
+        
         cell.topicLabel.text = p.valueForKey("topicName") as? String
         
         return cell

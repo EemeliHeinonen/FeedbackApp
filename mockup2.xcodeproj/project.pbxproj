@@ -168,6 +168,7 @@
 		2B1704CC1CA0157400CFC720 /* mockup2 */ = {
 			isa = PBXGroup;
 			children = (
+				2BDF50211CE8652F00A8958B /* trash */,
 				2B1704CD1CA0157400CFC720 /* AppDelegate.swift */,
 				BA898F491CD8B07F0085DDC8 /* Empty classes */,
 				2B0BF93A1CBBA93B00F93EE8 /* Beacon.swift */,
@@ -216,11 +217,18 @@
 			isa = PBXGroup;
 			children = (
 				BAA1332C1CC78071004F5070 /* StudentParser.swift */,
-				2BD125501CD2830B00B68B43 /* LessonParser.swift */,
-				2BC7904B1CD3A2DA0083094C /* TopicParser.swift */,
 				BA4570481CDA167F00ED1C95 /* NewLessonParser.swift */,
 			);
 			name = Parsers;
+			sourceTree = "<group>";
+		};
+		2BDF50211CE8652F00A8958B /* trash */ = {
+			isa = PBXGroup;
+			children = (
+				2BD125501CD2830B00B68B43 /* LessonParser.swift */,
+				2BC7904B1CD3A2DA0083094C /* TopicParser.swift */,
+			);
+			name = trash;
 			sourceTree = "<group>";
 		};
 		BA898F491CD8B07F0085DDC8 /* Empty classes */ = {

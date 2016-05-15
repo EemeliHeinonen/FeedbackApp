@@ -60,7 +60,12 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
             thisLesson?.lessonName = currentString
             print("************** courseName changed to \(currentString)")
         } else if (elementName == "topic") {
-            //thisLesson?.topic?.setByAddingObject(thisTopic!)
+            CoreDataHandler.sharedInstance.topics.append(thisTopic!)
+            
+            //thisLesson!.setValue(NSSet(object: thisTopic!), forKey: "topicRelationship")
+            let t = thisLesson!.mutableSetValueForKey("topicRelationship") //good shit
+            t.addObject(thisTopic!)// good shit
+            
             print()
             //print("************** Topic \(thisTopic?.topicName!) added to \(thisLesson?.subject)'s topics list")
         } else if (elementName == "topicName") {
@@ -82,8 +87,7 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
         print ("******************************************* did end document")
         //save the parsed objects to persistent storage
         do {
-            CoreDataHandler.sharedInstance.test()
-            
+                        
             //try managedContext!.save()
         } catch let error as NSError {
             print("Saving failed with error \(error), \(error.userInfo)")

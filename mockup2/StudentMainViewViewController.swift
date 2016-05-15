@@ -24,5 +24,37 @@ class StudentMainViewViewController: UIViewController{
             destinationCtrl.parentController = self
         }
     }
+            /*
+        else if segue.identifier == "lessonSegue"{
+            
+            print("lessonSegue valittu")
+            if let selectedLessonCell = sender as? StudentTopicsTableCellController{
+                let indexPath = tableView.indexPathForCell(selectedLessonCell)!
+                let selectedLesson = CoreDataHandler.sharedInstance.lessons[indexPath.row]
+                let lessonString = selectedLesson.valueForKey("lessonName") as? String
+                CoreDataHandler.sharedInstance.getLessonsTopics(lessonString!)
+                print("prepare for segue valmis")
+            }
+        }
+    }
     
 }
+
+
+
+override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "lessonSegue"{
+        
+                // Get the cell that generated this segue.
+        
+        if let selectedLessonCell = sender as? StudentTopicsTableCellController{
+            let indexPath = tableView.indexPathForCell(selectedLessonCell)!
+            let selectedLesson = CoreDataHandler.sharedInstance.lessons[indexPath.row]
+            let lessonString = selectedLesson.valueForKey("lessonName") as? String
+            CoreDataHandler.sharedInstance.getLessonsTopics(lessonString!)
+            print("prepare for segue valmis")
+        }
+    }
+ */
+}
+    

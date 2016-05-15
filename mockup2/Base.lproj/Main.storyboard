@@ -21,13 +21,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEz-DX-8zt">
-                                            <rect key="frame" x="158" y="7" width="38" height="30"/>
-                                            <state key="normal" title="Got it"/>
-                                            <connections>
-                                                <action selector="gotItAction:" destination="yZm-ZB-lzp" eventType="touchUpInside" id="dLF-7h-TwO"/>
-                                            </connections>
-                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D54-8F-03X">
                                             <rect key="frame" x="215" y="7" width="80" height="30"/>
                                             <state key="normal" title="Didn't get it"/>
@@ -41,6 +34,13 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEz-DX-8zt">
+                                            <rect key="frame" x="158" y="7" width="38" height="30"/>
+                                            <state key="normal" title="Got it"/>
+                                            <connections>
+                                                <action selector="gotItAction:" destination="yZm-ZB-lzp" eventType="touchUpInside" id="dLF-7h-TwO"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -88,9 +88,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Petri&amp;Peter ETYB304 - Aquarium" id="tSK-A6-aPm">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="xS1-ol-VY4"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Petri&amp;Peter ETYB304 - Aquarium" id="tSK-A6-aPm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJx-hB-iTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
