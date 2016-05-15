@@ -79,14 +79,14 @@ class NetworkOperations {
         
     }
     
-    func postStuff(s: String){
+    func postStuff(c: String, s: String){
         
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfiguration)
         
         let request = NSMutableURLRequest()
         request.HTTPMethod = "POST"
-        request.URL = NSURL(string: "http://"+url+":8080/WebApplication5/webresources/Students/")
+        request.URL = NSURL(string: "http://"+url+":8080/WebApplication5/webresources/Courses/"+c+"/students/")
         request.addValue("application/xml", forHTTPHeaderField: "Content-Type")
         request.addValue("application/xml", forHTTPHeaderField: "Accept")
         
