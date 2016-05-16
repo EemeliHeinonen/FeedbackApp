@@ -21,19 +21,21 @@ class Beacon: UIViewController, CLLocationManagerDelegate{
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "00000000-0000-0000-0000-000000000000")!, identifier: "ibks 105")
     
     
-    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationItem.setHidesBackButton(true, animated:true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        CoreDataHandler.sharedInstance.coreDataTestFunc() //crazy shit
-        CoreDataHandler.sharedInstance.getAllTopics()
-        CoreDataHandler.sharedInstance.getAllLessons()
+        
+        //CoreDataHandler.sharedInstance.coreDataTestFunc() //crazy shit
+        //CoreDataHandler.sharedInstance.getAllTopics()
+        //CoreDataHandler.sharedInstance.getAllLessons()
         
         //NetworkOperations.sharedInstance.getStuff() //crazy shit
-        NetworkOperations.sharedInstance.getLessons() //more of that
+        //more of that
         //NetworkOperations.sharedInstance.getTopics() //omg...
-        
-        
+                
         locationManager.delegate = self
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse){
             locationManager.requestWhenInUseAuthorization()

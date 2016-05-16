@@ -25,6 +25,7 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
     }
     
     func parserDidStartDocument(parser: NSXMLParser) {
+        CoreDataHandler.sharedInstance.clearTopicEntity()
         print ("******************************************* did start document")
         appDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         managedContext = appDelegate!.managedObjectContext
@@ -87,8 +88,7 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
         print ("******************************************* did end document")
         //save the parsed objects to persistent storage
         do {
-                        
-            //try managedContext!.save()
+                       //try managedContext!.save()
         } catch let error as NSError {
             print("Saving failed with error \(error), \(error.userInfo)")
         }

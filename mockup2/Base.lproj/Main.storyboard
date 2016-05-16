@@ -491,6 +491,30 @@
             </objects>
             <point key="canvasLocation" x="478" y="387"/>
         </scene>
+        <!--Start View Controller-->
+        <scene sceneID="Xay-X3-ueE">
+            <objects>
+                <viewController id="wlC-EE-vsR" customClass="StartViewController" customModule="mockup2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wl7-0U-EgG"/>
+                        <viewControllerLayoutGuide type="bottom" id="efG-Jg-p9G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qav-Pk-RLA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="M77-Ux-4dt"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="push" identifier="studentStartSegue" id="j2J-d7-W7B"/>
+                        <segue destination="aB7-4Z-uKx" kind="push" identifier="teacherStartSegue" id="GQB-gg-N3e"/>
+                        <segue destination="xku-9A-Onp" kind="push" identifier="startSegue" id="L97-Q5-lGA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Huu-Sh-CQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-581" y="1233"/>
+        </scene>
         <!--Beacon-->
         <scene sceneID="n6B-ry-pH3">
             <objects>
@@ -547,7 +571,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ktl-0N-bIm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="1175"/>
+            <point key="canvasLocation" x="223" y="1173"/>
         </scene>
         <!--Teacher Main View Controller-->
         <scene sceneID="oiu-4p-i1G">
@@ -843,25 +867,6 @@
             </objects>
             <point key="canvasLocation" x="5158" y="889"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="NdC-zR-2x0">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Djc-Jn-FF4" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="qG5-JP-I7a"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Usb-Bu-s3P">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BZA-Rq-S8V" kind="relationship" relationship="rootViewController" id="Ci1-Ny-Rpu"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bND-aL-fSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="433" y="1189"/>
-        </scene>
         <!--Teacher Signup View Controller-->
         <scene sceneID="NLB-bd-UHP">
             <objects>
@@ -1029,20 +1034,20 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="xku-9A-Onp" kind="relationship" relationship="rootViewController" id="zzd-jH-PMK"/>
+                        <segue destination="wlC-EE-vsR" kind="relationship" relationship="rootViewController" id="tIY-te-4Q0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmh-sW-xPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-507" y="1175"/>
+            <point key="canvasLocation" x="-1281" y="1579"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PZH-3z-rnJ"/>
-        <segue reference="IjS-yh-hYq"/>
+        <segue reference="GQB-gg-N3e"/>
+        <segue reference="j2J-d7-W7B"/>
         <segue reference="wTH-iV-7co"/>
+        <segue reference="IjS-yh-hYq"/>
         <segue reference="ivz-IZ-5Fy"/>
-        <segue reference="ief-xY-Y9C"/>
         <segue reference="0iw-tC-CIG"/>
     </inferredMetricsTieBreakers>
 </document>
