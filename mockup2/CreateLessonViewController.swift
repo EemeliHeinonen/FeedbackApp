@@ -28,7 +28,10 @@ class CreateLessonViewController: UIViewController, UITextFieldDelegate{
         print("return painettu")
         textField.resignFirstResponder()
         print("done editing")
-        NetworkOperations.sharedInstance.postLesson(subject.text!, time: time.text!)
+        print(subject.text)
+        print(time.text)
+        print(classroom.text)
+        NetworkOperations.sharedInstance.postLesson(subject.text!, time: time.text!, classroom: classroom.text!)
         
         return true
     }

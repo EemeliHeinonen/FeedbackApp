@@ -79,14 +79,17 @@ class NetworkOperations {
         
     }
     
-    func postStuff(c: String, s: String){
+    func postStudent(c: String, s: String){
         
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfiguration)
         
+        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+c+"/students/"
+        let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        
         let request = NSMutableURLRequest()
         request.HTTPMethod = "POST"
-        request.URL = NSURL(string: "http://"+url+":8080/WebApplication5/webresources/Courses/"+c+"/students/")
+        request.URL = NSURL(string: escapedAddress!)
         request.addValue("application/xml", forHTTPHeaderField: "Content-Type")
         request.addValue("application/xml", forHTTPHeaderField: "Accept")
         
@@ -101,7 +104,57 @@ class NetworkOperations {
         
     }
     
-    func postLesson(name: String, time: String){
+    func postTopic(c: String, t: String){
+        
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration)
+        
+        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+c+"/topics/"
+        let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        
+        let request = NSMutableURLRequest()
+        request.HTTPMethod = "POST"
+        request.URL = NSURL(string: escapedAddress!)
+        request.addValue("application/xml", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/xml", forHTTPHeaderField: "Accept")
+        
+        let body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <topic> <topicName>"+t+"</topicName><gotItRating>0</gotItRating> </topic>\n"
+        
+        request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let sessionTask = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) -> Void in
+            print("posting done, response = \(response), error = \(error)")
+        })
+        sessionTask.resume()
+        
+    }
+    
+    func postTeacher(c: String, t: String){
+        
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration)
+        
+        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+c+"/teachers/"
+        let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        
+        let request = NSMutableURLRequest()
+        request.HTTPMethod = "POST"
+        request.URL = NSURL(string: escapedAddress!)
+        request.addValue("application/xml", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/xml", forHTTPHeaderField: "Accept")
+        
+        let body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <teacher> <name>"+t+"</name> <id>76</id></teacher>\n"
+        
+        request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let sessionTask = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) -> Void in
+            print("posting done, response = \(response), error = \(error)")
+        })
+        sessionTask.resume()
+        
+    }
+    
+    func postLesson(name: String, time: String, classroom: String){
         
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfiguration)
@@ -112,7 +165,7 @@ class NetworkOperations {
         request.addValue("application/xml", forHTTPHeaderField: "Content-Type")
         request.addValue("application/xml", forHTTPHeaderField: "Accept")
         
-        let body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <course> <name>"+name+"</name> <time>"+time+"</time> </course>\n"
+        let body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <course> <name>"+name+"</name> <time>"+time+"</time> <classroom>"+classroom+" </classroom> </course>\n"
         
         request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
         
