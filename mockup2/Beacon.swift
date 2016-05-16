@@ -25,7 +25,7 @@ class Beacon: UIViewController, CLLocationManagerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        CoreDataHandler.sharedInstance.coreDataTestFunc() //crazy shit
+        //CoreDataHandler.sharedInstance.coreDataTestFunc() //crazy shit
         CoreDataHandler.sharedInstance.getAllTopics()
         CoreDataHandler.sharedInstance.getAllLessons()
         

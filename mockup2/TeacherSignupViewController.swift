@@ -30,7 +30,7 @@ class TeacherSignupViewController: UIViewController, UITextFieldDelegate, UINavi
         textField.resignFirstResponder()
         print("done editing")
         CoreDataHandler.sharedInstance.saveTeacherName(teacherNameOutlet.text!)
-        NetworkOperations.sharedInstance.postTeacher("lesson", t: teacherNameOutlet.text!)
+        NetworkOperations.sharedInstance.postTeacher("joo", t: teacherNameOutlet.text!)
         print("Teacher name saved \(teacherNameOutlet.text)")
         
         return true
