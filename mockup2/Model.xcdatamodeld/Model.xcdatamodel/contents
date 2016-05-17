@@ -17,6 +17,7 @@
     </entity>
     <entity name="Me" representedClassName=".Me" syncable="YES">
         <attribute name="myName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teacherOrStudent" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Student" representedClassName=".Student" syncable="YES">
         <attribute name="studentName" optional="YES" attributeType="String" syncable="YES"/>
@@ -36,7 +37,7 @@
     <elements>
         <element name="Classroom" positionX="-288" positionY="29" width="128" height="90"/>
         <element name="Lesson" positionX="-126" positionY="99" width="128" height="165"/>
-        <element name="Me" positionX="-63" positionY="3" width="128" height="60"/>
+        <element name="Me" positionX="-63" positionY="3" width="128" height="75"/>
         <element name="Student" positionX="-281" positionY="353" width="128" height="75"/>
         <element name="Teacher" positionX="97" positionY="108" width="128" height="75"/>
         <element name="Topic" positionX="52" positionY="320" width="128" height="105"/>

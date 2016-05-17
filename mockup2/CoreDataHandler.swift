@@ -30,6 +30,43 @@ class CoreDataHandler: UIViewController{
         return currentLesson
     }
     
+    func clearLessonEntity(){
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Lesson")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try managedContext.executeRequest(deleteRequest)
+            try managedContext.save()
+            print("clearattu lesson entity")
+        } catch let error as NSError {
+            // TODO: handle the error
+        }
+    }
+
+    
+    func clearTopicEntity(){
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+
+        let fetchRequest = NSFetchRequest(entityName: "Topic")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try managedContext.executeRequest(deleteRequest)
+            try managedContext.save()
+            print("clearattu topic entity")
+        } catch let error as NSError {
+            // TODO: handle the error
+        }
+    }
+    
     func getLessonsTopics(lessonString: String){
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
@@ -95,7 +132,7 @@ class CoreDataHandler: UIViewController{
         }
 
     }
-    
+    /*
     func coreDataTestFunc(){
         print("coredatahandler test function is called for students")
         //this func gets all students
@@ -119,6 +156,8 @@ class CoreDataHandler: UIViewController{
         }
 
     }
+ */
+    /*
     
     func getAllLessons(){
         print("coredatahandler test function is called for lessons")
@@ -143,8 +182,28 @@ class CoreDataHandler: UIViewController{
         }
 
     }
+ */
+    func loadMyName(){
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        
+        let fetchRequest = NSFetchRequest(entityName: "Me")
+        
+        do {
+            let results =
+                try managedContext.executeFetchRequest(fetchRequest)
+            me = results as! [NSManagedObject]
+            print("nimi loadattu coredatasta")
+        }catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
     
-    func saveMyName(name: String ) {
+    func saveMyName(name: String, type: String ) {
         //1
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
@@ -157,19 +216,20 @@ class CoreDataHandler: UIViewController{
         let fetchRequest = NSFetchRequest(entityName: "Me")
 
         
-        let student = NSManagedObject(entity: entity!,
+        let mee = NSManagedObject(entity: entity!,
                                      insertIntoManagedObjectContext: managedContext)
         
         //3
-        student.setValue(name, forKey: "myName")
+        mee.setValue(name, forKey: "myName")
+        mee.setValue(type, forKey: "teacherOrStudent")
         
         //4
         do {
-            try managedContext.save()
+            
             let results =
                 try managedContext.executeFetchRequest(fetchRequest)
             me = results as! [NSManagedObject]
-
+            try managedContext.save()
             //5
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
@@ -177,7 +237,7 @@ class CoreDataHandler: UIViewController{
     }
     
     //Method for saving teachers name
-    
+   /*
     func saveTeacherName(name: String) {
         //1
         let appDelegate =
@@ -203,6 +263,7 @@ class CoreDataHandler: UIViewController{
             print("Could not save \(error), \(error.userInfo)")
         }
     }
+ */
     /*
     func test(){
         print("näin monta lessonia=======")

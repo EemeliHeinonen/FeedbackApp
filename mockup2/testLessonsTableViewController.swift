@@ -36,8 +36,9 @@ class testLessonsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("func tableView return count")
-        
+        print("func lessonntableView return count")
+        print( CoreDataHandler.sharedInstance.lessons.count)
+
         return CoreDataHandler.sharedInstance.lessons.count
     }
     
@@ -62,12 +63,10 @@ class testLessonsTableViewController: UITableViewController {
         
         let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
         
+        let meCount = CoreDataHandler.sharedInstance.me.count-1
         CoreDataHandler.sharedInstance.getLessonsTopics(currentCell.textLabel!.text!)
         CoreDataHandler.sharedInstance.zetCurrentLesson(currentCell.textLabel!.text!)
-        
-        //tähän kohtaam NetworkOperations.sharedInscane laita oppilas luokkaan
-        
-        
+        NetworkOperations.sharedInstance.postStuff(currentCell.textLabel!.text!, s: (CoreDataHandler.sharedInstance.me[meCount].valueForKey("myName") as? String)!)
         print(currentCell.textLabel!.text)
     }
     

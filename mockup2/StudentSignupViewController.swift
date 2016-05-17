@@ -30,7 +30,7 @@ class StudentSignupViewController: UIViewController, UITextFieldDelegate, UINavi
         print("return painettu")
         textField.resignFirstResponder()
         print("done editing")
-        CoreDataHandler.sharedInstance.saveMyName(studentNameOutlet.text!)
+        CoreDataHandler.sharedInstance.saveMyName(studentNameOutlet.text!, type: "student")
         print("Student name saved \(studentNameOutlet.text)")
         
         return true

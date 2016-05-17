@@ -2,7 +2,7 @@
 //  Topic+CoreDataProperties.swift
 //  mockup2
 //
-//  Created by Mortti Aittokoski on 15.5.2016.
+//  Created by Mortti Aittokoski on 17.5.2016.
 //  Copyright © 2016 Mortti Aittokoski. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,8 +14,8 @@ import CoreData
 
 extension Topic {
 
-    @NSManaged var gotItRating: NSNumber?
-    @NSManaged var notGotItRating: NSNumber?
+    @NSManaged var gotItRating: String?
+    @NSManaged var notGotItRating: String?
     @NSManaged var topicName: String?
     @NSManaged var lessonRelationship: Lesson?
 

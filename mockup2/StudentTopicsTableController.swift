@@ -23,7 +23,6 @@ class StudentTopicsTableController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("func tableView return count")
-        
         return CoreDataHandler.sharedInstance.lessonsTopics.count
     }
     
