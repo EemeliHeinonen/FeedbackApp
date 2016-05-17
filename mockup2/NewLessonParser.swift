@@ -25,7 +25,8 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
     }
     
     func parserDidStartDocument(parser: NSXMLParser) {
-        CoreDataHandler.sharedInstance.clearTopicEntity()
+        //CoreDataHandler.sharedInstance.clearTopicEntity()
+        //CoreDataHandler.sharedInstance.clearLessonEntity()
         print ("******************************************* did start document")
         appDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         managedContext = appDelegate!.managedObjectContext

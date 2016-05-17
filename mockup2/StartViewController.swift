@@ -20,6 +20,7 @@ class StartViewController: UIViewController{
 
     override func viewWillAppear(animated: Bool) {
         loadMyName()
+        CoreDataHandler.sharedInstance.loadMyName()
         NetworkOperations.sharedInstance.getLessons()
 
     }
@@ -34,10 +35,10 @@ class StartViewController: UIViewController{
             performSegueWithIdentifier("startSegue", sender: self)
         }
         else if(me.last?.valueForKey("teacherOrStudent") as? String == "teacher"){
-            performSegueWithIdentifier("teacherStartSegue", sender: self)
+            performSegueWithIdentifier("startSegue", sender: self)
         }
         else if(me.last?.valueForKey("teacherOrStudent") as? String == "student"){
-            performSegueWithIdentifier("studentStartSegue", sender: self)
+            performSegueWithIdentifier("startSegue", sender: self)
         }
     }
     

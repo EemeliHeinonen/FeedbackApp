@@ -30,6 +30,25 @@ class CoreDataHandler: UIViewController{
         return currentLesson
     }
     
+    func clearLessonEntity(){
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Lesson")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try managedContext.executeRequest(deleteRequest)
+            try managedContext.save()
+            print("clearattu lesson entity")
+        } catch let error as NSError {
+            // TODO: handle the error
+        }
+    }
+
+    
     func clearTopicEntity(){
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
@@ -41,6 +60,7 @@ class CoreDataHandler: UIViewController{
         
         do {
             try managedContext.executeRequest(deleteRequest)
+            try managedContext.save()
             print("clearattu topic entity")
         } catch let error as NSError {
             // TODO: handle the error

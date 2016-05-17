@@ -28,8 +28,8 @@
         <relationship name="lessonRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lesson" inverseName="teacherRelationship" inverseEntity="Lesson" syncable="YES"/>
     </entity>
     <entity name="Topic" representedClassName=".Topic" syncable="YES">
-        <attribute name="gotItRating" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="notGotItRating" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="gotItRating" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notGotItRating" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="topicName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="lessonRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lesson" inverseName="topicRelationship" inverseEntity="Lesson" syncable="YES"/>
     </entity>
