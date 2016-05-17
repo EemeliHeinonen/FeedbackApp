@@ -17,6 +17,7 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
     var managedContext:NSManagedObjectContext?
     var thisLesson:Lesson?
     var thisTopic:Topic?
+    var thisTeacher:Teacher?
     
     func parse (xmlData:NSData) {
         let myParser = NSXMLParser(data: xmlData)
@@ -70,6 +71,10 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
             //print("************** Topic \(thisTopic?.topicName!) added to \(thisLesson?.subject)'s topics list")
         } else if (elementName == "topicName") {
             thisTopic?.topicName = currentString
+        } else if (elementName == "gotItRating") {
+            thisTopic?.gotItRating = currentString
+        } else if (elementName == "notGotItRating") {
+            thisTopic?.notGotItRating = currentString
         } else if (elementName == "teacher") {
             //thisLesson?.teacher = currentString
         }/* else if (elementName == "lessonRatingAvg") {

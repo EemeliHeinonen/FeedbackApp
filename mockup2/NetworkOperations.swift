@@ -79,6 +79,68 @@ class NetworkOperations {
         
     }
     
+    func getLessonsByTeacher(teacher: String){
+        //this function gets all lessons
+        
+        print("getLessonsByTeacher called")
+        
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration)
+        
+        let urli = "http://localhost:8080/WebApplication5/webresources/Courses/course/"+teacher+""
+        let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        
+        let sessionTask = session.dataTaskWithURL(NSURL(string: escapedAddress!)!, completionHandler: { (data, response, error) -> Void in
+            
+            //Define the operation we'd like to run in the operation queue
+            let studentParseOperation = NSBlockOperation(block: {
+                let parser = NewLessonParser()
+                parser.parse(data!)
+                //self.showTF.text = resultString
+            })
+            
+            // create a queue and add the operation
+            let queue = NSOperationQueue()
+            queue.maxConcurrentOperationCount=1
+            queue.addOperation(studentParseOperation)
+            
+        })
+        //.resume will cause the session task to execute
+        
+        sessionTask.resume()
+    }
+    
+    func getLessonsByStudent(s: String){
+        //this function gets all lessons
+        
+        print("getLessonsByStudent called")
+        
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration)
+        
+        let urli = "http://localhost:8080/WebApplication5/webresources/Courses/course/Students/"+s+""
+        let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        
+        let sessionTask = session.dataTaskWithURL(NSURL(string: escapedAddress!)!, completionHandler: { (data, response, error) -> Void in
+            
+            //Define the operation we'd like to run in the operation queue
+            let studentParseOperation = NSBlockOperation(block: {
+                let parser = NewLessonParser()
+                parser.parse(data!)
+                //self.showTF.text = resultString
+            })
+            
+            // create a queue and add the operation
+            let queue = NSOperationQueue()
+            queue.maxConcurrentOperationCount=1
+            queue.addOperation(studentParseOperation)
+            
+        })
+        //.resume will cause the session task to execute
+        
+        sessionTask.resume()
+    }
+    
     func postStudent(c: String, s: String){
         
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
