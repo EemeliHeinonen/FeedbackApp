@@ -63,14 +63,16 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
             thisLesson?.lessonName = currentString
             print("************** courseName changed to \(currentString)")
         } else if (elementName == "topic") {
-            CoreDataHandler.sharedInstance.topics.append(thisTopic!)
+            if (thisTopic?.topicName != nil) {
+                CoreDataHandler.sharedInstance.topics.append(thisTopic!)
             
-            //thisLesson!.setValue(NSSet(object: thisTopic!), forKey: "topicRelationship")
-            let t = thisLesson!.mutableSetValueForKey("topicRelationship") //good shit
-            t.addObject(thisTopic!)// good shit
+                //thisLesson!.setValue(NSSet(object: thisTopic!), forKey: "topicRelationship")
+                let t = thisLesson!.mutableSetValueForKey("topicRelationship") //good shit
+                t.addObject(thisTopic!)// good shit
             
-            print()
-            //print("************** Topic \(thisTopic?.topicName!) added to \(thisLesson?.subject)'s topics list")
+                print()
+                //print("************** Topic \(thisTopic?.topicName!) added to \(thisLesson?.subject)'s topics list")
+            }
         } else if (elementName == "topicName") {
             thisTopic?.topicName = currentString
         } else if (elementName == "gotItRating") {

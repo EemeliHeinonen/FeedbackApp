@@ -28,8 +28,8 @@ class Beacon: UIViewController, CLLocationManagerDelegate{
         super.viewDidLoad()
         
         //CoreDataHandler.sharedInstance.coreDataTestFunc() //crazy shit
-        CoreDataHandler.sharedInstance.getAllTopics()
-        CoreDataHandler.sharedInstance.getAllLessons()
+        //CoreDataHandler.sharedInstance.getAllTopics()
+        //CoreDataHandler.sharedInstance.getAllLessons()
         
         //NetworkOperations.sharedInstance.getStuff() //crazy shit
         //more of that
