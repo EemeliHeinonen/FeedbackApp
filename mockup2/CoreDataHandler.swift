@@ -29,7 +29,7 @@ class CoreDataHandler: UIViewController{
     func getCurrentLesson() -> String{
         return currentLesson
     }
-    
+            
     func clearLessonEntity(){
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
@@ -42,11 +42,32 @@ class CoreDataHandler: UIViewController{
         do {
             try managedContext.executeRequest(deleteRequest)
             try managedContext.save()
+            getAllLessons()
             print("clearattu lesson entity")
         } catch let error as NSError {
             // TODO: handle the error
         }
     }
+    
+    func clearMyName(){
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Me")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try managedContext.executeRequest(deleteRequest)
+            try managedContext.save()
+            getAllLessons()
+            print("clearattu lesson entity")
+        } catch let error as NSError {
+            // TODO: handle the error
+        }
+    }
+
 
     
     func clearTopicEntity(){
@@ -59,6 +80,7 @@ class CoreDataHandler: UIViewController{
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         do {
+            
             try managedContext.executeRequest(deleteRequest)
             try managedContext.save()
             print("clearattu topic entity")
@@ -157,10 +179,10 @@ class CoreDataHandler: UIViewController{
 
     }
  */
-    /*
+    
     
     func getAllLessons(){
-        print("coredatahandler test function is called for lessons")
+        print("coredatahandler function is called for getting lessons")
         //this func gets all lessons
         
         //1
@@ -182,7 +204,7 @@ class CoreDataHandler: UIViewController{
         }
 
     }
- */
+ 
     func loadMyName(){
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate

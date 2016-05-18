@@ -13,6 +13,9 @@ class TeacherSignupViewController: UIViewController, UITextFieldDelegate, UINavi
     
     @IBOutlet weak var teacherNameOutlet: UITextField!
     
+    @IBAction func clearEntityButton(sender: AnyObject) {
+        CoreDataHandler.sharedInstance.clearLessonEntity()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Teacher signup view loaded")

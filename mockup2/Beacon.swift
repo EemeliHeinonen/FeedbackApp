@@ -16,6 +16,9 @@ class Beacon: UIViewController, CLLocationManagerDelegate{
     
     static let sharedInstance = Beacon()
 
+    @IBAction func clearName(sender: AnyObject) {
+        CoreDataHandler.sharedInstance.clearMyName()
+    }
     
     let locationManager = CLLocationManager()
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "00000000-0000-0000-0000-000000000000")!, identifier: "ibks 105")
@@ -28,8 +31,8 @@ class Beacon: UIViewController, CLLocationManagerDelegate{
         super.viewDidLoad()
         
         //CoreDataHandler.sharedInstance.coreDataTestFunc() //crazy shit
-        CoreDataHandler.sharedInstance.getAllTopics()
-        CoreDataHandler.sharedInstance.getAllLessons()
+        //CoreDataHandler.sharedInstance.getAllTopics()
+        //CoreDataHandler.sharedInstance.getAllLessons()
         
         //NetworkOperations.sharedInstance.getStuff() //crazy shit
         //more of that

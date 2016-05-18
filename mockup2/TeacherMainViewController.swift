@@ -9,19 +9,26 @@
 import UIKit
 
 
-class TeacherMainViewController: UIViewController, UINavigationControllerDelegate {
-    
-        //JEEJEE T:Eemeli
+class TeacherMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
+    }
+    override func viewWillAppear(animated: Bool) {
+        self.navigationItem.setHidesBackButton(true, animated:true)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "teacherLessonContainerSegue"){
+            let destinationCtrl = segue.destinationViewController as! TeacherLessonTableViewController
+            destinationCtrl.parentController = self
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    //push testifjjj
 }
 

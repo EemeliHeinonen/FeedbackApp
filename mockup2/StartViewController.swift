@@ -21,7 +21,6 @@ class StartViewController: UIViewController{
     override func viewWillAppear(animated: Bool) {
         loadMyName()
         CoreDataHandler.sharedInstance.loadMyName()
-        NetworkOperations.sharedInstance.getLessons()
 
     }
     
@@ -32,13 +31,14 @@ class StartViewController: UIViewController{
     func segueCheck(){
         
         if(me.count == 0){
+            //NetworkOperations.sharedInstance.getLessons()
             performSegueWithIdentifier("startSegue", sender: self)
         }
         else if(me.last?.valueForKey("teacherOrStudent") as? String == "teacher"){
-            performSegueWithIdentifier("startSegue", sender: self)
+            performSegueWithIdentifier("teacherStartSegue", sender: self)
         }
         else if(me.last?.valueForKey("teacherOrStudent") as? String == "student"){
-            performSegueWithIdentifier("startSegue", sender: self)
+            performSegueWithIdentifier("studentStartSegue", sender: self)
         }
     }
     
