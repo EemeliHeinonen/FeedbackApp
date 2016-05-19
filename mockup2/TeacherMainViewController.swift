@@ -20,8 +20,9 @@ class TeacherMainViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "teacherLessonContainerSegue"){
+        if(segue.identifier == "TeacherLessonContainerSegue"){
             let destinationCtrl = segue.destinationViewController as! TeacherLessonTableViewController
+            //print(self)
             destinationCtrl.parentController = self
         }
     }

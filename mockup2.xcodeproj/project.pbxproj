@@ -23,6 +23,7 @@
 		2B3DA3A31CC0CAC100F22CD7 /* TeacherFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3DA3A21CC0CAC100F22CD7 /* TeacherFeedbackViewController.swift */; };
 		2B4116771CB63C6B00F073C7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B4116751CB63C6B00F073C7 /* Model.xcdatamodeld */; };
 		2B56C1F21CA2B148005B231F /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B56C1F11CA2B148005B231F /* View.xib */; };
+		2B9243831CED0AC80053C5EC /* TeacherLessonViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9243821CED0AC80053C5EC /* TeacherLessonViewController2.swift */; };
 		2B9906401CBD07EB00316010 /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B99063F1CBD07EB00316010 /* CreateClassViewController.swift */; };
 		2B9906421CBD084200316010 /* StudentMainViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9906411CBD084200316010 /* StudentMainViewViewController.swift */; };
 		2B9906441CBD086F00316010 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9906431CBD086F00316010 /* FeedbackViewController.swift */; };
@@ -90,6 +91,7 @@
 		2B3DA3A21CC0CAC100F22CD7 /* TeacherFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherFeedbackViewController.swift; sourceTree = "<group>"; };
 		2B4116761CB63C6B00F073C7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		2B56C1F11CA2B148005B231F /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		2B9243821CED0AC80053C5EC /* TeacherLessonViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherLessonViewController2.swift; sourceTree = "<group>"; };
 		2B99063F1CBD07EB00316010 /* CreateClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateClassViewController.swift; sourceTree = "<group>"; };
 		2B9906411CBD084200316010 /* StudentMainViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentMainViewViewController.swift; sourceTree = "<group>"; };
 		2B9906431CBD086F00316010 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
@@ -113,7 +115,6 @@
 		2BDF502C1CE8B11E00A8958B /* Topic+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Topic+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2BDF502D1CE8B11E00A8958B /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		BA4570481CDA167F00ED1C95 /* NewLessonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewLessonParser.swift; sourceTree = "<group>"; };
-		BA52EA0B1CC0D13C0084FF8E /* TeacherLessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherLessonViewController.swift; sourceTree = "<group>"; };
 		BA73D6CD1CD0CF8500D76253 /* CreateLessonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateLessonViewController.swift; sourceTree = "<group>"; };
 		BA77B80A1CC65AA100ACAACB /* NetworkOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperations.swift; sourceTree = "<group>"; };
 		BAA1332C1CC78071004F5070 /* StudentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentParser.swift; sourceTree = "<group>"; };
@@ -182,8 +183,8 @@
 				BAD80C9E1CBCFE9900CEAFEB /* StudentSignupViewController.swift */,
 				BAD80C9C1CBCFDB900CEAFEB /* TeacherSignupViewController.swift */,
 				2BD8AC0C1CEC4BE900FD167D /* TeacherMainView */,
-				2BD8AC041CEC48D400FD167D /* TeacherLessonView */,
 				2BD8AC091CEC4B8900FD167D /* StudentMainView */,
+				2BD8AC041CEC48D400FD167D /* TeacherLessonView */,
 				2B2C50BD1CD63F930021846D /* student lesson view */,
 				BA77B80A1CC65AA100ACAACB /* NetworkOperations.swift */,
 				BACB7EDC1CCE1CBC0094779C /* CoreDataHandler.swift */,
@@ -204,7 +205,6 @@
 		2B2C50BD1CD63F930021846D /* student lesson view */ = {
 			isa = PBXGroup;
 			children = (
-				2BC790491CD39E7D0083094C /* StudentLessonCellController.swift */,
 				BAD80CA01CBCFF4C00CEAFEB /* StudentLessonViewController.swift */,
 				2B2C50BE1CD641B10021846D /* StudentTopicsTableController.swift */,
 				2B2C50C01CD641E30021846D /* StudentTopicsTableCellController.swift */,
@@ -243,7 +243,7 @@
 		2BD8AC041CEC48D400FD167D /* TeacherLessonView */ = {
 			isa = PBXGroup;
 			children = (
-				BA52EA0B1CC0D13C0084FF8E /* TeacherLessonViewController.swift */,
+				2B9243821CED0AC80053C5EC /* TeacherLessonViewController2.swift */,
 				2BD8AC051CEC498400FD167D /* TeacherTopicsTableController.swift */,
 				2BD8AC071CEC499D00FD167D /* TeacherTopicsTableCellController.swift */,
 			);
@@ -271,6 +271,7 @@
 		2BDF50211CE8652F00A8958B /* trash */ = {
 			isa = PBXGroup;
 			children = (
+				2BC790491CD39E7D0083094C /* StudentLessonCellController.swift */,
 				BACB7EDE1CCE35C40094779C /* Parser.swift */,
 				2B1CF3871CE9C99500FCD858 /* LaunchScreenViewController.swift */,
 				2B37E21D1CD1F7620061530A /* (students)LessonsTableViewController.swift */,
@@ -411,6 +412,7 @@
 				2B9906441CBD086F00316010 /* FeedbackViewController.swift in Sources */,
 				2BD125511CD2830B00B68B43 /* LessonParser.swift in Sources */,
 				2B2C50BF1CD641B10021846D /* StudentTopicsTableController.swift in Sources */,
+				2B9243831CED0AC80053C5EC /* TeacherLessonViewController2.swift in Sources */,
 				BAD80CA31CBD004600CEAFEB /* TeacherMainViewController.swift in Sources */,
 				BAD80CA11CBCFF4C00CEAFEB /* StudentLessonViewController.swift in Sources */,
 				2BDF50341CE8B11E00A8958B /* Teacher+CoreDataProperties.swift in Sources */,

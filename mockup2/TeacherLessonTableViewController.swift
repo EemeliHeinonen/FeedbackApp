@@ -34,6 +34,8 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
     }()
     
     override func viewDidLoad() {
+        print("viewdidloadin parencontrollerprint")
+        print(parentController)
         clearLessonsEntity()
         self.refreshControl?.addTarget(self, action: #selector(TeacherLessonTableViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
 
@@ -49,10 +51,6 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
         }
 }
     
-    
-    override func viewWillAppear(animated: Bool) {
-        
-    }
     func getlessonsbyTeacher(){
         NetworkOperations.sharedInstance.getLessonsByTeacher((CoreDataHandler.sharedInstance.me.last?.valueForKey("myName") as? String)!)
     }
@@ -109,7 +107,8 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        parentController!.performSegueWithIdentifier("teacherLessonSegue", sender: parentController)
+        print(parentController)
+        self.parentController!.performSegueWithIdentifier("teacherLessonViewSegue", sender: parentController)
         
         let indexPath = tableView.indexPathForSelectedRow!
         

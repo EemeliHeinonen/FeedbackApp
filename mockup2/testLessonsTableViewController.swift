@@ -7,22 +7,69 @@
 //
 
 import UIKit
+import CoreData
 
-class testLessonsTableViewController: UITableViewController {
+class testLessonsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     var parentController: StudentMainViewViewController?
+    var managedObjectContext: NSManagedObjectContext!
+    
+    lazy var fetchedResultsController: NSFetchedResultsController = {
+        // Initialize Fetch Request
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let fetchRequest = NSFetchRequest(entityName: "Lesson")
+        
+        // Add Sort Descriptors
+        let sortDescriptor = NSSortDescriptor(key: "lessonName", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        // Initialize Fetched Results Controller
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: appDelegate.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        
+        // Configure Fetched Results Controller
+        fetchedResultsController.delegate = self
+        
+        return fetchedResultsController
+    }()
+
+
     override func viewDidLoad() {
+        clearLessonsEntity()
         print("lessontableviewcontroller viewdidload")
         super.viewDidLoad()
         title = "\"List of all Lessons\""
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        do {
+            try fetchedResultsController.performFetch()
+        } catch let error as NSError {
+            print ("Could not fetch \(error), \(error.userInfo)")
+        }
     }
+    
+    func getLessons(){
+        NetworkOperations.sharedInstance.getLessons()
+    }
+    func clearLessonsEntity(){
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Lesson")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try managedContext.executeRequest(deleteRequest)
+            try managedContext.save()
+            
+            print("clearattu lesson entity")
+        } catch let error as NSError {
+            // TODO: handle the error
+        }
+        getLessons()
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -32,14 +79,18 @@ class testLessonsTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        var numberOfSections = 1
+        if let sections = fetchedResultsController.sections {
+            numberOfSections = sections.count
+        }
+        return numberOfSections
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("func lessonntableView return count")
         print( CoreDataHandler.sharedInstance.lessons.count)
 
-        return CoreDataHandler.sharedInstance.lessons.count
+        return fetchedResultsController.sections![section].numberOfObjects
     }
     
     
@@ -48,7 +99,9 @@ class testLessonsTableViewController: UITableViewController {
         let cell =
             tableView.dequeueReusableCellWithIdentifier("Cell")
         
-        let p = CoreDataHandler.sharedInstance.lessons[indexPath.row]
+        //let p = CoreDataHandler.sharedInstance.lessons[indexPath.row]
+        let p = fetchedResultsController.objectAtIndexPath(indexPath)
+
         
         cell!.textLabel!.text =
             p.valueForKey("lessonName") as? String
@@ -57,6 +110,8 @@ class testLessonsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("nyt tulee parentcontrollerprintti")
+        print(parentController)
         parentController!.performSegueWithIdentifier("lessonSegue", sender: parentController)
         
         let indexPath = tableView.indexPathForSelectedRow!
@@ -70,6 +125,11 @@ class testLessonsTableViewController: UITableViewController {
         print(currentCell.textLabel!.text)
     }
     
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!did change content")
+        self.tableView.reloadData()
+    }
+
     
     
     

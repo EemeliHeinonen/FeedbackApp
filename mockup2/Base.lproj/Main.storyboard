@@ -94,16 +94,16 @@
             </objects>
             <point key="canvasLocation" x="1866" y="620"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Teacher Topics Table Controller-->
         <scene sceneID="v02-NO-wa6">
             <objects>
-                <tableViewController id="KgU-nu-443" sceneMemberID="viewController">
+                <tableViewController id="KgU-nu-443" customClass="TeacherTopicsTableController" customModule="mockup2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="HvD-3i-GcM">
                         <rect key="frame" x="0.0" y="0.0" width="291" height="210"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RUD-cG-1gP">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeacherTopicsTableCellController" id="RUD-cG-1gP" customClass="TeacherTopicsTableCellController" customModule="mockup2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="291" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RUD-cG-1gP" id="rwJ-xt-u6x">
@@ -111,7 +111,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Topic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCd-OG-vIY">
-                                            <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                            <rect key="frame" x="8" y="11" width="143" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -130,6 +130,11 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="didntGetItLabel" destination="QUa-7M-CPx" id="IkJ-mC-jbx"/>
+                                    <outlet property="gotItLabel" destination="mpX-Wr-G5r" id="lO0-1R-RsX"/>
+                                    <outlet property="topicNameLabel" destination="iCd-OG-vIY" id="5NQ-IZ-23m"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -140,12 +145,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOk-O0-yPD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-673.5" y="2814"/>
+            <point key="canvasLocation" x="10.5" y="2879"/>
         </scene>
         <!--ETYB304 - MATH-->
         <scene sceneID="PBG-7f-Hjw">
             <objects>
-                <viewController id="weM-PW-3z4" customClass="TeacherLessonViewController" customModule="mockup2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="weM-PW-3z4" customClass="TeacherLessonViewController2" customModule="mockup2" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o3v-49-hld"/>
                         <viewControllerLayoutGuide type="bottom" id="Owi-2o-dJS"/>
@@ -178,9 +183,6 @@
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FQ7-Kh-pgc">
                                 <rect key="frame" x="20" y="135" width="291" height="210"/>
-                                <connections>
-                                    <segue destination="KgU-nu-443" kind="embed" identifier="teacherContainerSegue" id="j8N-UC-lp7"/>
-                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -189,12 +191,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOJ-Mz-sWK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-283" y="2715"/>
+            <point key="canvasLocation" x="-519" y="3153"/>
         </scene>
-        <!--View Controller-->
+        <!--Teacher Lesson View Controller2-->
         <scene sceneID="lSS-ci-fep">
             <objects>
-                <viewController id="IMD-Pg-07Q" sceneMemberID="viewController">
+                <viewController id="IMD-Pg-07Q" customClass="TeacherLessonViewController2" customModule="mockup2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aLo-om-0Y8"/>
                         <viewControllerLayoutGuide type="bottom" id="Oa6-tp-VjM"/>
@@ -202,8 +204,39 @@
                     <view key="view" contentMode="scaleToFill" id="ZXt-0q-D3p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Got it" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xs-MR-JP3">
+                                <rect key="frame" x="150" y="83" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Didn't get it" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMP-Mz-eSj">
+                                <rect key="frame" x="217" y="83" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KrW-yR-TkH">
+                                <rect key="frame" x="20" y="112" width="291" height="210"/>
+                                <connections>
+                                    <segue destination="KgU-nu-443" kind="embed" identifier="teacherTopicContainerSegue" id="bSE-er-Rf9"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repeat, please" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zak-ya-RN0">
+                                <rect key="frame" x="112" y="389" width="113" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0KN-E0-l8c">
+                                <rect key="frame" x="59" y="452" width="212" height="46"/>
+                                <state key="normal" title="A student needs help"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fnC-KF-QSk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0k3-4P-048" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -689,7 +722,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="weM-PW-3z4" kind="push" identifier="teacherLessonSegue" id="sUQ-ts-Fpb"/>
+                        <segue destination="IMD-Pg-07Q" kind="push" identifier="teacherLessonViewSegue" id="NBw-ML-VXZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rkc-Zu-K4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1091,10 +1124,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="GQB-gg-N3e"/>
         <segue reference="j2J-d7-W7B"/>
+        <segue reference="IjS-yh-hYq"/>
         <segue reference="ivz-IZ-5Fy"/>
         <segue reference="wTH-iV-7co"/>
-        <segue reference="IjS-yh-hYq"/>
-        <segue reference="ief-xY-Y9C"/>
     </inferredMetricsTieBreakers>
 </document>
