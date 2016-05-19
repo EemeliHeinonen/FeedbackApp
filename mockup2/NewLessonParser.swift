@@ -81,11 +81,12 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
             thisTopic?.notGotItRating = currentString
         } else if (elementName == "teacher") {
             //thisLesson?.teacher = currentString
-        }/* else if (elementName == "lessonRatingAvg") {
+        } else if (elementName == "lessonRatingAvg") {
             if (currentString != "NaN"){
             thisLesson?.lessonRating = currentString
+                print("RatingAvg set to \(currentString)")
             }
-        } */ else if (elementName == "classroom") {
+        }  else if (elementName == "classroom") {
           
         } else if (elementName == "feedback") {
             //thisLesson?.lessonFeedback?.append(currentString)

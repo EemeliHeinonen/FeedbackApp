@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
     <entity name="Classroom" representedClassName=".Classroom" syncable="YES">
-        <attribute name="beaconID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="beaconID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="roomName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="lessonRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lesson" inverseName="classroomRelationship" inverseEntity="Lesson" syncable="YES"/>
     </entity>
     <entity name="Lesson" representedClassName=".Lesson" syncable="YES">
         <attribute name="lessonFeedback" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lessonName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lessonRating" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="lessonRating" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="classroomRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Classroom" inverseName="lessonRelationship" inverseEntity="Classroom" syncable="YES"/>
         <relationship name="studentRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="lessonRelationship" inverseEntity="Student" syncable="YES"/>
