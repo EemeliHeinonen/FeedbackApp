@@ -62,8 +62,10 @@ class StudentParser: NSObject,NSXMLParserDelegate{
             print("elementName= \(elementName)")
             
             if (elementName == "student") {
+                if (thisStudent?.studentName != nil){
                 CoreDataHandler.sharedInstance.people.append(thisStudent!)
-                
+                    print("Student had a name \(thisStudent?.studentName), added it to the CoreData people list.")
+                }
                 print("did end element student \(currentString)")
             } else if(elementName == "name") {
                 thisStudent?.studentName = currentString

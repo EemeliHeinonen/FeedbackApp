@@ -32,6 +32,8 @@ class StudentSignupViewController: UIViewController, UITextFieldDelegate, UINavi
         print("done editing")
         CoreDataHandler.sharedInstance.saveMyName(studentNameOutlet.text!, type: "student")
         print("Student name saved \(studentNameOutlet.text)")
+        NetworkOperations.sharedInstance.postStudent("joo", s: studentNameOutlet.text!)
+        NetworkOperations.sharedInstance.postTopic("joo", t: studentNameOutlet.text!)
         
         return true
     }
