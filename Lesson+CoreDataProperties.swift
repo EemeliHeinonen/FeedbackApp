@@ -22,5 +22,6 @@ extension Lesson {
     @NSManaged var studentRelationship: NSSet?
     @NSManaged var teacherRelationship: Teacher?
     @NSManaged var topicRelationship: NSSet?
+    @NSManaged var feedbackRelationship: NSSet?
 
 }

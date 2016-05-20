@@ -54,6 +54,8 @@
 		BAD80CA31CBD004600CEAFEB /* TeacherMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD80CA21CBD004600CEAFEB /* TeacherMainViewController.swift */; };
 		BAE374511CBFCC3600EEE9B8 /* FeedbackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE374501CBFCC3600EEE9B8 /* FeedbackListViewController.swift */; };
 		BAE374531CBFCDCC00EEE9B8 /* StudentFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE374521CBFCDCC00EEE9B8 /* StudentFeedbackViewController.swift */; };
+		BAFE05581CEF3CFC007B17DF /* Feedback+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE05561CEF3CFC007B17DF /* Feedback+CoreDataProperties.swift */; };
+		BAFE05591CEF3CFC007B17DF /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE05571CEF3CFC007B17DF /* Feedback.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,8 @@
 		BAD80CA21CBD004600CEAFEB /* TeacherMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherMainViewController.swift; sourceTree = "<group>"; };
 		BAE374501CBFCC3600EEE9B8 /* FeedbackListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackListViewController.swift; sourceTree = "<group>"; };
 		BAE374521CBFCDCC00EEE9B8 /* StudentFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentFeedbackViewController.swift; sourceTree = "<group>"; };
+		BAFE05561CEF3CFC007B17DF /* Feedback+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Feedback+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BAFE05571CEF3CFC007B17DF /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 		2B1704C11CA0157400CFC720 = {
 			isa = PBXGroup;
 			children = (
+				BAFE05561CEF3CFC007B17DF /* Feedback+CoreDataProperties.swift */,
+				BAFE05571CEF3CFC007B17DF /* Feedback.swift */,
 				2BDF50221CE8B11D00A8958B /* Classroom+CoreDataProperties.swift */,
 				2BDF50231CE8B11D00A8958B /* Classroom.swift */,
 				2BDF50241CE8B11E00A8958B /* Lesson+CoreDataProperties.swift */,
@@ -358,6 +364,7 @@
 			files = (
 				2BDF50361CE8B11E00A8958B /* Me+CoreDataProperties.swift in Sources */,
 				2B37E2201CD238EC0061530A /* testLessonsTableViewController.swift in Sources */,
+				BAFE05581CEF3CFC007B17DF /* Feedback+CoreDataProperties.swift in Sources */,
 				BACB7EDD1CCE1CBC0094779C /* CoreDataHandler.swift in Sources */,
 				2B1704D01CA0157400CFC720 /* ViewController.swift in Sources */,
 				BA77B80B1CC65AA100ACAACB /* NetworkOperations.swift in Sources */,
@@ -381,6 +388,7 @@
 				2BDF50381CE8B11E00A8958B /* Topic+CoreDataProperties.swift in Sources */,
 				2B4116771CB63C6B00F073C7 /* Model.xcdatamodeld in Sources */,
 				2B3DA3A31CC0CAC100F22CD7 /* TeacherFeedbackViewController.swift in Sources */,
+				BAFE05591CEF3CFC007B17DF /* Feedback.swift in Sources */,
 				2BC7904A1CD39E7D0083094C /* StudentLessonCellController.swift in Sources */,
 				2B1CF3881CE9C99500FCD858 /* LaunchScreenViewController.swift in Sources */,
 				2BDF502E1CE8B11E00A8958B /* Classroom+CoreDataProperties.swift in Sources */,

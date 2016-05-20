@@ -19,6 +19,7 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
     var thisTopic:Topic?
     var thisTeacher:Teacher?
     var thisClassroom:Classroom?
+    var thisFeedback:Feedback?
     
     func parse (xmlData:NSData) {
         let myParser = NSXMLParser(data: xmlData)
@@ -54,6 +55,9 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
         } else if (elementName == "classroom") {
             thisClassroom = NSEntityDescription.insertNewObjectForEntityForName("Classroom", inManagedObjectContext: managedContext!) as? Classroom
             print("!!!!!!!!!!!!!!!!!!!!!! Created a new classroom")
+        } else if (elementName == "feedback") {
+            thisFeedback = NSEntityDescription.insertNewObjectForEntityForName("Feedback", inManagedObjectContext: managedContext!) as? Feedback
+            print("!!!!!!!!!!!!!!!!!!!!!! Created a new feedback")
         }
     }
     
@@ -83,7 +87,16 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
                 print()
                 //print("************** Topic \(thisTopic?.topicName!) added to \(thisLesson?.subject)'s topics list")
             }
-        } else if (elementName == "topicName") {
+        } else if (elementName == "feedback") {
+            if (thisFeedback?.feedbackText != "haamu"){
+                CoreDataHandler.sharedInstance.feedbacks.append(thisFeedback!) // Luo tämmönen CoreDataan.
+                
+                let t = thisLesson!.mutableSetValueForKey("feedbackRelationship") //good shit
+                t.addObject(thisFeedback!)// good shit
+            }
+        }
+        
+        else if (elementName == "topicName") {
             thisTopic?.topicName = currentString
         } else if (elementName == "gotItRating") {
             thisTopic?.gotItRating = currentString
@@ -100,9 +113,8 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
             thisLesson?.lessonRating = currentString
                 print("RatingAvg set to \(currentString)")
             }
-        }   else if (elementName == "feedback") {
-            //thisLesson?.lessonFeedback?.append(currentString)
-            //print("\(currentString) Added to lessons feedback list")
+        }   else if (elementName == "feedbackText") {
+            thisFeedback?.feedbackText = currentString
         }
     }
     func parserDidEndDocument(parser: NSXMLParser) {
