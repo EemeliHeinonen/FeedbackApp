@@ -87,7 +87,7 @@ class NetworkOperations {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfiguration)
         
-        let urli = "http://localhost:8080/WebApplication5/webresources/Courses/course/"+teacher+""
+        let urli = "http://localhost:8080/WebApplication5/webresources/Courses/course/Teachers/"+teacher+""
         let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
         
         let sessionTask = session.dataTaskWithURL(NSURL(string: escapedAddress!)!, completionHandler: { (data, response, error) -> Void in
@@ -146,7 +146,7 @@ class NetworkOperations {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfiguration)
         
-        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+c+"/students/"
+        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+c+"/Students/"
         let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
         
         let request = NSMutableURLRequest()
@@ -171,7 +171,7 @@ class NetworkOperations {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfiguration)
         
-        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+c+"/topics/"
+        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+c+"/Topics/"
         let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
         
         let request = NSMutableURLRequest()
@@ -196,7 +196,7 @@ class NetworkOperations {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfiguration)
         
-        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+c+"/teachers/"
+        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+c+"/Teachers/"
         let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
         
         let request = NSMutableURLRequest()
@@ -227,7 +227,7 @@ class NetworkOperations {
         request.addValue("application/xml", forHTTPHeaderField: "Content-Type")
         request.addValue("application/xml", forHTTPHeaderField: "Accept")
         
-        let body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <course> <courseName>"+name+"</courseName> <time>"+time+"</time> <classroom>"+classroom+"</classroom><teacher></teacher><student></student><topic></topic><feedback></feedback><lessonRating></lessonRating></course>\n"
+        let body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <course><courseName>"+name+"</courseName> <time>"+time+"</time><teacher><name>haamu</name></teacher><student><name>haamu</name></student><topic></topic><feedback></feedback><lessonRating></lessonRating><classroom> <room>haamu</room> <beaconId>haamu</beaconId> </classroom></course>\n"
         
         request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
         
@@ -242,7 +242,7 @@ class NetworkOperations {
         //this function gets all lessons
         
         print("gotIt called")
-        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+course+"/topics/"+topic+"/gotItRating"
+        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+course+"/Topics/"+topic+"/gotItRating"
         let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
         print(escapedAddress)
         
@@ -262,7 +262,7 @@ class NetworkOperations {
         
         print("notGotIt called")
         
-        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+course+"/topics/"+topic+"/notGotItRating"
+        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+course+"/Topics/"+topic+"/notGotItRating"
         let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
         
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()

@@ -10,7 +10,7 @@
         <attribute name="lessonName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lessonRating" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="classroomRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Classroom" inverseName="lessonRelationship" inverseEntity="Classroom" syncable="YES"/>
+        <relationship name="classroomRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Classroom" inverseName="lessonRelationship" inverseEntity="Classroom" syncable="YES"/>
         <relationship name="studentRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="lessonRelationship" inverseEntity="Student" syncable="YES"/>
         <relationship name="teacherRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Teacher" inverseName="lessonRelationship" inverseEntity="Teacher" syncable="YES"/>
         <relationship name="topicRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Topic" inverseName="lessonRelationship" inverseEntity="Topic" syncable="YES"/>
