@@ -230,7 +230,7 @@ class NetworkOperations {
         request.addValue("application/xml", forHTTPHeaderField: "Content-Type")
         request.addValue("application/xml", forHTTPHeaderField: "Accept")
         
-        let body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <course> <courseName>"+name+"</courseName> <time>"+time+"</time> <classroom></classroom><teacher><name>haamu</name></teacher><student><name>haamu</name></student><topic></topic><feedback></feedback><lessonRating></lessonRating></course>\n"
+        let body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <course><courseName>"+name+"</courseName> <time>"+time+"</time><teacher><name>haamu</name></teacher><student><name>haamu</name></student><topic></topic><feedback></feedback><lessonRating></lessonRating><classroom> <room>haamu</room> <beaconId>haamu</beaconId> </classroom></course>\n"
         
         request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
         
