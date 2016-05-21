@@ -5,12 +5,18 @@
         <attribute name="roomName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="lessonRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lesson" inverseName="classroomRelationship" inverseEntity="Lesson" syncable="YES"/>
     </entity>
+    <entity name="Feedback" representedClassName=".Feedback" syncable="YES">
+        <attribute name="feedbackText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="lessonRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lesson" inverseName="feedbackRelationship" inverseEntity="Lesson" syncable="YES"/>
+    </entity>
     <entity name="Lesson" representedClassName=".Lesson" syncable="YES">
         <attribute name="lessonFeedback" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lessonName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lessonRating" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="classroomRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Classroom" inverseName="lessonRelationship" inverseEntity="Classroom" syncable="YES"/>
+        <relationship name="classroomRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Classroom" inverseName="lessonRelationship" inverseEntity="Classroom" syncable="YES"/>
+        <relationship name="feedbackRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Feedback" inverseName="lessonRelationship" inverseEntity="Feedback" syncable="YES"/>
         <relationship name="studentRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="lessonRelationship" inverseEntity="Student" syncable="YES"/>
         <relationship name="teacherRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Teacher" inverseName="lessonRelationship" inverseEntity="Teacher" syncable="YES"/>
         <relationship name="topicRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Topic" inverseName="lessonRelationship" inverseEntity="Topic" syncable="YES"/>
@@ -36,10 +42,11 @@
     <fetchRequest name="FetchRequest" entity="Me" predicateString="myName BEGINSWITH &quot;hermanni&quot;"/>
     <elements>
         <element name="Classroom" positionX="-288" positionY="29" width="128" height="90"/>
-        <element name="Lesson" positionX="-126" positionY="99" width="128" height="165"/>
+        <element name="Lesson" positionX="-126" positionY="99" width="128" height="180"/>
         <element name="Me" positionX="-63" positionY="3" width="128" height="75"/>
         <element name="Student" positionX="-281" positionY="353" width="128" height="75"/>
         <element name="Teacher" positionX="97" positionY="108" width="128" height="75"/>
         <element name="Topic" positionX="52" positionY="320" width="128" height="105"/>
+        <element name="Feedback" positionX="-99" positionY="153" width="128" height="90"/>
     </elements>
 </model>

@@ -146,7 +146,7 @@ class NetworkOperations {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: sessionConfiguration)
         
-        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+c+"/students/"
+        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+c+"/Students/"
         let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
         
         let request = NSMutableURLRequest()

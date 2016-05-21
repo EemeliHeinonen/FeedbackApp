@@ -18,6 +18,8 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
     var thisLesson:Lesson?
     var thisTopic:Topic?
     var thisTeacher:Teacher?
+    var thisClassroom:Classroom?
+    var thisFeedback:Feedback?
     
     func parse (xmlData:NSData) {
         let myParser = NSXMLParser(data: xmlData)
@@ -64,6 +66,12 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
         } else if (elementName == "topic") {
             thisTopic = NSEntityDescription.insertNewObjectForEntityForName("Topic", inManagedObjectContext: managedContext!) as? Topic
             print("!!!!!!!!!!!!!!!!!!!!!! Created a new topic")
+        } else if (elementName == "classroom") {
+            thisClassroom = NSEntityDescription.insertNewObjectForEntityForName("Classroom", inManagedObjectContext: managedContext!) as? Classroom
+            print("!!!!!!!!!!!!!!!!!!!!!! Created a new classroom")
+        } else if (elementName == "feedback") {
+            thisFeedback = NSEntityDescription.insertNewObjectForEntityForName("Feedback", inManagedObjectContext: managedContext!) as? Feedback
+            print("!!!!!!!!!!!!!!!!!!!!!! Created a new feedback")
         }
     }
     
@@ -73,9 +81,15 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
             CoreDataHandler.sharedInstance.lessons.append(thisLesson!)
             print("!!!!!!!!!!!!!!!!!!!!!! Appended the new lesson \(thisLesson?.lessonName) to the CoreData List")
             
-        } else if(elementName == "courseName") {
+        }  else if(elementName == "courseName") {
             thisLesson?.lessonName = currentString
             print("************** courseName changed to \(currentString)")
+        } else if (elementName == "classroom") {
+            if (thisClassroom?.roomName != "haamu") {
+                
+                let t = thisLesson!.mutableSetValueForKey("classroomRelationship") //good shit
+                t.addObject(thisClassroom!)// good shit
+            }
         } else if (elementName == "topic") {
             if (thisTopic?.topicName != nil) {
                 CoreDataHandler.sharedInstance.topics.append(thisTopic!)
@@ -87,24 +101,34 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
                 print()
                 //print("************** Topic \(thisTopic?.topicName!) added to \(thisLesson?.subject)'s topics list")
             }
-        } else if (elementName == "topicName") {
+        } else if (elementName == "feedback") {
+            if (thisFeedback?.feedbackText != "haamu"){
+                CoreDataHandler.sharedInstance.feedbacks.append(thisFeedback!) // Luo tämmönen CoreDataan.
+                
+                let t = thisLesson!.mutableSetValueForKey("feedbackRelationship") //good shit
+                t.addObject(thisFeedback!)// good shit
+            }
+        }
+        
+        else if (elementName == "topicName") {
             thisTopic?.topicName = currentString
         } else if (elementName == "gotItRating") {
             thisTopic?.gotItRating = currentString
         } else if (elementName == "notGotItRating") {
             thisTopic?.notGotItRating = currentString
-        } else if (elementName == "teacher") {
+        } else if (elementName == "room") {
+            thisClassroom?.roomName = currentString
+        } else if (elementName == "beaconId") {
+            thisClassroom?.beaconID = currentString
+        }else if (elementName == "teacher") {
             //thisLesson?.teacher = currentString
         } else if (elementName == "lessonRatingAvg") {
             if (currentString != "NaN"){
             thisLesson?.lessonRating = currentString
                 print("RatingAvg set to \(currentString)")
             }
-        }  else if (elementName == "classroom") {
-          
-        } else if (elementName == "feedback") {
-            //thisLesson?.lessonFeedback?.append(currentString)
-            //print("\(currentString) Added to lessons feedback list")
+        }   else if (elementName == "feedbackText") {
+            thisFeedback?.feedbackText = currentString
         }
     }
     func parserDidEndDocument(parser: NSXMLParser) {
