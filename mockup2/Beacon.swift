@@ -25,11 +25,11 @@ class Beacon: UIViewController, CLLocationManagerDelegate{
     
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationItem.setHidesBackButton(true, animated:true)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.hidesBackButton = true
         //CoreDataHandler.sharedInstance.coreDataTestFunc() //crazy shit
         //CoreDataHandler.sharedInstance.getAllTopics()
         //CoreDataHandler.sharedInstance.getAllLessons()

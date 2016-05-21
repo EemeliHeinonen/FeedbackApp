@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CoreDataHandler: UIViewController{
+class CoreDataHandler {
     
     static let sharedInstance = CoreDataHandler()
     
@@ -21,6 +21,13 @@ class CoreDataHandler: UIViewController{
     var me = [NSManagedObject]()
     var lessonsTopics = [NSManagedObject]()
     var currentLesson = ""
+    
+    init(){
+        appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        
+        managedContext = appDelegate!.managedObjectContext
+
+    }
     
     func zetCurrentLesson(s: String){
         currentLesson = s

@@ -30,8 +30,8 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
         //CoreDataHandler.sharedInstance.clearTopicEntity()
         //CoreDataHandler.sharedInstance.clearLessonEntity()
         print ("******************************************* did start document")
-        appDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
-        managedContext = appDelegate!.managedObjectContext
+        appDelegate = CoreDataHandler.sharedInstance.appDelegate //(UIApplication.sharedApplication().delegate as! AppDelegate)
+        managedContext = CoreDataHandler.sharedInstance.managedContext //appDelegate!.managedObjectContext
         
        /*
         let fetchRequest = NSFetchRequest(entityName: "Lesson")

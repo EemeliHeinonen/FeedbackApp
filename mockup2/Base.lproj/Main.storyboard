@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="a6q-mr-42h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="a6q-mr-42h">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -741,7 +741,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aVI-JU-9Af">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lesson name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aVI-JU-9Af">
                                 <rect key="frame" x="20" y="105" width="265" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -761,13 +761,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Topic 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jE7-9c-sRJ">
-                                <rect key="frame" x="20" y="354" width="265" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Topic 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gcT-RZ-hK4">
+                                <rect key="frame" x="20" y="264" width="265" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Topic 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gcT-RZ-hK4">
-                                <rect key="frame" x="20" y="264" width="265" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Topic 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jE7-9c-sRJ">
+                                <rect key="frame" x="20" y="354" width="265" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -775,15 +775,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create a lesson" id="f6D-SX-RUA">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="w53-qn-2Hb"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="w53-qn-2Hb">
+                            <connections>
+                                <action selector="doneAction:" destination="OVw-ad-zqD" id="Xhb-af-Ael"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="Classroom" destination="sz8-hY-tPC" id="2qg-Dk-cPK"/>
-                        <outlet property="Subject" destination="aVI-JU-9Af" id="NOl-zz-hxs"/>
                         <outlet property="classroom" destination="sz8-hY-tPC" id="xJs-bc-dIc"/>
-                        <outlet property="subject" destination="aVI-JU-9Af" id="6Sg-6u-uaB"/>
+                        <outlet property="lessonName" destination="aVI-JU-9Af" id="coc-A8-0Z4"/>
                         <outlet property="time" destination="Ins-2z-fqj" id="DBX-NE-KOe"/>
                         <outlet property="topic1" destination="gcT-RZ-hK4" id="bj8-rF-Vx3"/>
+                        <outlet property="topic2" destination="Yul-BV-0UW" id="ZEb-II-GJD"/>
+                        <outlet property="topic3" destination="jE7-9c-sRJ" id="f0D-Vc-GvC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9p-2F-f3K" userLabel="First Responder" sceneMemberID="firstResponder"/>

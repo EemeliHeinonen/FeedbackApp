@@ -16,7 +16,7 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
         // Initialize Fetch Request
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = CoreDataHandler.sharedInstance.appDelegate//UIApplication.sharedApplication().delegate as! AppDelegate
 
         let fetchRequest = NSFetchRequest(entityName: "Lesson")
         
@@ -25,7 +25,7 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         // Initialize Fetched Results Controller
-        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: appDelegate.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataHandler.sharedInstance.managedContext! /*appDelegate.managedObjectContext*/, sectionNameKeyPath: nil, cacheName: nil)
         
         // Configure Fetched Results Controller
         fetchedResultsController.delegate = self
@@ -33,10 +33,24 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
         return fetchedResultsController
     }()
     
+    override func viewDidAppear(animated: Bool) {
+        
+    }
+    
+    
     override func viewDidLoad() {
+        clearLessonsEntity()
+        
+        do {
+            try fetchedResultsController.performFetch()
+        } catch let error as NSError {
+            print ("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        
+
         print("viewdidloadin parencontrollerprint")
         print(parentController)
-        clearLessonsEntity()
         self.refreshControl?.addTarget(self, action: #selector(TeacherLessonTableViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
 
         super.viewDidLoad()
@@ -44,33 +58,30 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
         
-        do {
-            try fetchedResultsController.performFetch()
-        } catch let error as NSError {
-            print ("Could not fetch \(error), \(error.userInfo)")
         }
-}
     
     func getlessonsbyTeacher(){
         NetworkOperations.sharedInstance.getLessonsByTeacher((CoreDataHandler.sharedInstance.me.last?.valueForKey("myName") as? String)!)
     }
     func clearLessonsEntity(){
-        let appDelegate =
-            UIApplication.sharedApplication().delegate as! AppDelegate
         
-        let managedContext = appDelegate.managedObjectContext
+        let appDelegate =
+            CoreDataHandler.sharedInstance.appDelegate //UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = CoreDataHandler.sharedInstance.managedContext//appDelegate.managedObjectContext
 
         let fetchRequest = NSFetchRequest(entityName: "Lesson")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         do {
-            try managedContext.executeRequest(deleteRequest)
-            try managedContext.save()
+            try managedContext!.executeRequest(deleteRequest)
+            try managedContext!.save()
             
             print("clearattu lesson entity")
         } catch let error as NSError {
             // TODO: handle the error
         }
+ 
         getlessonsbyTeacher()
     }
     
