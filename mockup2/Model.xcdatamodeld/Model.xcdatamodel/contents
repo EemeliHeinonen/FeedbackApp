@@ -8,12 +8,13 @@
     <entity name="Feedback2" representedClassName=".Feedback2" syncable="YES">
         <attribute name="feedbackText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lessonRating" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="lessonRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lesson" inverseName="feedbackRelationship" inverseEntity="Lesson" syncable="YES"/>
     </entity>
     <entity name="Lesson" representedClassName=".Lesson" syncable="YES">
         <attribute name="lessonFeedback" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lessonName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lessonRating" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lessonRatingAverage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="classroomRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Classroom" inverseName="lessonRelationship" inverseEntity="Classroom" syncable="YES"/>
         <relationship name="feedbackRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Feedback2" inverseName="lessonRelationship" inverseEntity="Feedback2" syncable="YES"/>
@@ -21,7 +22,6 @@
         <relationship name="teacherRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Teacher" inverseName="lessonRelationship" inverseEntity="Teacher" syncable="YES"/>
         <relationship name="topicRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Topic" inverseName="lessonRelationship" inverseEntity="Topic" syncable="YES"/>
     </entity>
-    <entity name="LessonByStudent" syncable="YES"/>
     <entity name="Me" representedClassName=".Me" syncable="YES">
         <attribute name="myName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="teacherOrStudent" optional="YES" attributeType="String" syncable="YES"/>
@@ -43,9 +43,8 @@
     <fetchRequest name="FetchRequest" entity="Lesson" predicateString="myName BEGINSWITH &quot;hermanni&quot;"/>
     <elements>
         <element name="Classroom" positionX="-288" positionY="29" width="128" height="90"/>
-        <element name="Feedback2" positionX="-99" positionY="153" width="128" height="90"/>
+        <element name="Feedback2" positionX="-99" positionY="153" width="128" height="105"/>
         <element name="Lesson" positionX="-126" positionY="99" width="128" height="180"/>
-        <element name="LessonByStudent" positionX="-90" positionY="162" width="128" height="45"/>
         <element name="Me" positionX="-63" positionY="3" width="128" height="75"/>
         <element name="Student" positionX="-281" positionY="353" width="128" height="75"/>
         <element name="Teacher" positionX="97" positionY="108" width="128" height="75"/>
