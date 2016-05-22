@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class TeacherPastLessonTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     var parentController: TeacherMainViewController?
     
     var managedObjectContext: NSManagedObjectContext!
@@ -17,12 +17,13 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
     lazy var fetchedResultsController: NSFetchedResultsController = {
         // Initialize Fetch Request
         let appDelegate = CoreDataHandler.sharedInstance.appDelegate//UIApplication.sharedApplication().delegate as! AppDelegate
-
+        
         let fetchRequest = NSFetchRequest(entityName: "Lesson")
         
-        let predicate = NSPredicate(format: "ANY teacherRelationship.teacherName == %@", (CoreDataHandler.sharedInstance.me.last?.valueForKey("myName") as? String)!)
+        let predicate = NSPredicate(format: "ANY teacherRelationship.teacherName == %@ AND lessonStarted == %@", argumentArray: [(CoreDataHandler.sharedInstance.me.last?.valueForKey("myName") as? String)!, "yes"])
         fetchRequest.predicate = predicate
         
+        //format: "name = %@ AND nickName = %@", argumentArray: [name, nickname])
         
         // Add Sort Descriptors
         let sortDescriptor = NSSortDescriptor(key: "lessonName", ascending: true)
@@ -52,21 +53,20 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
         }
         
         
-
+        
         print("viewdidloadin parencontrollerprint")
         print(parentController)
-        self.refreshControl?.addTarget(self, action: #selector(TeacherLessonTableViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
-
+        self.refreshControl?.addTarget(self, action: #selector(TeacherPastLessonTableViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        
         super.viewDidLoad()
         title = "\"List of all Lessons\""
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
         
-        }
+    }
     
     func getlessonsbyTeacher(){
         //NetworkOperations.sharedInstance.getLessonsByTeacher((CoreDataHandler.sharedInstance.me.last?.valueForKey("myName") as? String)!)
-        NetworkOperations.sharedInstance.getLessons()
     }
     func clearLessonsEntity(){
         
@@ -74,7 +74,7 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
             CoreDataHandler.sharedInstance.appDelegate //UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = CoreDataHandler.sharedInstance.managedContext//appDelegate.managedObjectContext
-
+        
         let fetchRequest = NSFetchRequest(entityName: "Lesson")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
@@ -86,7 +86,7 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
         } catch let error as NSError {
             // TODO: handle the error
         }
- 
+        
         getlessonsbyTeacher()
     }
     
@@ -115,8 +115,6 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
         
         //let p = CoreDataHandler.sharedInstance.lessons[indexPath.row]
         let p = fetchedResultsController.objectAtIndexPath(indexPath)
-        
-        p.setValue("yes", forKey: "lessonStarted") // DING DING DING
         
         cell!.textLabel!.text =
             p.valueForKey("lessonName") as? String

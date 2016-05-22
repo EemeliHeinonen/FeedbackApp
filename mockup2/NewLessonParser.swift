@@ -18,8 +18,9 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
     var thisLesson:Lesson?
     var thisTopic:Topic?
     var thisTeacher:Teacher?
+    var thisStudent:Student?
     var thisClassroom:Classroom?
-    var thisFeedback:Feedback?
+    var thisFeedback:Feedback2?
     
     func parse (xmlData:NSData) {
         let myParser = NSXMLParser(data: xmlData)
@@ -70,8 +71,14 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
             thisClassroom = NSEntityDescription.insertNewObjectForEntityForName("Classroom", inManagedObjectContext: managedContext!) as? Classroom
             print("!!!!!!!!!!!!!!!!!!!!!! Created a new classroom")
         } else if (elementName == "feedback") {
-            thisFeedback = NSEntityDescription.insertNewObjectForEntityForName("Feedback", inManagedObjectContext: managedContext!) as? Feedback
+            thisFeedback = NSEntityDescription.insertNewObjectForEntityForName("Feedback2", inManagedObjectContext: managedContext!) as? Feedback2
             print("!!!!!!!!!!!!!!!!!!!!!! Created a new feedback")
+        } else if (elementName == "teacher") {
+            thisTeacher = NSEntityDescription.insertNewObjectForEntityForName("Teacher", inManagedObjectContext: managedContext!) as? Teacher
+            print("!!!!!!!!!!!!!!!!!!!!!! Created a new teacher")
+        } else if (elementName == "student") {
+            thisStudent = NSEntityDescription.insertNewObjectForEntityForName("Student", inManagedObjectContext: managedContext!) as? Student
+            print("!!!!!!!!!!!!!!!!!!!!!! Created a new Student")
         }
     }
     
@@ -103,10 +110,21 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
             }
         } else if (elementName == "feedback") {
             if (thisFeedback?.feedbackText != "haamu"){
-                CoreDataHandler.sharedInstance.feedbacks.append(thisFeedback!) // Luo tämmönen CoreDataan.
-                
+                CoreDataHandler.sharedInstance.feedbacks.append(thisFeedback!)
                 let t = thisLesson!.mutableSetValueForKey("feedbackRelationship") //good shit
                 t.addObject(thisFeedback!)// good shit
+            }
+        } else if (elementName == "teacher") {
+            if (thisTeacher?.teacherName != "haamu"){
+                CoreDataHandler.sharedInstance.teachers.append(thisTeacher!)
+                let t = thisLesson!.mutableSetValueForKey("teacherRelationship") //good shit
+                t.addObject(thisTeacher!)// good shit
+            }
+        } else if (elementName == "student") {
+            if (thisStudent?.studentName != "haamu"){
+                CoreDataHandler.sharedInstance.students.append(thisStudent!)
+                let t = thisLesson!.mutableSetValueForKey("studentRelationship") //good shit
+                t.addObject(thisStudent!)// good shit
             }
         }
         
@@ -120,15 +138,19 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
             thisClassroom?.roomName = currentString
         } else if (elementName == "beaconId") {
             thisClassroom?.beaconID = currentString
-        }else if (elementName == "teacher") {
-            //thisLesson?.teacher = currentString
+        } else if (elementName == "teacherName") {
+            thisTeacher?.teacherName = currentString
+        } else if (elementName == "studentName") {
+            thisStudent?.studentName = currentString
+        } else if (elementName == "feedbackText") {
+            thisFeedback?.feedbackText = currentString
+        } else if (elementName == "rating") {
+            thisFeedback?.lessonRating = currentString
         } else if (elementName == "lessonRatingAvg") {
             if (currentString != "NaN"){
-            thisLesson?.lessonRating = currentString
+            thisLesson?.lessonRatingAverage = currentString
                 print("RatingAvg set to \(currentString)")
             }
-        }   else if (elementName == "feedbackText") {
-            thisFeedback?.feedbackText = currentString
         }
     }
     func parserDidEndDocument(parser: NSXMLParser) {

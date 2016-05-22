@@ -9,7 +9,7 @@
 import UIKit
 
 
-class TeacherFeedbackViewController: UIViewController, UINavigationControllerDelegate, UITableViewDelegate {
+class TeacherFeedbackViewController: UIViewController, UINavigationControllerDelegate {
     
     
     override func viewDidLoad() {

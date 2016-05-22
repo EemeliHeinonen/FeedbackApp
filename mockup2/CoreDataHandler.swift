@@ -18,8 +18,11 @@ class CoreDataHandler {
     var people = [NSManagedObject]()
     var lessons = [NSManagedObject]()
     var topics = [NSManagedObject]()
+    var feedbacks = [NSManagedObject]()
     var me = [NSManagedObject]()
     var lessonsTopics = [NSManagedObject]()
+    var students = [NSManagedObject]()
+    var teachers = [NSManagedObject]()
     var currentLesson = ""
     
     init(){

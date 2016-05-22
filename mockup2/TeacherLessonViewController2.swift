@@ -13,6 +13,7 @@ class TeacherLessonViewController2: UIViewController, UINavigationControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
     }
     
     override func didReceiveMemoryWarning() {

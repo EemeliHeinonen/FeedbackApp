@@ -15,7 +15,7 @@ class NetworkOperations {
     var url:String
     
     init(){
-        url = "192.168.43.236"
+        url = "localhost"
     }
     
     /*
@@ -48,7 +48,6 @@ class NetworkOperations {
      }
      */
 
-    
     
     func getLessons(){
         //this function gets all lessons
