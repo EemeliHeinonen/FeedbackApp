@@ -52,6 +52,7 @@ class CreateLessonViewController: UIViewController, UITextFieldDelegate{
         }
         
        // NetworkOperations.sharedInstance.getLessonsByTeacher(CoreDataHandler.sharedInstance.me.last?.valueForKey("myName") as! String)
+        NetworkOperations.sharedInstance.postClassroom(lessonName.text!, room: classroom.text!)
         NSThread.sleepForTimeInterval(1)
 
         clearLessonsEntity()

@@ -23,7 +23,14 @@ class StudentMainViewViewController: UIViewController{
             let destinationCtrl = segue.destinationViewController as! testLessonsTableViewController
             destinationCtrl.parentController = self
         }
+        if(segue.identifier == "attendedClassesContainerSegue"){
+            let destinationCtrl = segue.destinationViewController as! StudentAttendedLessonsTableView
+            destinationCtrl.parentController = self
+        }
     }
+
+
+    
             /*
         else if segue.identifier == "lessonSegue"{
             

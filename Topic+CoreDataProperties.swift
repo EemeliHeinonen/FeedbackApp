@@ -2,7 +2,7 @@
 //  Topic+CoreDataProperties.swift
 //  mockup2
 //
-//  Created by Mortti Aittokoski on 17.5.2016.
+//  Created by Mortti Aittokoski on 21.5.2016.
 //  Copyright © 2016 Mortti Aittokoski. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu

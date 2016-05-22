@@ -15,7 +15,7 @@ class NetworkOperations {
     var url:String
     
     init(){
-        url = "192.168.43.236"
+        url = "localhost"
     }
     
     /*
@@ -140,6 +140,62 @@ class NetworkOperations {
         
         sessionTask.resume()
     }
+    
+    func getLessonsByClassroom(s: String){
+        
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration)
+        
+        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/Classroom/"+s+""
+        let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        
+        let sessionTask = session.dataTaskWithURL(NSURL(string: escapedAddress!)!, completionHandler: { (data, response, error) -> Void in
+            
+            //Define the operation we'd like to run in the operation queue
+            let studentParseOperation = NSBlockOperation(block: {
+                let parser = NewLessonParser()
+                parser.parse(data!)
+                //self.showTF.text = resultString
+            })
+            
+            // create a queue and add the operation
+            let queue = NSOperationQueue()
+            queue.maxConcurrentOperationCount=1
+            queue.addOperation(studentParseOperation)
+            
+        })
+        //.resume will cause the session task to execute
+        
+        sessionTask.resume()
+
+    }
+    
+    func postClassroom(c: String, room: String){
+        
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration)
+        
+        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+c+"/Classrooms/"
+        let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        
+        let request = NSMutableURLRequest()
+        request.HTTPMethod = "POST"
+        request.URL = NSURL(string: escapedAddress!)
+        request.addValue("application/xml", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/xml", forHTTPHeaderField: "Accept")
+        
+        let body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <classroom> <room>"+room+"</room> </classroom>\n"
+        
+        request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let sessionTask = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) -> Void in
+            print("posting done, response = \(response), error = \(error)")
+        })
+        sessionTask.resume()
+
+        
+    }
+    
     
     func postStudent(c: String, s: String){
         

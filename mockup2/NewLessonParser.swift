@@ -19,7 +19,7 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
     var thisTopic:Topic?
     var thisTeacher:Teacher?
     var thisClassroom:Classroom?
-    var thisFeedback:Feedback?
+    var thisFeedback:Feedback2?
     
     func parse (xmlData:NSData) {
         let myParser = NSXMLParser(data: xmlData)
@@ -70,7 +70,7 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
             thisClassroom = NSEntityDescription.insertNewObjectForEntityForName("Classroom", inManagedObjectContext: managedContext!) as? Classroom
             print("!!!!!!!!!!!!!!!!!!!!!! Created a new classroom")
         } else if (elementName == "feedback") {
-            thisFeedback = NSEntityDescription.insertNewObjectForEntityForName("Feedback", inManagedObjectContext: managedContext!) as? Feedback
+            thisFeedback = NSEntityDescription.insertNewObjectForEntityForName("Feedback2", inManagedObjectContext: managedContext!) as? Feedback2
             print("!!!!!!!!!!!!!!!!!!!!!! Created a new feedback")
         }
     }
@@ -87,8 +87,10 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
         } else if (elementName == "classroom") {
             if (thisClassroom?.roomName != "haamu") {
                 
-                let t = thisLesson!.mutableSetValueForKey("classroomRelationship") //good shit
-                t.addObject(thisClassroom!)// good shit
+                thisLesson!.setValue((object: thisClassroom!), forKey: "classroomRelationship")
+                //let t = thisLesson!.mutableSetValueForKey("classroomRelationship") //good shit
+                //t.addObject(thisClassroom!)// good shit
+                
             }
         } else if (elementName == "topic") {
             if (thisTopic?.topicName != nil) {

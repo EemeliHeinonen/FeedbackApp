@@ -38,6 +38,8 @@ class TeacherTopicsTableController: UITableViewController {
          p.valueForKey("topicName") as? String*/
         
         cell.topicNameLabel.text = p.valueForKey("topicName") as? String
+        cell.gotItLabel.text = p.valueForKey("gotItRating") as? String
+        cell.didntGetItLabel.text = p.valueForKey("notGotItRating") as? String
         
         return cell
     }

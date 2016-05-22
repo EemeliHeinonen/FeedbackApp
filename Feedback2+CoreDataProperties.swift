@@ -1,8 +1,8 @@
 //
-//  Feedback+CoreDataProperties.swift
+//  Feedback2+CoreDataProperties.swift
 //  mockup2
 //
-//  Created by Eemeli Heinonen on 20/05/16.
+//  Created by Mortti Aittokoski on 21.5.2016.
 //  Copyright © 2016 Mortti Aittokoski. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -12,7 +12,7 @@
 import Foundation
 import CoreData
 
-extension Feedback {
+extension Feedback2 {
 
     @NSManaged var feedbackText: String?
     @NSManaged var id: String?

@@ -1,4 +1,12 @@
 //
+//  StudentAttendedLessonsTableView.swift
+//  mockup2
+//
+//  Created by Mortti Aittokoski on 21.5.2016.
+//  Copyright © 2016 Mortti Aittokoski. All rights reserved.
+//
+
+//
 //  testLessonsTableViewController.swift
 //  mockup2
 //
@@ -9,7 +17,7 @@
 import UIKit
 import CoreData
 
-class testLessonsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class StudentAttendedLessonsTableView: UITableViewController, NSFetchedResultsControllerDelegate {
     var parentController: StudentMainViewViewController?
     var managedObjectContext: NSManagedObjectContext!
     
@@ -19,9 +27,11 @@ class testLessonsTableViewController: UITableViewController, NSFetchedResultsCon
         
         let fetchRequest = NSFetchRequest(entityName: "Lesson")
         
-        let predicate = NSPredicate(format: "%K == %@", "classroomRelationship.roomName", BeaconTracker.sharedInstance.currentRoom)
+        let predicate = NSPredicate(format: "ANY studentRelationship.studentName == %@", (CoreDataHandler.sharedInstance.me.last?.valueForKey("myName") as? String)!)
+        // not the one let predicate = NSPredicate(format: "%K == %@", "studentRelationship.studentName", (CoreDataHandler.sharedInstance.me.last?.valueForKey("myName") as? String)!)
         fetchRequest.predicate = predicate
-
+        
+        
         // Add Sort Descriptors
         let sortDescriptor = NSSortDescriptor(key: "lessonName", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
@@ -34,10 +44,11 @@ class testLessonsTableViewController: UITableViewController, NSFetchedResultsCon
         
         return fetchedResultsController
     }()
-
-
+    
+    
     override func viewDidLoad() {
-        clearLessonsEntity()
+        
+        //clearLessonsEntity()
         print("lessontableviewcontroller viewdidload")
         super.viewDidLoad()
         title = "\"List of all Lessons\""
@@ -51,7 +62,7 @@ class testLessonsTableViewController: UITableViewController, NSFetchedResultsCon
     }
     
     func getLessons(){
-        NetworkOperations.sharedInstance.getLessons()
+        //NetworkOperations.sharedInstance.getLessons()
         //NetworkOperations.sharedInstance.getLessonsByClassroom(BeaconTracker.sharedInstance.currentRoom)
     }
     
@@ -74,7 +85,7 @@ class testLessonsTableViewController: UITableViewController, NSFetchedResultsCon
         }
         getLessons()
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -94,7 +105,7 @@ class testLessonsTableViewController: UITableViewController, NSFetchedResultsCon
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("func lessonntableView return count")
         print( CoreDataHandler.sharedInstance.lessons.count)
-
+        
         return fetchedResultsController.sections![section].numberOfObjects
     }
     
@@ -106,7 +117,7 @@ class testLessonsTableViewController: UITableViewController, NSFetchedResultsCon
         
         //let p = CoreDataHandler.sharedInstance.lessons[indexPath.row]
         let p = fetchedResultsController.objectAtIndexPath(indexPath)
-
+        
         
         cell!.textLabel!.text =
             p.valueForKey("lessonName") as? String
@@ -134,7 +145,7 @@ class testLessonsTableViewController: UITableViewController, NSFetchedResultsCon
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!did change content")
         self.tableView.reloadData()
     }
-
+    
     
     
     
