@@ -14,6 +14,8 @@ class TeacherRatingsTableController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("TeecherFeedbackViewController didload")
+        
         
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -32,15 +34,30 @@ class TeacherRatingsTableController: UITableViewController {
         let cell =
             tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! TeacherRatingsTableCellController // needed for cell class
         
+        print(" =)=)=)))=)=)=)=)=)=)=)=)=)=)=)=)=)=)==)== \(CoreDataHandler.sharedInstance.feedbacks.count)")
         let p = CoreDataHandler.sharedInstance.feedbacks[indexPath.row]
         
         /*cell!.textLabel!.text =
          p.valueForKey("topicName") as? String*/
         
-        cell.ratingLabel.text = p.valueForKey("lessonRating") as? String
+        
+        
+        cell.rating.text = p.valueForKey("lessonRating") as? String
         cell.feedbackTextLabel.text = p.valueForKey("feedbackText") as? String
+        
+
         
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let indexPath = tableView.indexPathForSelectedRow!
+        
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
+        let nakki = CoreDataHandler.sharedInstance.feedbacks[indexPath.row]
+        parentController!.performSegueWithIdentifier("FeedbackTextPushSegue", sender: parentController)
+        CoreDataHandler.sharedInstance.zetCurrentLessonRating((nakki.valueForKey("lessonRating") as? String)!)
+        CoreDataHandler.sharedInstance.zetCurrentFeedbackText((nakki.valueForKey("feedbackText") as? String)!)
+        
+}
 }

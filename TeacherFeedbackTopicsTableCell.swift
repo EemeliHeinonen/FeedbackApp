@@ -1,19 +1,18 @@
 //
-//  TeacherTopicsTableCellController.swift
+//  TeacherFeedbackTopicsTableCell.swift
 //  mockup2
 //
-//  Created by Mortti Aittokoski on 18.5.2016.
+//  Created by Eemeli Heinonen on 23/05/16.
 //  Copyright © 2016 Mortti Aittokoski. All rights reserved.
 //
 
 import UIKit
 
-class TeacherRatingsTableCellController: UITableViewCell{
-    
-    @IBOutlet weak var rating: UILabel!
+class TeacherFeedbackTopicsTableCell: UITableViewCell{
 
-    @IBOutlet weak var feedbackTextLabel: UILabel!
-
+    @IBOutlet weak var topic: UILabel!
+    @IBOutlet weak var gotIt: UILabel!
+    @IBOutlet weak var notGotIt: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

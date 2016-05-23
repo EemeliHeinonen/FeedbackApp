@@ -11,7 +11,7 @@ import CoreLocation
 
 class BeaconTracker: NSObject, CLLocationManagerDelegate{
     static let sharedInstance = BeaconTracker()
-    var currentRoom:String = ""
+    var currentRoom:String = "303"
     
     let locationManager = CLLocationManager()
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "00000000-0000-0000-0000-000000000000")!, identifier: "ibks 105")
@@ -36,6 +36,9 @@ class BeaconTracker: NSObject, CLLocationManagerDelegate{
             }
             if(closestBeacon.major == 23){
                 currentRoom = "304"
+            }
+            else{
+                currentRoom = "303"
             }
         }
     }

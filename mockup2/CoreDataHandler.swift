@@ -23,13 +23,39 @@ class CoreDataHandler {
     var lessonsTopics = [NSManagedObject]()
     var students = [NSManagedObject]()
     var teachers = [NSManagedObject]()
+    var currentFeedbackText = ""
+    var currentLessonRating = ""
     var currentLesson = ""
+    var currentLessonRatingAvg = ""
     
     init(){
         appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
         
         managedContext = appDelegate!.managedObjectContext
 
+    }
+    
+    func zetCurrentFeedbackText(s: String){
+        currentFeedbackText = s
+    }
+    
+    func getCurrentFeedbackText() -> String{
+        return currentFeedbackText
+    }
+    
+    func zetCurrentLessonRating(s: String){
+        currentLessonRating = s
+    }
+    func getCurrentLessonRating() -> String{
+        return currentLessonRating
+    }
+    
+    func zetCurrentRatingAvg(s: String){
+        currentLessonRatingAvg = s
+    }
+    
+    func getCurrentRatingAvg() -> String{
+        return currentLessonRatingAvg
     }
     
     func zetCurrentLesson(s: String){
@@ -139,6 +165,85 @@ class CoreDataHandler {
         }
         
     }
+    /*
+     
+     AIVAN ROSKA FUNCTIO
+     
+    func getLessonRatingAvg(lessonString: String) -> String{
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        // Fetching
+        let fetchRequest = NSFetchRequest(entityName: "Lesson")
+        
+        // Create Predicate
+        let predicate = NSPredicate(format: "%K == %@", "lessonName", lessonString)
+        fetchRequest.predicate = predicate
+        
+        /*
+         // Add Sort Descriptor
+         let sortDescriptor1 = NSSortDescriptor(key: "last", ascending: true)
+         let sortDescriptor2 = NSSortDescriptor(key: "age", ascending: true)
+         fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
+         */
+        
+        // Execute Fetch Request
+        do {
+            let result = try managedContext.executeFetchRequest(fetchRequest)
+            print("?!?!?!??!?!?!?!??!?! result count:\(result.count)")
+            print("?!?!?!??!?!?!?!??!?! result count:\(result)")
+            
+            currentLessonRatingAvg = result as! [NSManagedObject]
+            //let avg = currentLessonRatingAvg.last?.valueForKey("lessonRatingAverage") as! String
+            //return avg
+            
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+        print("%(%(%(%/%/%/%(%/%(%/%%( lessonratingavg count")
+        print(currentLessonRatingAvg.count)
+        let ratingAvgValue = currentLessonRatingAvg.last?.valueForKey("lessonRatingAverage") as! String
+        return ratingAvgValue
+    }
+    */
+    func getLessonsFeedbacks(lessonString: String){
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        // Fetching
+        let fetchRequest = NSFetchRequest(entityName: "Feedback2")
+        
+        // Create Predicate
+        let predicate = NSPredicate(format: "%K == %@", "lessonRelationship.lessonName", lessonString)
+        fetchRequest.predicate = predicate
+        
+        /*
+         // Add Sort Descriptor
+         let sortDescriptor1 = NSSortDescriptor(key: "last", ascending: true)
+         let sortDescriptor2 = NSSortDescriptor(key: "age", ascending: true)
+         fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
+         */
+        
+        // Execute Fetch Request
+        do {
+            let result = try managedContext.executeFetchRequest(fetchRequest)
+            print("?!?!?!??!?!?!?!??!?! result count:\(result.count)")
+            print("?!?!?!??!?!?!?!??!?! result count:\(result)")
+            
+            feedbacks = result as! [NSManagedObject]
+            
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+        
+    }
+
     
     //Method for saving students name
     func getAllTopics(){

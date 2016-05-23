@@ -25,6 +25,14 @@ class TeacherMainViewController: UIViewController {
             //print(self)
             destinationCtrl.parentController = self
         }
+        if(segue.identifier == "TeacherPastLessonEmbedSegue"){
+            let destinationCtrl = segue.destinationViewController as! TeacherPastLessonTableViewController
+            //print(self)
+            destinationCtrl.parentController = self
+        }
+
+        
+
     }
     
     override func didReceiveMemoryWarning() {

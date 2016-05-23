@@ -123,14 +123,26 @@ class TeacherPastLessonTableViewController: UITableViewController, NSFetchedResu
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(parentController)
-        self.parentController!.performSegueWithIdentifier("teacherLessonViewSegue", sender: parentController)
+        self.parentController!.performSegueWithIdentifier("TeacherFeedbackPushSegue", sender: parentController)
         
         let indexPath = tableView.indexPathForSelectedRow!
         
         let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
         
-        CoreDataHandler.sharedInstance.getLessonsTopics(currentCell.textLabel!.text!)
+        let p = fetchedResultsController.objectAtIndexPath(indexPath)
+        let g = p.valueForKey("lessonRatingAverage") as? String
+        
+        if(g != nil){
+            CoreDataHandler.sharedInstance.zetCurrentRatingAvg(g!)
+        }
+        else {
+            CoreDataHandler.sharedInstance.zetCurrentRatingAvg("No rating")
+        }
+        
         CoreDataHandler.sharedInstance.zetCurrentLesson(currentCell.textLabel!.text!)
+        CoreDataHandler.sharedInstance.getLessonsTopics(currentCell.textLabel!.text!)
+        CoreDataHandler.sharedInstance.getLessonsFeedbacks(currentCell.textLabel!.text!)
+        
         
         print(currentCell.textLabel!.text)
     }
