@@ -16,7 +16,7 @@
         <attribute name="lessonRatingAverage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lessonStarted" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="classroomRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Classroom" inverseName="lessonRelationship" inverseEntity="Classroom" syncable="YES"/>
+        <relationship name="classroomRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Classroom" inverseName="lessonRelationship" inverseEntity="Classroom" syncable="YES"/>
         <relationship name="feedbackRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Feedback2" inverseName="lessonRelationship" inverseEntity="Feedback2" syncable="YES"/>
         <relationship name="studentRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="lessonRelationship" inverseEntity="Student" syncable="YES"/>
         <relationship name="teacherRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Teacher" inverseName="lessonRelationship" inverseEntity="Teacher" syncable="YES"/>

@@ -94,8 +94,8 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
         } else if (elementName == "classroom") {
             if (thisClassroom?.roomName != "haamu") {
                 
-                let t = thisLesson!.mutableSetValueForKey("classroomRelationship") //good shit
-                t.addObject(thisClassroom!)// good shit
+                
+                thisLesson!.setValue((object: thisClassroom!), forKey: "classroomRelationship")
             }
         } else if (elementName == "topic") {
             if (thisTopic?.topicName != nil) {

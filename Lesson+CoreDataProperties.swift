@@ -18,10 +18,10 @@ extension Lesson {
     @NSManaged var lessonRatingAverage: String?
     @NSManaged var time: String?
     @NSManaged var lessonStarted: String?
-    @NSManaged var classroomRelationship: NSSet?
+    @NSManaged var classroomRelationship: Classroom?
     @NSManaged var feedbackRelationship: NSSet?
     @NSManaged var studentRelationship: NSSet?
-    @NSManaged var teacherRelationship: Teacher?
+    @NSManaged var teacherRelationship: NSSet?
     @NSManaged var topicRelationship: NSSet?
 
 }

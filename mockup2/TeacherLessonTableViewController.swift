@@ -116,7 +116,10 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
         //let p = CoreDataHandler.sharedInstance.lessons[indexPath.row]
         let p = fetchedResultsController.objectAtIndexPath(indexPath)
         
+        /*
         p.setValue("yes", forKey: "lessonStarted") // DING DING DING
+        print("|||||||||||||||||||||||||||||| Value for lesson started: \(p.valueForKey("lessonStarted"))")
+         */
         
         cell!.textLabel!.text =
             p.valueForKey("lessonName") as? String
@@ -134,6 +137,13 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
         
         CoreDataHandler.sharedInstance.getLessonsTopics(currentCell.textLabel!.text!)
         CoreDataHandler.sharedInstance.zetCurrentLesson(currentCell.textLabel!.text!)
+        
+        let p = fetchedResultsController.objectAtIndexPath(indexPath)
+        
+        
+         p.setValue("yes", forKey: "lessonStarted") // DING DING DING
+         print("|||||||||||||||||||||||||||||| Lesson \(p.valueForKey("lessonName"))'s Value for lesson started: \(p.valueForKey("lessonStarted"))")
+ 
         
         print(currentCell.textLabel!.text)
     }

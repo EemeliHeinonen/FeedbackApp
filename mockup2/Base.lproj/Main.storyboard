@@ -59,6 +59,34 @@
             </objects>
             <point key="canvasLocation" x="1509" y="197"/>
         </scene>
+        <!--Student Past Lessons Table View-->
+        <scene sceneID="4Pd-Lz-rJ7">
+            <objects>
+                <tableViewController id="5vt-ek-Rtb" customClass="StudentPastLessonsTableView" customModule="mockup2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="F7G-yI-4SR">
+                        <rect key="frame" x="0.0" y="0.0" width="257" height="222"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bfx-hx-iV9">
+                                <rect key="frame" x="0.0" y="28" width="257" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bfx-hx-iV9" id="WOX-4U-dN3">
+                                    <rect key="frame" x="0.0" y="0.0" width="257" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5vt-ek-Rtb" id="Afz-aw-pSA"/>
+                            <outlet property="delegate" destination="5vt-ek-Rtb" id="C0v-CQ-YIw"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K9D-33-YY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1318.5" y="985"/>
+        </scene>
         <!--Petri&Peter ETYB304 - Aquarium-->
         <scene sceneID="5kj-WR-uFr">
             <objects>
@@ -404,32 +432,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YkB-xq-EMZ">
-                                <rect key="frame" x="20" y="358" width="240" height="145"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3a0-Cz-9el">
-                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3a0-Cz-9el" id="hvk-yn-cOX">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="25.1 13:00 ETYB303 Math" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3la-pi-VGm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eR7-9k-M1P">
                                 <rect key="frame" x="37" y="128" width="240" height="128"/>
                                 <connections>
                                     <segue destination="6J6-Wc-eBg" kind="embed" identifier="lessonsContainerSegue" id="zB6-60-ggt"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eNd-Q2-VXb">
+                                <rect key="frame" x="20" y="326" width="257" height="222"/>
+                                <connections>
+                                    <segue destination="5vt-ek-Rtb" kind="embed" identifier="StudentPastLessonsContainerSegue" id="jIn-Yi-Bsu"/>
                                 </connections>
                             </containerView>
                         </subviews>

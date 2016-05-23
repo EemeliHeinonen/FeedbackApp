@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1613A3721CF1BD4E002AB93A /* TeacherPastLessonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613A3711CF1BD4E002AB93A /* TeacherPastLessonTableViewController.swift */; };
+		1613A3741CF1E2DA002AB93A /* StudentPastLessonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613A3731CF1E2DA002AB93A /* StudentPastLessonsTableViewController.swift */; };
 		16FE39141CF08410009520A0 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE39061CF08410009520A0 /* Student+CoreDataProperties.swift */; };
 		16FE39151CF08410009520A0 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE39071CF08410009520A0 /* Student.swift */; };
 		16FE39161CF08410009520A0 /* Teacher+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE39081CF08410009520A0 /* Teacher+CoreDataProperties.swift */; };
@@ -78,6 +79,7 @@
 
 /* Begin PBXFileReference section */
 		1613A3711CF1BD4E002AB93A /* TeacherPastLessonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherPastLessonTableViewController.swift; sourceTree = "<group>"; };
+		1613A3731CF1E2DA002AB93A /* StudentPastLessonsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentPastLessonsTableViewController.swift; sourceTree = "<group>"; };
 		16FE39061CF08410009520A0 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		16FE39071CF08410009520A0 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		16FE39081CF08410009520A0 /* Teacher+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			children = (
 				2B9906411CBD084200316010 /* StudentMainViewViewController.swift */,
 				2B37E21F1CD238EC0061530A /* testLessonsTableViewController.swift */,
+				1613A3731CF1E2DA002AB93A /* StudentPastLessonsTableViewController.swift */,
 			);
 			name = StudentMainView;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				2BC7904A1CD39E7D0083094C /* StudentLessonCellController.swift in Sources */,
 				2B1CF3881CE9C99500FCD858 /* LaunchScreenViewController.swift in Sources */,
 				BA4570491CDA167F00ED1C95 /* NewLessonParser.swift in Sources */,
+				1613A3741CF1E2DA002AB93A /* StudentPastLessonsTableViewController.swift in Sources */,
 				2B1CF38A1CE9D1DC00FCD858 /* StartViewController.swift in Sources */,
 				BACB7EDF1CCE35C40094779C /* Parser.swift in Sources */,
 				16FE391B1CF08410009520A0 /* Classroom.swift in Sources */,

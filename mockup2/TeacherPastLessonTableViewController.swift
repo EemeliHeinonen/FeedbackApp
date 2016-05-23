@@ -23,7 +23,6 @@ class TeacherPastLessonTableViewController: UITableViewController, NSFetchedResu
         let predicate = NSPredicate(format: "ANY teacherRelationship.teacherName == %@ AND lessonStarted == %@", argumentArray: [(CoreDataHandler.sharedInstance.me.last?.valueForKey("myName") as? String)!, "yes"])
         fetchRequest.predicate = predicate
         
-        //format: "name = %@ AND nickName = %@", argumentArray: [name, nickname])
         
         // Add Sort Descriptors
         let sortDescriptor = NSSortDescriptor(key: "lessonName", ascending: true)
@@ -44,7 +43,7 @@ class TeacherPastLessonTableViewController: UITableViewController, NSFetchedResu
     
     
     override func viewDidLoad() {
-        clearLessonsEntity()
+        //clearLessonsEntity()
         
         do {
             try fetchedResultsController.performFetch()
