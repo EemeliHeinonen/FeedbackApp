@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 
 class TeacherMainViewController: UIViewController {
@@ -30,8 +31,25 @@ class TeacherMainViewController: UIViewController {
             //print(self)
             destinationCtrl.parentController = self
         }
-
-        
+        if(segue.identifier == "teacherLogoutSegue"){
+            let appDelegate =
+                CoreDataHandler.sharedInstance.appDelegate //UIApplication.sharedApplication().delegate as! AppDelegate
+            
+            let managedContext = CoreDataHandler.sharedInstance.managedContext//appDelegate.managedObjectContext
+            
+            let fetchRequest = NSFetchRequest(entityName: "Me")
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+            
+            do {
+                try managedContext!.executeRequest(deleteRequest)
+                try managedContext!.save()
+                
+                print("clearattu me entity")
+            } catch let error as NSError {
+                // TODO: handle the error
+            }
+            
+        }
 
     }
     

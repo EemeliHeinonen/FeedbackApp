@@ -56,8 +56,21 @@ class TeacherRatingsTableController: UITableViewController {
         let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
         let nakki = CoreDataHandler.sharedInstance.feedbacks[indexPath.row]
         parentController!.performSegueWithIdentifier("FeedbackTextPushSegue", sender: parentController)
-        CoreDataHandler.sharedInstance.zetCurrentLessonRating((nakki.valueForKey("lessonRating") as? String)!)
-        CoreDataHandler.sharedInstance.zetCurrentFeedbackText((nakki.valueForKey("feedbackText") as? String)!)
+        
+        if (nakki.valueForKey("lessonRating") != nil){
+            CoreDataHandler.sharedInstance.zetCurrentLessonRating((nakki.valueForKey("lessonRating") as? String)!)
+        }
+        else {
+            CoreDataHandler.sharedInstance.zetCurrentLessonRating("")
+        }
+        
+        if(nakki.valueForKey("feedbackText") != nil){
+            CoreDataHandler.sharedInstance.zetCurrentFeedbackText((nakki.valueForKey("feedbackText") as? String)!)
+        }
+        else {
+            CoreDataHandler.sharedInstance.zetCurrentFeedbackText("")
+        }
+        
         
 }
 }

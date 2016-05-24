@@ -57,7 +57,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tu8-tg-ewZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1509" y="197"/>
+            <point key="canvasLocation" x="1745" y="-104"/>
         </scene>
         <!--Student Past Lessons Table View-->
         <scene sceneID="4Pd-Lz-rJ7">
@@ -85,7 +85,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9D-33-YY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1318.5" y="985"/>
+            <point key="canvasLocation" x="1180.5" y="979"/>
         </scene>
         <!--Petri&Peter ETYB304 - Aquarium-->
         <scene sceneID="5kj-WR-uFr">
@@ -120,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJx-hB-iTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1866" y="620"/>
+            <point key="canvasLocation" x="1630" y="435"/>
         </scene>
         <!--Teacher Past Lesson Table View Controller-->
         <scene sceneID="eq7-Ve-ept">
@@ -252,10 +252,60 @@
             </objects>
             <point key="canvasLocation" x="244" y="2776"/>
         </scene>
+        <!--Student Feedback Topics Table View Controller-->
+        <scene sceneID="YG6-sA-6bu">
+            <objects>
+                <tableViewController id="Ps7-fb-TAa" customClass="StudentFeedbackTopicsTableViewController" customModule="mockup2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="W5f-XA-fOP">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentFeedbackTopicsTableCell" id="NXv-3o-EQb" customClass="StudentFeedbackTopicsTableCell" customModule="mockup2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="280" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NXv-3o-EQb" id="Zzk-o2-mXQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBu-Zy-g4A">
+                                            <rect key="frame" x="16" y="11" width="107" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="hzV-Ft-IHw">
+                                            <rect key="frame" x="122" y="8" width="150" height="29"/>
+                                            <segments>
+                                                <segment title="Got it"/>
+                                                <segment title="Didn't get it"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="StudentFeedbackTopicGotItSegmentAction:" destination="NXv-3o-EQb" eventType="valueChanged" id="yj9-mx-3ES"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="StudentFeedbackTopicGotItSegmentOutlet" destination="hzV-Ft-IHw" id="PR1-4L-8kR"/>
+                                    <outlet property="studentFeedbackTopicNameLabel" destination="YBu-Zy-g4A" id="1YG-5N-vRR"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ps7-fb-TAa" id="ZEx-YU-eXe"/>
+                            <outlet property="delegate" destination="Ps7-fb-TAa" id="lhi-ht-OmF"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dVP-7c-jXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1180" y="1573"/>
+        </scene>
         <!--Feedback for 12.2 Jaakko Math-->
         <scene sceneID="08A-kY-pgl">
             <objects>
-                <viewController id="4sP-fE-z2f" customClass="FeedbackViewController" customModule="mockup2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4sP-fE-z2f" customClass="StudentFeedbackViewController" customModule="mockup2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ftF-0N-2E4"/>
                         <viewControllerLayoutGuide type="bottom" id="vkb-i5-sKW"/>
@@ -265,79 +315,58 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="254" placeholderIntrinsicHeight="100" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gNf-Ve-hv7">
-                                <rect key="frame" x="13" y="421" width="254" height="100"/>
+                                <rect key="frame" x="13" y="421" width="287" height="100"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How well did you learn?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXa-T0-PPa">
-                                <rect key="frame" x="49" y="131" width="180" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccY-pS-7jO">
-                                <rect key="frame" x="92" y="180" width="30" height="30"/>
-                                <state key="normal" title=":)"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Y1-BR-7Je">
-                                <rect key="frame" x="143" y="180" width="30" height="30"/>
-                                <state key="normal" title=":("/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nds-Mu-MZe">
-                                <rect key="frame" x="39" y="180" width="30" height="30"/>
-                                <state key="normal" title=":D"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KL0-8t-efD">
                                 <rect key="frame" x="97" y="383" width="84" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u7P-wT-szP">
-                                <rect key="frame" x="20" y="228" width="240" height="135"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2pS-eK-cB3">
-                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2pS-eK-cB3" id="nOK-k1-8H2">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subject1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFw-6B-5Fr">
-                                                    <rect key="frame" x="8" y="11" width="66" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUC-cA-ixs">
-                                                    <rect key="frame" x="99" y="7" width="42" height="30"/>
-                                                    <state key="normal" title="Got it!"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sq6-J5-B53">
-                                                    <rect key="frame" x="152" y="7" width="80" height="30"/>
-                                                    <state key="normal" title="Didn't get it"/>
-                                                </button>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAS-i1-J52">
-                                <rect key="frame" x="199" y="180" width="30" height="30"/>
-                                <state key="normal" title="D:"/>
-                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="sKx-rL-EtF">
+                                <rect key="frame" x="20" y="101" width="180" height="29"/>
+                                <segments>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                    <segment title="4"/>
+                                </segments>
+                                <connections>
+                                    <action selector="ratingValueChangedAction:" destination="4sP-fE-z2f" eventType="valueChanged" id="hFN-gf-9pR"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WIM-2B-dj0">
+                                <rect key="frame" x="20" y="137" width="280" height="128"/>
+                                <connections>
+                                    <segue destination="Ps7-fb-TAa" kind="embed" identifier="StudentFeedbackTopicsContainerSegue" id="Gwl-lF-V26"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How well did you learn?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXa-T0-PPa">
+                                <rect key="frame" x="20" y="72" width="180" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Feedback for 12.2 Jaakko Math" id="eaU-UZ-Df0">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="feT-79-1gO"/>
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="oX3-BL-bk0"/>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="oX3-BL-bk0">
+                            <connections>
+                                <action selector="submitFeedbackAction:" destination="4sP-fE-z2f" id="ZjP-Ym-u3X"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="feedbackTextViewBox" destination="gNf-Ve-hv7" id="8Iz-QT-ZIh"/>
+                        <outlet property="lessonRatingSegment" destination="sKx-rL-EtF" id="kcg-Fv-8TA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uud-lk-b0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3549" y="926"/>
+            <point key="canvasLocation" x="1630" y="1142"/>
         </scene>
         <!--Student's feedback-->
         <scene sceneID="a8C-Nu-8Cm">
@@ -447,9 +476,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="juP-FW-4ol"/>
+                    <navigationItem key="navigationItem" id="juP-FW-4ol">
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="bhT-TO-qQp">
+                            <connections>
+                                <segue destination="xku-9A-Onp" kind="push" identifier="studentLogoutSegue" id="sa7-V1-1k5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="Cr4-DZ-l1x" kind="push" identifier="lessonSegue" id="koF-Yu-RAL"/>
+                        <segue destination="4sP-fE-z2f" kind="push" identifier="StudentFeedbackViewPushSegue" id="KZ0-QH-2fe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -692,6 +728,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="M5j-gi-y9f">
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="F4A-eM-Fnk">
+                            <connections>
+                                <segue destination="xku-9A-Onp" kind="push" identifier="teacherLogoutSegue" id="1nd-zV-vjW"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Create lesson" id="yYj-R5-Avn">
                             <connections>
                                 <segue destination="OVw-ad-zqD" kind="push" id="DGG-Nx-6gG"/>
@@ -856,7 +897,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ue0-bB-99J">
                                 <rect key="frame" x="20" y="141" width="280" height="189"/>
                                 <connections>
-                                    <segue destination="wWa-Ly-bTI" kind="embed" id="OCW-mB-UuV"/>
+                                    <segue destination="wWa-Ly-bTI" kind="embed" identifier="TeacherFeedbackTopicsTableContainerSegue" id="OCW-mB-UuV"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RNN-FC-U9O">
@@ -871,7 +912,7 @@
                     <navigationItem key="navigationItem" id="p56-Ti-mTz"/>
                     <connections>
                         <outlet property="ratingAvgLabel" destination="8ae-oX-za3" id="l99-CF-za2"/>
-                        <segue destination="D74-fS-MV8" kind="push" identifier="FeedbackTextPushSegue" id="aN0-KY-tjx"/>
+                        <segue destination="oYo-Oh-IES" kind="push" identifier="FeedbackTextPushSegue" id="839-67-Fxo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBu-Jy-YwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -879,42 +920,42 @@
             <point key="canvasLocation" x="833" y="2805"/>
         </scene>
         <!--Teacher Feedback Text View Controller-->
-        <scene sceneID="ogP-md-DtB">
+        <scene sceneID="sN9-ny-Lq8">
             <objects>
-                <viewController id="D74-fS-MV8" customClass="TeacherFeedbackTextViewController" sceneMemberID="viewController">
+                <viewController id="oYo-Oh-IES" customClass="TeacherFeedbackTextViewController" customModule="mockup2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="iIh-NO-6IK"/>
-                        <viewControllerLayoutGuide type="bottom" id="TvE-jr-Ltj"/>
+                        <viewControllerLayoutGuide type="top" id="MK3-jJ-2nN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zeb-Xm-EeX"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kGO-Td-0hU">
+                    <view key="view" contentMode="scaleToFill" id="67h-H4-hGB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="095-72-3ah">
-                                <rect key="frame" x="20" y="101" width="280" height="459"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VQ8-qR-cpf">
+                                <rect key="frame" x="20" y="101" width="280" height="415"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk8-jr-spo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqE-eT-Kk0">
                                 <rect key="frame" x="20" y="72" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="PJ5-8n-Dk7"/>
+                    <navigationItem key="navigationItem" id="hOK-vV-KKF"/>
                     <connections>
-                        <outlet property="feedbackTextLabelLong" destination="095-72-3ah" id="Os1-ui-4Bg"/>
-                        <outlet property="rating" destination="Pk8-jr-spo" id="s6a-jv-F4W"/>
+                        <outlet property="feedbackViewRatingLabel" destination="CqE-eT-Kk0" id="3zi-iD-Lif"/>
+                        <outlet property="feedbackViewTextLabelLong" destination="VQ8-qR-cpf" id="0wB-x8-Tiv"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ptm-fJ-uLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uLI-WT-GlI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1317" y="2808"/>
+            <point key="canvasLocation" x="1282" y="2818"/>
         </scene>
         <!--Test Lessons Table View Controller-->
         <scene sceneID="Bfk-sG-A70">
@@ -943,24 +984,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1t-r6-NOs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="955" y="-157"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="oXs-jR-p49">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ztn-8N-ouf" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hIW-TN-pwu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="4sP-fE-z2f" kind="relationship" relationship="rootViewController" id="5KV-9k-2r3"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Opc-GY-SN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2712.5333333333333" y="175.13333333333333"/>
         </scene>
         <!--Feedback for 13:00 ETYB304 - Math-->
         <scene sceneID="jvb-5j-8ZZ">
@@ -1300,7 +1323,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="feedbackText" destination="ytE-jq-Nti" id="ZXU-iQ-QwF"/>
                                     <outlet property="feedbackTextLabel" destination="ytE-jq-Nti" id="XTL-bO-Ymx"/>
                                     <outlet property="rating" destination="Y39-Am-X8h" id="MGp-Sg-gM0"/>
                                 </connections>
@@ -1318,10 +1340,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GQB-gg-N3e"/>
         <segue reference="j2J-d7-W7B"/>
+        <segue reference="GQB-gg-N3e"/>
+        <segue reference="1nd-zV-vjW"/>
+        <segue reference="wTH-iV-7co"/>
         <segue reference="IjS-yh-hYq"/>
         <segue reference="ivz-IZ-5Fy"/>
-        <segue reference="wTH-iV-7co"/>
     </inferredMetricsTieBreakers>
 </document>

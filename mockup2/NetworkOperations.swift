@@ -165,6 +165,32 @@ class NetworkOperations {
         
     }
     
+    func postFeedback(c: String, f: String, rating: String){
+        
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration)
+        
+        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+c+"/Feedback"
+        let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        
+        let request = NSMutableURLRequest()
+        request.HTTPMethod = "POST"
+        request.URL = NSURL(string: escapedAddress!)
+        request.addValue("application/xml", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/xml", forHTTPHeaderField: "Accept")
+        
+        let body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <feedback><rating>"+rating+"</rating><feedbackText>"+f+"</feedbackText></feedback>\n"
+        
+        request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let sessionTask = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) -> Void in
+            print("posting done, response = \(response), error = \(error)")
+        })
+        sessionTask.resume()
+        
+    }
+    
+    
     func postTopic(c: String, t: String){
         
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()

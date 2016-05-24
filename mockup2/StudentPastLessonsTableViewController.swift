@@ -120,16 +120,15 @@ class StudentPastLessonsTableView: UITableViewController, NSFetchedResultsContro
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("nyt tulee parentcontrollerprintti")
         print(parentController)
-        parentController!.performSegueWithIdentifier("lessonSegue", sender: parentController)
+        parentController!.performSegueWithIdentifier("StudentFeedbackViewPushSegue", sender: parentController)
         
         let indexPath = tableView.indexPathForSelectedRow!
         
         let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
-        
-        let meCount = CoreDataHandler.sharedInstance.me.count-1
+
         CoreDataHandler.sharedInstance.getLessonsTopics(currentCell.textLabel!.text!)
         CoreDataHandler.sharedInstance.zetCurrentLesson(currentCell.textLabel!.text!)
-        NetworkOperations.sharedInstance.postStudent(currentCell.textLabel!.text!, s: (CoreDataHandler.sharedInstance.me[meCount].valueForKey("myName") as? String)!)
+       
         print(currentCell.textLabel!.text)
     }
     

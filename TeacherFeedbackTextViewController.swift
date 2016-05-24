@@ -10,9 +10,9 @@ import UIKit
 
 
 class TeacherFeedbackTextViewController: UIViewController{
-    @IBOutlet weak var rating: UILabel!
+    @IBOutlet weak var feedbackViewRatingLabel: UILabel!
     
-    @IBOutlet weak var feedbackTextLabelLong: UITextView!
+    @IBOutlet weak var feedbackViewTextLabelLong: UITextView!
 
     
     override func viewDidLoad() {
@@ -21,7 +21,19 @@ class TeacherFeedbackTextViewController: UIViewController{
     }
     
     override func viewWillAppear(animated: Bool) {
-        rating.text = CoreDataHandler.sharedInstance.getCurrentLessonRating()
-        feedbackTextLabelLong.text = CoreDataHandler.sharedInstance.getCurrentFeedbackText()
+        print(CoreDataHandler.sharedInstance.getCurrentLessonRating())
+        print(CoreDataHandler.sharedInstance.getCurrentFeedbackText())
+        if (CoreDataHandler.sharedInstance.getCurrentLessonRating() == ""){
+            feedbackViewRatingLabel.text = "No rating"
+        }
+        else {
+        feedbackViewRatingLabel.text = CoreDataHandler.sharedInstance.getCurrentLessonRating()
+        }
+        if (CoreDataHandler.sharedInstance.getCurrentFeedbackText() == ""){
+            feedbackViewTextLabelLong.text = "No feedback given"
+        }
+        else{
+        feedbackViewTextLabelLong.text = CoreDataHandler.sharedInstance.getCurrentFeedbackText()
+        }
     }
 }
