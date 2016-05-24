@@ -30,17 +30,16 @@ class StudentMainViewViewController: UIViewController{
         }
         if(segue.identifier == "studentLogoutSegue"){
             
-                let appDelegate =
-                    CoreDataHandler.sharedInstance.appDelegate //UIApplication.sharedApplication().delegate as! AppDelegate
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //CoreDataHandler.sharedInstance.appDelegate
                 
-                let managedContext = CoreDataHandler.sharedInstance.managedContext//appDelegate.managedObjectContext
+                let managedContext = appDelegate.managedObjectContext //CoreDataHandler.sharedInstance.managedContext
                 
                 let fetchRequest = NSFetchRequest(entityName: "Me")
                 let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
                 
                 do {
-                    try managedContext!.executeRequest(deleteRequest)
-                    try managedContext!.save()
+                    try managedContext.executeRequest(deleteRequest)
+                    try managedContext.save()
                     
                     print("clearattu me entity")
                 } catch let error as NSError {

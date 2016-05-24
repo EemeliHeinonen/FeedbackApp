@@ -8,11 +8,35 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class Beacon: UIViewController, CLLocationManagerDelegate{
     
+    var me = [NSManagedObject]()
     //MARK: Labels
     @IBOutlet weak var beaconCount: UILabel!
+    
+    @IBAction func printMeButton(sender: UIButton) {
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        
+        let fetchRequest = NSFetchRequest(entityName: "Me")
+        
+        do {
+            let results =
+                try managedContext.executeFetchRequest(fetchRequest)
+            me = results as! [NSManagedObject]
+            print("ME Count Tulee täsä ny")
+            print(me.count)
+
+        }catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
     
     static let sharedInstance = Beacon()
 

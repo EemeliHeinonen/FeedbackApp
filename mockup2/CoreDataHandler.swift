@@ -27,6 +27,7 @@ class CoreDataHandler {
     var currentLessonRating = ""
     var currentLesson = ""
     var currentLessonRatingAvg = ""
+    var parseCheck = "sealed"
     
     init(){
         appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate

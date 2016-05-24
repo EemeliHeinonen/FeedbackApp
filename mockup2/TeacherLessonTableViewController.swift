@@ -43,13 +43,11 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
     
     
     override func viewDidLoad() {
+         print("teacherlessontablecontroller view did load BAZINGGAAAAAAAAAAAAAAA ASD ")
         clearLessonsEntity()
         
-        do {
-            try fetchedResultsController.performFetch()
-        } catch let error as NSError {
-            print ("Could not fetch \(error), \(error.userInfo)")
-        }
+        
+
         
         
 
@@ -63,6 +61,14 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
         
         
         }
+    override func viewWillAppear(animated: Bool) {
+        print("teacherlessontablecontroller view WILL APPEAR BAZINGGAAAAAAAAAAAAAAA ASD ")
+        do {
+            try fetchedResultsController.performFetch()
+        } catch let error as NSError {
+            print ("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
     
     func getlessonsbyTeacher(){
         //NetworkOperations.sharedInstance.getLessonsByTeacher((CoreDataHandler.sharedInstance.me.last?.valueForKey("myName") as? String)!)
@@ -150,6 +156,7 @@ class TeacherLessonTableViewController: UITableViewController, NSFetchedResultsC
     
     func handleRefresh(refreshControl: UIRefreshControl) {
         self.tableView.reloadData()
+       
         refreshControl.endRefreshing()
     }
     

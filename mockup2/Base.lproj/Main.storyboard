@@ -198,10 +198,13 @@
                             <outlet property="delegate" destination="KgU-nu-443" id="gCN-Zf-j5l"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="rOZ-y9-DNF">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOk-O0-yPD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="23.5" y="3237"/>
+            <point key="canvasLocation" x="16.5" y="3264"/>
         </scene>
         <!--Teacher Lesson View Controller2-->
         <scene sceneID="lSS-ci-fep">
@@ -242,6 +245,20 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0KN-E0-l8c">
                                 <rect key="frame" x="59" y="452" width="212" height="46"/>
                                 <state key="normal" title="A student needs help"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLQ-4k-Fmd">
+                                <rect key="frame" x="7" y="351" width="161" height="30"/>
+                                <state key="normal" title="get lessons from server"/>
+                                <connections>
+                                    <action selector="getLessonsFromServerButtonAction:" destination="IMD-Pg-07Q" eventType="touchUpInside" id="PHi-WJ-wkL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMX-of-UqV">
+                                <rect key="frame" x="6" y="394" width="75" height="30"/>
+                                <state key="normal" title="print count"/>
+                                <connections>
+                                    <action selector="printCount:" destination="IMD-Pg-07Q" eventType="touchUpInside" id="sMv-Ho-U7G"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -667,6 +684,13 @@
                                 <state key="normal" title="Clear Name"/>
                                 <connections>
                                     <action selector="clearName:" destination="xku-9A-Onp" eventType="touchUpInside" id="xNz-ur-dJ9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uw-FR-YNf">
+                                <rect key="frame" x="11" y="99" width="100" height="30"/>
+                                <state key="normal" title="print me entity"/>
+                                <connections>
+                                    <action selector="printMeButton:" destination="xku-9A-Onp" eventType="touchUpInside" id="2mh-69-cDh"/>
                                 </connections>
                             </button>
                         </subviews>

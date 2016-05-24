@@ -14,6 +14,7 @@
 		166731361CF359F600114D2C /* TeacherFeedbackTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166731351CF359F600114D2C /* TeacherFeedbackTextViewController.swift */; };
 		16CC9FEC1CF45F07008AAA16 /* StudentFeedbackTopicsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CC9FEB1CF45F07008AAA16 /* StudentFeedbackTopicsTableViewController.swift */; };
 		16CC9FEE1CF45F29008AAA16 /* StudentFeedbackTopicsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CC9FED1CF45F29008AAA16 /* StudentFeedbackTopicsTableCell.swift */; };
+		16CC9FF01CF4B3AF008AAA16 /* GotItParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CC9FEF1CF4B3AF008AAA16 /* GotItParser.swift */; };
 		16FE39141CF08410009520A0 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE39061CF08410009520A0 /* Student+CoreDataProperties.swift */; };
 		16FE39151CF08410009520A0 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE39071CF08410009520A0 /* Student.swift */; };
 		16FE39161CF08410009520A0 /* Teacher+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE39081CF08410009520A0 /* Teacher+CoreDataProperties.swift */; };
@@ -89,6 +90,7 @@
 		166731351CF359F600114D2C /* TeacherFeedbackTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherFeedbackTextViewController.swift; sourceTree = "<group>"; };
 		16CC9FEB1CF45F07008AAA16 /* StudentFeedbackTopicsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentFeedbackTopicsTableViewController.swift; sourceTree = "<group>"; };
 		16CC9FED1CF45F29008AAA16 /* StudentFeedbackTopicsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentFeedbackTopicsTableCell.swift; sourceTree = "<group>"; };
+		16CC9FEF1CF4B3AF008AAA16 /* GotItParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GotItParser.swift; sourceTree = "<group>"; };
 		16FE39061CF08410009520A0 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		16FE39071CF08410009520A0 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		16FE39081CF08410009520A0 /* Teacher+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			children = (
 				BAA1332C1CC78071004F5070 /* StudentParser.swift */,
 				BA4570481CDA167F00ED1C95 /* NewLessonParser.swift */,
+				16CC9FEF1CF4B3AF008AAA16 /* GotItParser.swift */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				16CC9FEE1CF45F29008AAA16 /* StudentFeedbackTopicsTableCell.swift in Sources */,
 				16FE39181CF08410009520A0 /* Topic+CoreDataProperties.swift in Sources */,
 				16FE39241CF08523009520A0 /* Feedback2+CoreDataProperties.swift in Sources */,
+				16CC9FF01CF4B3AF008AAA16 /* GotItParser.swift in Sources */,
 				2B9243831CED0AC80053C5EC /* TeacherLessonViewController2.swift in Sources */,
 				BAD80CA31CBD004600CEAFEB /* TeacherMainViewController.swift in Sources */,
 				BAD80CA11CBCFF4C00CEAFEB /* StudentLessonViewController.swift in Sources */,

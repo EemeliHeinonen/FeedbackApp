@@ -53,7 +53,9 @@ class testLessonsTableViewController: UITableViewController, NSFetchedResultsCon
     func getLessons(){
         NetworkOperations.sharedInstance.getLessons()
     }
+    
     func clearLessonsEntity(){
+
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -71,6 +73,7 @@ class testLessonsTableViewController: UITableViewController, NSFetchedResultsCon
             // TODO: handle the error
         }
         getLessons()
+ 
     }
 
     

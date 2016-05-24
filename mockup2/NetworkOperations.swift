@@ -304,9 +304,39 @@ class NetworkOperations {
         
     }
     
-    func addStudentToLesson(student: String, lesson: String){
+    func getGotItValues(course: String, topic: String) -> String{
+        //this function gets all lessons
+        var gotItValue = ""
         
-    
+        print("getGotItValues called")
+        
+        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+course+"/Topics/"+topic+""
+        let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration)
+        
+        let sessionTask = session.dataTaskWithURL(NSURL(string: escapedAddress!)!, completionHandler: { (data, response, error) -> Void in
+            
+            //Define the operation we'd like to run in the operation queue
+            let studentParseOperation = NSBlockOperation(block: {
+                let parser = GotItParser()
+                parser.parse(data!)
+                gotItValue = parser.gotItRating
+                //self.showTF.text = resultString
+            })
+            
+            // create a queue and add the operation
+            let queue = NSOperationQueue()
+            queue.maxConcurrentOperationCount=1
+            queue.addOperation(studentParseOperation)
+            
+        })
+        //.resume will cause the session task to execute
+        
+        sessionTask.resume()
+        print("NETWORK OPERATION PRINT:: getGotItValues called, gotItValue is \(gotItValue)")
+        return gotItValue
     }
 }
 
