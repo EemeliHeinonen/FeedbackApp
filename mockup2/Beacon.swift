@@ -12,6 +12,10 @@ import CoreData
 
 class Beacon: UIViewController, CLLocationManagerDelegate{
     
+    @IBAction func prepareForUnwind(sender: UIStoryboardSegue){
+        
+    }
+    
     var me = [NSManagedObject]()
     //MARK: Labels
     @IBOutlet weak var beaconCount: UILabel!

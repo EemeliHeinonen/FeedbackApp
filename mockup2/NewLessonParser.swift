@@ -21,6 +21,14 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
     var thisStudent:Student?
     var thisClassroom:Classroom?
     var thisFeedback:Feedback2?
+    var currentClassroom = ""
+    var currentStudent = ""
+    var currentTeacher = ""
+    var currentFeedback = ""
+    var currentTopic = ""
+    var currentTopicName = ""
+    var currentGotItRating = ""
+    var current notGotItRating = ""
     
 
     

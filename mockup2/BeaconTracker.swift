@@ -31,10 +31,10 @@ class BeaconTracker: NSObject, CLLocationManagerDelegate{
             let closestBeacon = knownBeacons[0] as CLBeacon
             //print(closestBeacon)
            // beaconCount.text = "There are "+String(knownBeacons.count)+" beacon(s) nearby"
-            if(closestBeacon.major == 60){
+            if(closestBeacon.major == 0000){
                 currentRoom = "303"
             }
-            if(closestBeacon.major == 23){
+            if(closestBeacon.major == 6666){
                 currentRoom = "304"
             }
             else{

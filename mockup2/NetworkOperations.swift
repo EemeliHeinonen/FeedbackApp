@@ -15,7 +15,7 @@ class NetworkOperations {
     var url:String
     
     init(){
-        url = "localhost"
+        url = "localhost" //192.168.43.102
     }
     
     /*

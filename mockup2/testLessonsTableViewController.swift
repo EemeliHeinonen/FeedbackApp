@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import QuartzCore
 
 class testLessonsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     var parentController: StudentMainViewViewController?
@@ -37,6 +38,11 @@ class testLessonsTableViewController: UITableViewController, NSFetchedResultsCon
 
 
     override func viewDidLoad() {
+        
+        //UI STUFF
+        tableView.layer.borderWidth = 2.0
+        
+        
         clearLessonsEntity()
         print("lessontableviewcontroller viewdidload")
         super.viewDidLoad()
