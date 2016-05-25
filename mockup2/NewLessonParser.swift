@@ -21,14 +21,15 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
     var thisStudent:Student?
     var thisClassroom:Classroom?
     var thisFeedback:Feedback2?
+    
+    var currentLesson = ""
     var currentClassroom = ""
     var currentStudent = ""
     var currentTeacher = ""
     var currentFeedback = ""
     var currentTopic = ""
-    var currentTopicName = ""
     var currentGotItRating = ""
-    var current notGotItRating = ""
+    var currentnotGotItRating = ""
     
 
     
@@ -141,7 +142,37 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
             // asd CoreDataHandler.sharedInstance.lessons.append(thisLesson!)
             print("!!!!!!!!!!!!!!!!!!!!!! Appended the new lesson \(thisLesson?.lessonName) to the CoreData List")
             
+            /*
+            //uutta
+            
+            let appDelegate =
+                UIApplication.sharedApplication().delegate as! AppDelegate
+            
+            let managedContext = appDelegate.managedObjectContext
+            
+            //2
+            
+            let fetchRequest = NSFetchRequest(entityName: "Lesson")
+            
+            let predicate = NSPredicate(format: "%K == %@", "lessonName", currentLesson)
+            fetchRequest.predicate = predicate
+            
+            
+            do {
+                let results =
+                    try managedContext.executeFetchRequest(fetchRequest)
+                thisLesson = results as? Lesson
+                if(results.count != 0){
+                    try results.
+                }
+            }catch let error as NSError  {
+                print("Could not save \(error), \(error.userInfo)")
+            }
+            */
+            
         }  else if(elementName == "courseName") {
+           // currentLesson = currentString // uutta
+         
             thisLesson?.lessonName = currentString
             print("************** courseName changed to \(currentString)")
         } else if (elementName == "classroom") {
