@@ -43,6 +43,10 @@ class TeacherPastLessonTableViewController: UITableViewController, NSFetchedResu
     
     
     override func viewDidLoad() {
+        tableView.layer.borderWidth = 0.8
+        let metropoliaColor = UIColor(red: 238.0/255.0, green: 103.0/255.0, blue: 7.0/255.0, alpha: 1)
+        tableView.layer.borderColor = metropoliaColor.CGColor
+        tableView.layer.cornerRadius = 5
         //clearLessonsEntity()
         
         do {
@@ -133,10 +137,10 @@ class TeacherPastLessonTableViewController: UITableViewController, NSFetchedResu
         let g = p.valueForKey("lessonRatingAverage") as? String
         
         if(g != nil){
-            CoreDataHandler.sharedInstance.zetCurrentRatingAvg(g!)
+            CoreDataHandler.sharedInstance.zetCurrentRatingAvg("Rating for this lesson: \(g!)")
         }
         else {
-            CoreDataHandler.sharedInstance.zetCurrentRatingAvg("No rating")
+            CoreDataHandler.sharedInstance.zetCurrentRatingAvg("No rating for this lesson")
         }
         
         CoreDataHandler.sharedInstance.zetCurrentLesson(currentCell.textLabel!.text!)

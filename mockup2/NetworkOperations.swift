@@ -15,7 +15,7 @@ class NetworkOperations {
     var url:String
     
     init(){
-        url = "localhost"
+        url = "192.168.1.245"
     }
     
     /*
@@ -216,6 +216,31 @@ class NetworkOperations {
         
     }
     
+    func postClassroom(c: String, classroom: String){
+        
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: sessionConfiguration)
+        
+        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+c+"/Classrooms/"
+        let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        
+        let request = NSMutableURLRequest()
+        request.HTTPMethod = "POST"
+        request.URL = NSURL(string: escapedAddress!)
+        request.addValue("application/xml", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/xml", forHTTPHeaderField: "Accept")
+        
+        let body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <classroom><room>"+classroom+"</room></classroom>\n"
+        
+        request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let sessionTask = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) -> Void in
+            print("posting done, response = \(response), error = \(error)")
+        })
+        sessionTask.resume()
+        
+    }
+    
     func postTeacher(c: String, t: String){
         
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -255,7 +280,7 @@ class NetworkOperations {
         request.addValue("application/xml", forHTTPHeaderField: "Content-Type")
         request.addValue("application/xml", forHTTPHeaderField: "Accept")
         
-        let body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <course><courseName>"+name+"</courseName> <time>"+time+"</time><teacher><teacherName>haamu</teacherName></teacher><student><studentName>haamu</studentName></student><topic></topic><feedback></feedback><lessonRating></lessonRating><classroom> <room>haamu</room> <beaconId>haamu</beaconId> </classroom></course>\n"
+        let body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <course><courseName>"+name+"</courseName> <time>"+time+"</time><teacher><teacherName>haamu</teacherName></teacher><student><studentName>haamu</studentName></student><topic><topicName>haamu</topicName></topic><feedback></feedback><lessonRating></lessonRating><classroom> <room>haamu</room> <beaconId>haamu</beaconId> </classroom></course>\n"
         
         request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
         
@@ -302,41 +327,6 @@ class NetworkOperations {
         
         sessionTask.resume()
         
-    }
-    
-    func getGotItValues(course: String, topic: String) -> String{
-        //this function gets all lessons
-        var gotItValue = ""
-        
-        print("getGotItValues called")
-        
-        let urli = "http://"+url+":8080/WebApplication5/webresources/Courses/"+course+"/Topics/"+topic+""
-        let escapedAddress = urli.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
-        
-        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let session = NSURLSession(configuration: sessionConfiguration)
-        
-        let sessionTask = session.dataTaskWithURL(NSURL(string: escapedAddress!)!, completionHandler: { (data, response, error) -> Void in
-            
-            //Define the operation we'd like to run in the operation queue
-            let studentParseOperation = NSBlockOperation(block: {
-                let parser = GotItParser()
-                parser.parse(data!)
-                gotItValue = parser.gotItRating
-                //self.showTF.text = resultString
-            })
-            
-            // create a queue and add the operation
-            let queue = NSOperationQueue()
-            queue.maxConcurrentOperationCount=1
-            queue.addOperation(studentParseOperation)
-            
-        })
-        //.resume will cause the session task to execute
-        
-        sessionTask.resume()
-        print("NETWORK OPERATION PRINT:: getGotItValues called, gotItValue is \(gotItValue)")
-        return gotItValue
     }
 }
 

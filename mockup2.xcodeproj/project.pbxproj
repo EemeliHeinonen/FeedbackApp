@@ -280,9 +280,7 @@
 		2B2C50C21CD6455D0021846D /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
-				BAA1332C1CC78071004F5070 /* StudentParser.swift */,
 				BA4570481CDA167F00ED1C95 /* NewLessonParser.swift */,
-				16CC9FEF1CF4B3AF008AAA16 /* GotItParser.swift */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -327,6 +325,8 @@
 		2BDF50211CE8652F00A8958B /* trash */ = {
 			isa = PBXGroup;
 			children = (
+				16CC9FEF1CF4B3AF008AAA16 /* GotItParser.swift */,
+				BAA1332C1CC78071004F5070 /* StudentParser.swift */,
 				2BC790491CD39E7D0083094C /* StudentLessonCellController.swift */,
 				BACB7EDE1CCE35C40094779C /* Parser.swift */,
 				2B1CF3871CE9C99500FCD858 /* LaunchScreenViewController.swift */,
@@ -398,7 +398,7 @@
 				TargetAttributes = {
 					2B1704C91CA0157400CFC720 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = C6BK6X4E8Z;
+						DevelopmentTeam = VQ3548JMP7;
 					};
 					2B1704DD1CA0157400CFC720 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -641,7 +641,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = mockup2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fi.metropolia.mockup2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.mockup2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -655,7 +655,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = mockup2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fi.metropolia.mockup2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.mockup2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

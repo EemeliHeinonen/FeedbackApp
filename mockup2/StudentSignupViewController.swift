@@ -16,9 +16,23 @@ class StudentSignupViewController: UIViewController, UITextFieldDelegate, UINavi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.rightBarButtonItem?.enabled = false
+        
         print("student signup view loaded")
         studentNameOutlet.delegate = self
         
+        studentNameOutlet.layer.borderWidth = 0.8
+        let metropoliaColor = UIColor(red: 238.0/255.0, green: 103.0/255.0, blue: 7.0/255.0, alpha: 1)
+        studentNameOutlet.layer.borderColor = metropoliaColor.CGColor
+        studentNameOutlet.layer.cornerRadius = 5
+        
+    }
+    @IBAction func submitActionBarButton(sender: UIBarButtonItem) {
+        
+    }
+    override func viewWillAppear(animated: Bool) {
+        studentNameOutlet.becomeFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,16 +47,10 @@ class StudentSignupViewController: UIViewController, UITextFieldDelegate, UINavi
         CoreDataHandler.sharedInstance.saveMyName(studentNameOutlet.text!, type: "student")
         print("Student name saved \(studentNameOutlet.text)")
         
+        self.navigationItem.rightBarButtonItem?.enabled = true
+        
+        
         return true
     }
- 
-    // OIS OIKEEN KIVA JOS JOSKUS SAAATAIS TÄÄ TOIMIMAAN xdddd
-    /*
-    @IBAction func submitAction(sender: AnyObject) {
-        studentNameOutlet.resignFirstResponder()
-        CoreDataHandler.sharedInstance.saveStudentName(studentNameOutlet.text!)
-        print("Student name saved \(studentNameOutlet.text)")
-    }
- */
 }
 

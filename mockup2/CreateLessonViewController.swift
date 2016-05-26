@@ -34,6 +34,7 @@ class CreateLessonViewController: UIViewController, UITextFieldDelegate{
         NSThread.sleepForTimeInterval(1)
         print("sleep loppuu")
         NetworkOperations.sharedInstance.postTeacher(lessonName.text!, t: CoreDataHandler.sharedInstance.me.last?.valueForKey("myName") as! String)
+        NetworkOperations.sharedInstance.postClassroom(lessonName.text!, classroom: classroom.text!)
 
         if(topic1.text != ""){
             print("post topic1")
@@ -54,8 +55,8 @@ class CreateLessonViewController: UIViewController, UITextFieldDelegate{
        // NetworkOperations.sharedInstance.getLessonsByTeacher(CoreDataHandler.sharedInstance.me.last?.valueForKey("myName") as! String)
         NSThread.sleepForTimeInterval(1)
 
-        clearLessonsEntity()
-        //getlessonsbyTeacher()
+        //clearLessonsEntity()
+        getlessonsbyTeacher()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,16 +85,16 @@ class CreateLessonViewController: UIViewController, UITextFieldDelegate{
     
     func clearLessonsEntity(){
         let appDelegate =
-            CoreDataHandler.sharedInstance.appDelegate//UIApplication.sharedApplication().delegate as! AppDelegate
+            UIApplication.sharedApplication().delegate as! AppDelegate //CoreDataHandler.sharedInstance.appDelegate
         
-        let managedContext = CoreDataHandler.sharedInstance.managedContext//appDelegate.managedObjectContext
+        let managedContext = appDelegate.managedObjectContext //CoreDataHandler.sharedInstance.managedContext
         
         let fetchRequest = NSFetchRequest(entityName: "Lesson")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         do {
-            try managedContext!.executeRequest(deleteRequest)
-            try managedContext!.save()
+            try managedContext.executeRequest(deleteRequest)
+            try managedContext.save()
             
             print("clearattu lesson entity")
         } catch let error as NSError {

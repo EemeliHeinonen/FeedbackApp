@@ -40,6 +40,11 @@ class StudentPastLessonsTableView: UITableViewController, NSFetchedResultsContro
     
     override func viewDidLoad() {
         
+        tableView.layer.borderWidth = 0.8
+        let metropoliaColor = UIColor(red: 238.0/255.0, green: 103.0/255.0, blue: 7.0/255.0, alpha: 1)
+        tableView.layer.borderColor = metropoliaColor.CGColor
+        tableView.layer.cornerRadius = 5
+        
         //clearLessonsEntity()
         print("lessontableviewcontroller viewdidload")
         super.viewDidLoad()

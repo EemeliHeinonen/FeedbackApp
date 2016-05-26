@@ -6,12 +6,19 @@
 //  Copyright © 2016 Mortti Aittokoski. All rights reserved.
 //
 import UIKit
+import QuartzCore
 
 class StudentFeedbackTopicsTableViewController: UITableViewController {
     var parentController: StudentFeedbackViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.layer.borderWidth = 0.8
+        var metropoliaColor = UIColor(red: 238.0/255.0, green: 103.0/255.0, blue: 7.0/255.0, alpha: 1)
+        tableView.layer.borderColor = metropoliaColor.CGColor
+        tableView.layer.cornerRadius = 5
+
+        
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

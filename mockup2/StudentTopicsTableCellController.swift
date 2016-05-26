@@ -12,13 +12,21 @@ class StudentTopicsTableCellController: UITableViewCell{
     
     @IBOutlet weak var topicLabel: UILabel!
     
-    @IBAction func gotItAction(sender: AnyObject) {
-        NetworkOperations.sharedInstance.gotIt(CoreDataHandler.sharedInstance.getCurrentLesson(), topic: topicLabel.text!)
+    @IBAction func StudentTopicsTableCellSegmentAction(sender: UISegmentedControl) {
+        
+        switch StudentTopicsTableCellGotItSegment.selectedSegmentIndex {
+        case 0:
+            print("Got it")
+            NetworkOperations.sharedInstance.gotIt(CoreDataHandler.sharedInstance.getCurrentLesson(), topic: topicLabel.text!)
+        case 1:
+            print("Didn't get it")
+            NetworkOperations.sharedInstance.notGotIt(CoreDataHandler.sharedInstance.getCurrentLesson(), topic: topicLabel.text!)
+        default:
+            break
+        }
     }
+    @IBOutlet weak var StudentTopicsTableCellGotItSegment: UISegmentedControl!
     
-    @IBAction func didNotGetIt(sender: AnyObject) {
-        NetworkOperations.sharedInstance.notGotIt(CoreDataHandler.sharedInstance.getCurrentLesson(), topic: topicLabel.text!)
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

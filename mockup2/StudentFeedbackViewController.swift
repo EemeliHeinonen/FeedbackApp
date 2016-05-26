@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import QuartzCore
 
 
 class StudentFeedbackViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var feedbackTextViewBox: UITextField!
+  
     @IBOutlet weak var lessonRatingSegment: UISegmentedControl!
     
+    @IBOutlet weak var feedbackTextViewOutlet: UITextView!
     var selectedRating = ""
     
     @IBAction func ratingValueChangedAction(sender: UISegmentedControl) {
@@ -37,12 +39,12 @@ class StudentFeedbackViewController: UIViewController, UITextFieldDelegate, UITa
     }
 
     @IBAction func submitFeedbackAction(sender: UIBarButtonItem) {
-        NetworkOperations.sharedInstance.postFeedback(CoreDataHandler.sharedInstance.getCurrentLesson(), f: feedbackTextViewBox.text!, rating: selectedRating)
+        NetworkOperations.sharedInstance.postFeedback(CoreDataHandler.sharedInstance.getCurrentLesson(), f: feedbackTextViewOutlet.text!, rating: selectedRating)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        feedbackTextViewOutlet.layer.cornerRadius = 5
     }
     
     override func didReceiveMemoryWarning() {

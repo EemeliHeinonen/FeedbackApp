@@ -39,6 +39,14 @@ class TeacherTopicsTableController: UITableViewController, NSFetchedResultsContr
 
         
     override func viewDidLoad() {
+        
+        tableView.layer.borderWidth = 0.8
+        let metropoliaColor = UIColor(red: 238.0/255.0, green: 103.0/255.0, blue: 7.0/255.0, alpha: 1)
+        tableView.layer.borderColor = metropoliaColor.CGColor
+        tableView.layer.cornerRadius = 5
+        
+      //  self.refreshControl?.addTarget(self, action: #selector(TeacherTopicsTableController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        
         print("teachertopicstablecontorller view did load BAZINGGAAAAAAAAAAAAAAA ASD ")
         super.viewDidLoad()
         do {
@@ -77,7 +85,7 @@ class TeacherTopicsTableController: UITableViewController, NSFetchedResultsContr
          p.valueForKey("topicName") as? String*/
         
         cell.topicNameLabel.text = p.valueForKey("topicName") as? String
-        cell.gotItLabel.text =  NetworkOperations.sharedInstance.getGotItValues("lesson", topic: (p.valueForKey("topicName") as? String)!) //p.valueForKey("gotItRating") as? String
+        cell.gotItLabel.text = p.valueForKey("gotItRating") as? String
         cell.didntGetItLabel.text = p.valueForKey("notGotItRating") as? String
         
         return cell
@@ -86,13 +94,13 @@ class TeacherTopicsTableController: UITableViewController, NSFetchedResultsContr
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!did change content")
         self.tableView.reloadData()
     }
-    
+    /*
     func handleRefresh(refreshControl: UIRefreshControl) {
-
+        NetworkOperations.sharedInstance.getLessons()
         tableView.reloadData()
         refreshControl.endRefreshing()
     }
-    
+    */
     
     
 }

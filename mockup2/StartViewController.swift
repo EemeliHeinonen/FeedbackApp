@@ -21,7 +21,7 @@ class StartViewController: UIViewController{
     override func viewWillAppear(animated: Bool) {
         loadMyName()
         CoreDataHandler.sharedInstance.loadMyName()
-        BeaconTracker.sharedInstance.startScanning()
+        //BeaconTracker.sharedInstance.startScanning()
 
     }
     

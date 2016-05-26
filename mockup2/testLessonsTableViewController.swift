@@ -19,6 +19,7 @@ class testLessonsTableViewController: UITableViewController, NSFetchedResultsCon
         
         let fetchRequest = NSFetchRequest(entityName: "Lesson")
         
+        
         let predicate = NSPredicate(format: "%K == %@", "classroomRelationship.roomName", BeaconTracker.sharedInstance.currentRoom)
         fetchRequest.predicate = predicate
         
@@ -37,6 +38,13 @@ class testLessonsTableViewController: UITableViewController, NSFetchedResultsCon
 
 
     override func viewDidLoad() {
+        print("currentRoom:::::")
+        print(BeaconTracker.sharedInstance.currentRoom)
+        tableView.layer.borderWidth = 0.8
+        var metropoliaColor = UIColor(red: 238.0/255.0, green: 103.0/255.0, blue: 7.0/255.0, alpha: 1)
+        tableView.layer.borderColor = metropoliaColor.CGColor
+        tableView.layer.cornerRadius = 5
+        
         clearLessonsEntity()
         print("lessontableviewcontroller viewdidload")
         super.viewDidLoad()
@@ -135,53 +143,5 @@ class testLessonsTableViewController: UITableViewController, NSFetchedResultsCon
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!did change content")
         self.tableView.reloadData()
     }
-
-    
-    
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-     if editingStyle == .Delete {
-     // Delete the row from the data source
-     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-     } else if editingStyle == .Insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

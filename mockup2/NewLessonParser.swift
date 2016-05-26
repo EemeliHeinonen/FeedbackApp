@@ -35,7 +35,7 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
-        
+        /*
         if(CoreDataHandler.sharedInstance.parseCheck != "sealed"){
         let fetchRequestLesson = NSFetchRequest(entityName: "Lesson")
         let deleteRequestLesson = NSBatchDeleteRequest(fetchRequest: fetchRequestLesson)
@@ -70,6 +70,8 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
             // TODO: handle the error
         }
         }
+        */
+        
         
         //CoreDataHandler.sharedInstance.clearTopicEntity()
         //CoreDataHandler.sharedInstance.clearLessonEntity()
@@ -143,7 +145,7 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
                 thisLesson!.setValue((object: thisClassroom!), forKey: "classroomRelationship")
             }
         } else if (elementName == "topic") {
-            if (thisTopic?.topicName != nil) {
+            if (thisTopic?.topicName != nil && thisTopic?.topicName != "haamu") {
                 // asd CoreDataHandler.sharedInstance.topics.append(thisTopic!)
             
                 //thisLesson!.setValue(NSSet(object: thisTopic!), forKey: "topicRelationship")
@@ -154,7 +156,7 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
                 //print("************** Topic \(thisTopic?.topicName!) added to \(thisLesson?.subject)'s topics list")
             }
         } else if (elementName == "feedback") {
-            if (thisFeedback?.feedbackText != "haamu"){
+            if (thisFeedback?.feedbackText != "haamu" && thisFeedback?.lessonRating != "0"){
                 // asd CoreDataHandler.sharedInstance.feedbacks.append(thisFeedback!)
                 let t = thisLesson!.mutableSetValueForKey("feedbackRelationship") //good shit
                 t.addObject(thisFeedback!)// good shit
@@ -190,6 +192,7 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
         } else if (elementName == "feedbackText") {
             thisFeedback?.feedbackText = currentString
         } else if (elementName == "rating") {
+            
             thisFeedback?.lessonRating = currentString
         } else if (elementName == "lessonRatingAvg") {
             if (currentString != "NaN"){

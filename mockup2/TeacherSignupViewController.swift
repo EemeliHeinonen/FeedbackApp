@@ -13,14 +13,23 @@ class TeacherSignupViewController: UIViewController, UITextFieldDelegate, UINavi
     
     @IBOutlet weak var teacherNameOutlet: UITextField!
     
-    @IBAction func clearEntityButton(sender: AnyObject) {
-        CoreDataHandler.sharedInstance.clearLessonEntity()
-    }
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem?.enabled = false
+        
         print("Teacher signup view loaded")
         teacherNameOutlet.delegate = self
         
+        teacherNameOutlet.layer.borderWidth = 0.8
+        let metropoliaColor = UIColor(red: 238.0/255.0, green: 103.0/255.0, blue: 7.0/255.0, alpha: 1)
+        teacherNameOutlet.layer.borderColor = metropoliaColor.CGColor
+        teacherNameOutlet.layer.cornerRadius = 5
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        teacherNameOutlet.becomeFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,16 +44,9 @@ class TeacherSignupViewController: UIViewController, UITextFieldDelegate, UINavi
         CoreDataHandler.sharedInstance.saveMyName(teacherNameOutlet.text!, type: "teacher")
         print("Teacher name saved \(teacherNameOutlet.text)")
         
+        self.navigationItem.rightBarButtonItem?.enabled = true
+        
         return true
     }
-    
-    // OIS OIKEEN KIVA JOS JOSKUS SAAATAIS TÄÄ TOIMIMAAN xdddd
-    /*
-     @IBAction func submitAction(sender: AnyObject) {
-     teacherNameOutlet.resignFirstResponder()
-     CoreDataHandler.sharedInstance.saveStudentName(teacherNameOutlet.text!)
-     print("Student name saved \(teacherNameOutlet.text)")
-     }
-     */
-}
 
+}
