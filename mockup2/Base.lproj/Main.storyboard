@@ -488,7 +488,6 @@
                     <navigationItem key="navigationItem" id="eIN-Nr-YpO">
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="GHn-Mb-w4U">
                             <connections>
-                                <action selector="submitActionBarButton:" destination="BZA-Rq-S8V" id="8cb-YO-duB"/>
                                 <segue destination="BYZ-38-t0r" kind="push" id="lbw-b8-PO8"/>
                             </connections>
                         </barButtonItem>
@@ -1206,9 +1205,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="j2J-d7-W7B"/>
-        <segue reference="GQB-gg-N3e"/>
+        <segue reference="lbw-b8-PO8"/>
         <segue reference="L97-Q5-lGA"/>
+        <segue reference="GQB-gg-N3e"/>
         <segue reference="IjS-yh-hYq"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.93333333330000001" green="0.40236065329999998" blue="0.027397629310000001" alpha="1" colorSpace="calibratedRGB"/>

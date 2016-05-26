@@ -8,6 +8,7 @@
 
 import UIKit
 
+// class for the tableview showing the after-lesson ratings for each topic
 class TeacherFeedbackTopicsTableViewController: UITableViewController {
     var parentController: TeacherFeedbackViewController?
     
@@ -25,22 +26,15 @@ class TeacherFeedbackTopicsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("func tableView return count")
         return CoreDataHandler.sharedInstance.lessonsTopics.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("func tableView return cell")
-        
         let cellIdentifier = "TeacherFeedbackTopicsTableCell" //needed for cell class
         let cell =
             tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! TeacherFeedbackTopicsTableCell // needed for cell class
         
         let p = CoreDataHandler.sharedInstance.lessonsTopics[indexPath.row]
-        
-        /*cell!.textLabel!.text =
-         p.valueForKey("topicName") as? String*/
-       
         cell.topic.text = p.valueForKey("topicName") as? String
         cell.gotIt.text = p.valueForKey("gotItRating") as? String
         cell.notGotIt.text = p.valueForKey("notGotItRating") as? String

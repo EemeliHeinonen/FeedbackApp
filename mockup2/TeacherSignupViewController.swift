@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+//class for teachers sign up viewcontroller
 class TeacherSignupViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var teacherNameOutlet: UITextField!
@@ -20,7 +20,6 @@ class TeacherSignupViewController: UIViewController, UITextFieldDelegate, UINavi
         
         print("Teacher signup view loaded")
         teacherNameOutlet.delegate = self
-        
         teacherNameOutlet.layer.borderWidth = 0.8
         let metropoliaColor = UIColor(red: 238.0/255.0, green: 103.0/255.0, blue: 7.0/255.0, alpha: 1)
         teacherNameOutlet.layer.borderColor = metropoliaColor.CGColor
@@ -30,11 +29,6 @@ class TeacherSignupViewController: UIViewController, UITextFieldDelegate, UINavi
     
     override func viewWillAppear(animated: Bool) {
         teacherNameOutlet.becomeFirstResponder()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

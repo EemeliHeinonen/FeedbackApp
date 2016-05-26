@@ -10,11 +10,11 @@ import UIKit
 import Foundation
 import CoreData
 
+//class for parsing the data from server
+
 class NewLessonParser: NSObject,NSXMLParserDelegate{
     
     var currentString = ""
-    //var appDelegate:AppDelegate?
-    //var managedContext:NSManagedObjectContext?
     var thisLesson:Lesson?
     var thisTopic:Topic?
     var thisTeacher:Teacher?
@@ -35,62 +35,9 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
-        /*
-        if(CoreDataHandler.sharedInstance.parseCheck != "sealed"){
-        let fetchRequestLesson = NSFetchRequest(entityName: "Lesson")
-        let deleteRequestLesson = NSBatchDeleteRequest(fetchRequest: fetchRequestLesson)
-       
-        let fetchRequestTopic = NSFetchRequest(entityName: "Topic")
-        let deleteRequestTopic = NSBatchDeleteRequest(fetchRequest: fetchRequestTopic)
-        
-        let fetchRequestTeacher = NSFetchRequest(entityName: "Teacher")
-        let deleteRequestTeacher = NSBatchDeleteRequest(fetchRequest: fetchRequestTeacher)
-        
-        let fetchRequestStudent = NSFetchRequest(entityName: "Student")
-        let deleteRequestStudent = NSBatchDeleteRequest(fetchRequest: fetchRequestStudent)
-        
-        let fetchRequestFeedback2 = NSFetchRequest(entityName: "Feedback2")
-        let deleteRequestFeedback2 = NSBatchDeleteRequest(fetchRequest: fetchRequestFeedback2)
-        
-        let fetchRequestClassroom = NSFetchRequest(entityName: "Classroom")
-        let deleteRequestClassroom = NSBatchDeleteRequest(fetchRequest: fetchRequestClassroom)
-        
-        do {
-            try managedContext.executeRequest(deleteRequestLesson)
-            try managedContext.executeRequest(deleteRequestTopic)
-            try managedContext.executeRequest(deleteRequestTeacher)
-            try managedContext.executeRequest(deleteRequestStudent)
-            try managedContext.executeRequest(deleteRequestFeedback2)
-            try managedContext.executeRequest(deleteRequestClassroom)
-            try managedContext.save()
-            
-            
-            print("clearattu kuule ihan kaikki mitä parsetaan")
-        } catch let error as NSError {
-            // TODO: handle the error
-        }
-        }
-        */
-        
-        
-        //CoreDataHandler.sharedInstance.clearTopicEntity()
-        //CoreDataHandler.sharedInstance.clearLessonEntity()
+
         print ("******************************************* did start document")
-      //  appDelegate = CoreDataHandler.sharedInstance.appDelegate //(UIApplication.sharedApplication().delegate as! AppDelegate)
-       // managedContext = CoreDataHandler.sharedInstance.managedContext //appDelegate!.managedObjectContext
-        
-       /*
-        let fetchRequest = NSFetchRequest(entityName: "Lesson")
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        
-        do {
-            try managedContext!.executeRequest(deleteRequest)
-            try managedContext!.save()
-            print("clearattu lesson entity")
-        } catch let error as NSError {
-            // TODO: handle the error
-        }
-*/
+
     }
     
     func parser(parser: NSXMLParser, foundCharacters string: String) {
@@ -132,7 +79,6 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         
         if (elementName == "course") {
-            // asd CoreDataHandler.sharedInstance.lessons.append(thisLesson!)
             print("!!!!!!!!!!!!!!!!!!!!!! Appended the new lesson \(thisLesson?.lessonName) to the CoreData List")
             
         }  else if(elementName == "courseName") {
@@ -146,30 +92,24 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
             }
         } else if (elementName == "topic") {
             if (thisTopic?.topicName != nil && thisTopic?.topicName != "haamu") {
-                // asd CoreDataHandler.sharedInstance.topics.append(thisTopic!)
-            
-                //thisLesson!.setValue(NSSet(object: thisTopic!), forKey: "topicRelationship")
                 let t = thisLesson!.mutableSetValueForKey("topicRelationship") //good shit
                 t.addObject(thisTopic!)// good shit
             
                 print()
-                //print("************** Topic \(thisTopic?.topicName!) added to \(thisLesson?.subject)'s topics list")
+
             }
         } else if (elementName == "feedback") {
             if (thisFeedback?.feedbackText != "haamu" && thisFeedback?.lessonRating != "0"){
-                // asd CoreDataHandler.sharedInstance.feedbacks.append(thisFeedback!)
                 let t = thisLesson!.mutableSetValueForKey("feedbackRelationship") //good shit
                 t.addObject(thisFeedback!)// good shit
             }
         } else if (elementName == "teacher") {
             if (thisTeacher?.teacherName != "haamu"){
-               // asd CoreDataHandler.sharedInstance.teachers.append(thisTeacher!)
                 let t = thisLesson!.mutableSetValueForKey("teacherRelationship") //good shit
                 t.addObject(thisTeacher!)// good shit
             }
         } else if (elementName == "student") {
             if (thisStudent?.studentName != "haamu"){
-                // asd CoreDataHandler.sharedInstance.students.append(thisStudent!)
                 let t = thisLesson!.mutableSetValueForKey("studentRelationship") //good shit
                 t.addObject(thisStudent!)// good shit
             }
@@ -206,9 +146,9 @@ class NewLessonParser: NSObject,NSXMLParserDelegate{
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
+        
         //save the parsed objects to persistent storage
         do {
-            CoreDataHandler.sharedInstance.parseCheck = "brokenseal"
             try managedContext.save()
         } catch let error as NSError {
             print("Saving failed with error \(error), \(error.userInfo)")

@@ -7,20 +7,14 @@
 //
 
 import UIKit
-import CoreData
 
+// class for the teachers current lesson view for ongoig lesson
 class TeacherLessonViewController2: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "teacherTopicContainerSegue"){
             let destinationCtrl = segue.destinationViewController as! TeacherTopicsTableController

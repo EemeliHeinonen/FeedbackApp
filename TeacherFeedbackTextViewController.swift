@@ -8,21 +8,16 @@
 
 import UIKit
 
-
+// class for the view of individual feedback from a student
 class TeacherFeedbackTextViewController: UIViewController{
     @IBOutlet weak var feedbackViewRatingLabel: UILabel!
-    
     @IBOutlet weak var feedbackViewTextLabelLong: UITextView!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(animated: Bool) {
-        print(CoreDataHandler.sharedInstance.getCurrentLessonRating())
-        print(CoreDataHandler.sharedInstance.getCurrentFeedbackText())
         if (CoreDataHandler.sharedInstance.getCurrentLessonRating() == ""){
             feedbackViewRatingLabel.text = "No rating"
         }

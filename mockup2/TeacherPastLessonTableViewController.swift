@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+// class for showing the tableview in which the past lessons are
 class TeacherPastLessonTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     var parentController: TeacherMainViewController?
     
@@ -23,7 +24,6 @@ class TeacherPastLessonTableViewController: UITableViewController, NSFetchedResu
         let predicate = NSPredicate(format: "ANY teacherRelationship.teacherName == %@ AND lessonStarted == %@", argumentArray: [(CoreDataHandler.sharedInstance.me.last?.valueForKey("myName") as? String)!, "yes"])
         fetchRequest.predicate = predicate
         
-        
         // Add Sort Descriptors
         let sortDescriptor = NSSortDescriptor(key: "lessonName", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
@@ -37,17 +37,12 @@ class TeacherPastLessonTableViewController: UITableViewController, NSFetchedResu
         return fetchedResultsController
     }()
     
-    override func viewDidAppear(animated: Bool) {
-        
-    }
-    
     
     override func viewDidLoad() {
         tableView.layer.borderWidth = 0.8
         let metropoliaColor = UIColor(red: 238.0/255.0, green: 103.0/255.0, blue: 7.0/255.0, alpha: 1)
         tableView.layer.borderColor = metropoliaColor.CGColor
         tableView.layer.cornerRadius = 5
-        //clearLessonsEntity()
         
         do {
             try fetchedResultsController.performFetch()
@@ -55,12 +50,7 @@ class TeacherPastLessonTableViewController: UITableViewController, NSFetchedResu
             print ("Could not fetch \(error), \(error.userInfo)")
         }
         
-        
-        
-        print("viewdidloadin parencontrollerprint")
-        print(parentController)
         self.refreshControl?.addTarget(self, action: #selector(TeacherPastLessonTableViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
-        
         super.viewDidLoad()
         title = "\"List of all Lessons\""
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -68,45 +58,15 @@ class TeacherPastLessonTableViewController: UITableViewController, NSFetchedResu
         
     }
     
-    func getlessonsbyTeacher(){
-        //NetworkOperations.sharedInstance.getLessonsByTeacher((CoreDataHandler.sharedInstance.me.last?.valueForKey("myName") as? String)!)
-    }
-    func clearLessonsEntity(){
-        
-        let appDelegate =
-            CoreDataHandler.sharedInstance.appDelegate //UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        let managedContext = CoreDataHandler.sharedInstance.managedContext//appDelegate.managedObjectContext
-        
-        let fetchRequest = NSFetchRequest(entityName: "Lesson")
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        
-        do {
-            try managedContext!.executeRequest(deleteRequest)
-            try managedContext!.save()
-            
-            print("clearattu lesson entity")
-        } catch let error as NSError {
-            // TODO: handle the error
-        }
-        
-        getlessonsbyTeacher()
-    }
-    
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         var numberOfSections = 1
         if let sections = fetchedResultsController.sections {
             numberOfSections = sections.count
         }
         return numberOfSections
-        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("func lessonntableView return count")
-        print( CoreDataHandler.sharedInstance.lessons.count)
-        
         return fetchedResultsController.sections![section].numberOfObjects
     }
     
@@ -115,8 +75,7 @@ class TeacherPastLessonTableViewController: UITableViewController, NSFetchedResu
         print("func tableView return cell")
         let cell =
             tableView.dequeueReusableCellWithIdentifier("Cell")
-        
-        //let p = CoreDataHandler.sharedInstance.lessons[indexPath.row]
+ 
         let p = fetchedResultsController.objectAtIndexPath(indexPath)
         
         cell!.textLabel!.text =
@@ -130,9 +89,7 @@ class TeacherPastLessonTableViewController: UITableViewController, NSFetchedResu
         self.parentController!.performSegueWithIdentifier("TeacherFeedbackPushSegue", sender: parentController)
         
         let indexPath = tableView.indexPathForSelectedRow!
-        
         let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
-        
         let p = fetchedResultsController.objectAtIndexPath(indexPath)
         let g = p.valueForKey("lessonRatingAverage") as? String
         

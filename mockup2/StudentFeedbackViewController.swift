@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-
+// class for students feedback for past lessons
 class StudentFeedbackViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UINavigationControllerDelegate {
     
   
@@ -46,15 +46,10 @@ class StudentFeedbackViewController: UIViewController, UITextFieldDelegate, UITa
         super.viewDidLoad()
         feedbackTextViewOutlet.layer.cornerRadius = 5
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "StudentFeedbackTopicsContainerSegue"){
             let destinationCtrl = segue.destinationViewController as! StudentFeedbackTopicsTableViewController
-            //print(self)
             destinationCtrl.parentController = self
         }
     }

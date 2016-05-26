@@ -8,6 +8,7 @@
 
 import UIKit
 
+// class for the cell of TeacherTopicsTableController
 class TeacherTopicsTableCellController: UITableViewCell{
     
     @IBOutlet weak var didntGetItLabel: UILabel!

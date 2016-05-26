@@ -8,13 +8,13 @@
 
 import UIKit
 
+// clas for the cell of TeacherRatingsTableController
 class TeacherRatingsTableCellController: UITableViewCell{
     
     @IBOutlet weak var rating: UILabel!
 
     @IBOutlet weak var feedbackTextLabel: UILabel!
 
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

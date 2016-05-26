@@ -8,6 +8,7 @@
 
 import UIKit
 
+// class for the cell of TeacherFeedbacjTopicsTableViewController
 class TeacherFeedbackTopicsTableCell: UITableViewCell{
 
     @IBOutlet weak var topic: UILabel!

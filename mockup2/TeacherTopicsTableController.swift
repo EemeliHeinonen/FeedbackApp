@@ -9,10 +9,10 @@
 import UIKit
 import CoreData
 
+//class for showing topics in the ongoing lesson
 class TeacherTopicsTableController: UITableViewController, NSFetchedResultsControllerDelegate {
     var parentController: TeacherLessonViewController2?
     var managedObjectContext: NSManagedObjectContext!
-    var zuubaduu = [NSManagedObject]()
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
         // Initialize Fetch Request
@@ -44,10 +44,7 @@ class TeacherTopicsTableController: UITableViewController, NSFetchedResultsContr
         let metropoliaColor = UIColor(red: 238.0/255.0, green: 103.0/255.0, blue: 7.0/255.0, alpha: 1)
         tableView.layer.borderColor = metropoliaColor.CGColor
         tableView.layer.cornerRadius = 5
-        
-      //  self.refreshControl?.addTarget(self, action: #selector(TeacherTopicsTableController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
-        
-        print("teachertopicstablecontorller view did load BAZINGGAAAAAAAAAAAAAAA ASD ")
+
         super.viewDidLoad()
         do {
             try fetchedResultsController.performFetch()
@@ -68,22 +65,16 @@ class TeacherTopicsTableController: UITableViewController, NSFetchedResultsContr
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("func tableView return count")
         return fetchedResultsController.sections![section].numberOfObjects
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("func tableView return cell")
         
         let cellIdentifier = "TeacherTopicsTableCellController" //needed for cell class
         let cell =
             tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! TeacherTopicsTableCellController // needed for cell class
-        
         let p = fetchedResultsController.objectAtIndexPath(indexPath)
-        
-        /*cell!.textLabel!.text =
-         p.valueForKey("topicName") as? String*/
-        
+    
         cell.topicNameLabel.text = p.valueForKey("topicName") as? String
         cell.gotItLabel.text = p.valueForKey("gotItRating") as? String
         cell.didntGetItLabel.text = p.valueForKey("notGotItRating") as? String
@@ -94,13 +85,6 @@ class TeacherTopicsTableController: UITableViewController, NSFetchedResultsContr
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!did change content")
         self.tableView.reloadData()
     }
-    /*
-    func handleRefresh(refreshControl: UIRefreshControl) {
-        NetworkOperations.sharedInstance.getLessons()
-        tableView.reloadData()
-        refreshControl.endRefreshing()
-    }
-    */
-    
+
     
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// class for the cell of StudentTopicsTableController
 class StudentTopicsTableCellController: UITableViewCell{
     
     @IBOutlet weak var topicLabel: UILabel!

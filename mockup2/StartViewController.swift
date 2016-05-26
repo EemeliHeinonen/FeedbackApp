@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-
+//class for the hidden start initializer viewcontroller for checking if the users name is stored and choosing the right segue based on that.
 class StartViewController: UIViewController{
     static let sharedInstance = StartViewController()
 
@@ -21,8 +21,6 @@ class StartViewController: UIViewController{
     override func viewWillAppear(animated: Bool) {
         loadMyName()
         CoreDataHandler.sharedInstance.loadMyName()
-        //BeaconTracker.sharedInstance.startScanning()
-
     }
     
     override func viewDidLoad() {
@@ -32,7 +30,6 @@ class StartViewController: UIViewController{
     func segueCheck(){
         
         if(me.count == 0){
-            //NetworkOperations.sharedInstance.getLessons()
             performSegueWithIdentifier("startSegue", sender: self)
         }
         else if(me.last?.valueForKey("teacherOrStudent") as? String == "teacher"){
@@ -47,10 +44,7 @@ class StartViewController: UIViewController{
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
         
-        let managedContext = appDelegate.managedObjectContext
-        
-        //2
-        
+        let managedContext = appDelegate.managedObjectContext      
         let fetchRequest = NSFetchRequest(entityName: "Me")
         
         do {

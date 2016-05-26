@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+// class for the students main view showing the lessons in current classroom and past lessons
 class StudentMainViewViewController: UIViewController{
     
     override func viewDidLoad() {
@@ -30,9 +31,9 @@ class StudentMainViewViewController: UIViewController{
         }
         if(segue.identifier == "studentLogoutSegue"){
             
-                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //CoreDataHandler.sharedInstance.appDelegate
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 
-                let managedContext = appDelegate.managedObjectContext //CoreDataHandler.sharedInstance.managedContext
+                let managedContext = appDelegate.managedObjectContext
                 
                 let fetchRequest = NSFetchRequest(entityName: "Me")
                 let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
@@ -45,41 +46,9 @@ class StudentMainViewViewController: UIViewController{
                 } catch let error as NSError {
                     // TODO: handle the error
                 }
-            
         }
         
     }
-            /*
-        else if segue.identifier == "lessonSegue"{
-            
-            print("lessonSegue valittu")
-            if let selectedLessonCell = sender as? StudentTopicsTableCellController{
-                let indexPath = tableView.indexPathForCell(selectedLessonCell)!
-                let selectedLesson = CoreDataHandler.sharedInstance.lessons[indexPath.row]
-                let lessonString = selectedLesson.valueForKey("lessonName") as? String
-                CoreDataHandler.sharedInstance.getLessonsTopics(lessonString!)
-                print("prepare for segue valmis")
-            }
-        }
-    }
-    
-}
-
-
-
-override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "lessonSegue"{
-        
-                // Get the cell that generated this segue.
-        
-        if let selectedLessonCell = sender as? StudentTopicsTableCellController{
-            let indexPath = tableView.indexPathForCell(selectedLessonCell)!
-            let selectedLesson = CoreDataHandler.sharedInstance.lessons[indexPath.row]
-            let lessonString = selectedLesson.valueForKey("lessonName") as? String
-            CoreDataHandler.sharedInstance.getLessonsTopics(lessonString!)
-            print("prepare for segue valmis")
-        }
-    }
- */
+ 
 }
     

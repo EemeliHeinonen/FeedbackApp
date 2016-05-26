@@ -8,6 +8,7 @@
 
 import UIKit
 
+// class for students ongoing lessons tableview showing the topics
 class StudentTopicsTableController: UITableViewController {
     var parentController: StudentLessonViewController?
 
@@ -19,9 +20,7 @@ class StudentTopicsTableController: UITableViewController {
         tableView.layer.cornerRadius = 5
         
         super.viewDidLoad()
-        title = "\"List of topics in one lesson\""
      
-        
 }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -33,16 +32,12 @@ class StudentTopicsTableController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("func tableView return cell")
         
         let cellIdentifier = "StudentTopicsTableCellController" //needed for cell class
         let cell =
             tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! StudentTopicsTableCellController // needed for cell class
         
         let p = CoreDataHandler.sharedInstance.lessonsTopics[indexPath.row]
-        
-        /*cell!.textLabel!.text =
-            p.valueForKey("topicName") as? String*/
         
         cell.topicLabel.text = p.valueForKey("topicName") as? String
         

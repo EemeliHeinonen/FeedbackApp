@@ -8,11 +8,10 @@
 
 import UIKit
 
+//Viewcontroller for the welcome screen
 class Beacon: UIViewController{
     
     override func viewDidLoad() {
-       // self.navigationItem.hidesBackButton = true
-        //self.navigationItem.leftBarButtonItem = nil
         super.viewDidLoad()
         
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: navigationController, action: nil)

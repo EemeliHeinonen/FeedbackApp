@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+// class for showing lessons the student has attended
 class StudentPastLessonsTableView: UITableViewController, NSFetchedResultsControllerDelegate {
     var parentController: StudentMainViewViewController?
     var managedObjectContext: NSManagedObjectContext!
@@ -45,8 +46,6 @@ class StudentPastLessonsTableView: UITableViewController, NSFetchedResultsContro
         tableView.layer.borderColor = metropoliaColor.CGColor
         tableView.layer.cornerRadius = 5
         
-        //clearLessonsEntity()
-        print("lessontableviewcontroller viewdidload")
         super.viewDidLoad()
         title = "\"List of all Lessons\""
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -57,32 +56,8 @@ class StudentPastLessonsTableView: UITableViewController, NSFetchedResultsContro
             print ("Could not fetch \(error), \(error.userInfo)")
         }
     }
-    
-    func getLessons(){
-        //NetworkOperations.sharedInstance.getLessons()
-        //NetworkOperations.sharedInstance.getLessonsByClassroom(BeaconTracker.sharedInstance.currentRoom)
-    }
-    
-    func clearLessonsEntity(){
-        let appDelegate =
-            UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        let managedContext = appDelegate.managedObjectContext
-        
-        let fetchRequest = NSFetchRequest(entityName: "Lesson")
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        
-        do {
-            try managedContext.executeRequest(deleteRequest)
-            try managedContext.save()
-            
-            print("clearattu lesson entity")
-        } catch let error as NSError {
-            // TODO: handle the error
-        }
-        getLessons()
-    }
-    
+   
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -100,10 +75,7 @@ class StudentPastLessonsTableView: UITableViewController, NSFetchedResultsContro
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("func lessonntableView return count")
-        print( CoreDataHandler.sharedInstance.lessons.count)
-        
-        return fetchedResultsController.sections![section].numberOfObjects
+      return fetchedResultsController.sections![section].numberOfObjects
     }
     
     
@@ -111,10 +83,7 @@ class StudentPastLessonsTableView: UITableViewController, NSFetchedResultsContro
         print("func tableView return cell")
         let cell =
             tableView.dequeueReusableCellWithIdentifier("Cell")
-        
-        //let p = CoreDataHandler.sharedInstance.lessons[indexPath.row]
         let p = fetchedResultsController.objectAtIndexPath(indexPath)
-        
         
         cell!.textLabel!.text =
             p.valueForKey("lessonName") as? String
@@ -123,71 +92,18 @@ class StudentPastLessonsTableView: UITableViewController, NSFetchedResultsContro
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("nyt tulee parentcontrollerprintti")
-        print(parentController)
         parentController!.performSegueWithIdentifier("StudentFeedbackViewPushSegue", sender: parentController)
         
         let indexPath = tableView.indexPathForSelectedRow!
-        
         let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
 
         CoreDataHandler.sharedInstance.getLessonsTopics(currentCell.textLabel!.text!)
         CoreDataHandler.sharedInstance.zetCurrentLesson(currentCell.textLabel!.text!)
-       
-        print(currentCell.textLabel!.text)
     }
     
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!did change content")
         self.tableView.reloadData()
     }
-    
-    
-    
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-     if editingStyle == .Delete {
-     // Delete the row from the data source
-     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-     } else if editingStyle == .Insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

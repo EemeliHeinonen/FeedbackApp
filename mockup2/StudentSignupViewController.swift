@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+// class for students sign up viewcontroller
 class StudentSignupViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var studentNameOutlet: UITextField!
@@ -28,16 +28,9 @@ class StudentSignupViewController: UIViewController, UITextFieldDelegate, UINavi
         studentNameOutlet.layer.cornerRadius = 5
         
     }
-    @IBAction func submitActionBarButton(sender: UIBarButtonItem) {
-        
-    }
+
     override func viewWillAppear(animated: Bool) {
         studentNameOutlet.becomeFirstResponder()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -46,10 +39,7 @@ class StudentSignupViewController: UIViewController, UITextFieldDelegate, UINavi
         print("done editing")
         CoreDataHandler.sharedInstance.saveMyName(studentNameOutlet.text!, type: "student")
         print("Student name saved \(studentNameOutlet.text)")
-        
         self.navigationItem.rightBarButtonItem?.enabled = true
-        
-        
         return true
     }
 }

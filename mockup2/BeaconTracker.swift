@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 
+//class for tracking the classroom beacons
+
 class BeaconTracker: NSObject, CLLocationManagerDelegate{
     static let sharedInstance = BeaconTracker()
     var currentRoom:String = ""
