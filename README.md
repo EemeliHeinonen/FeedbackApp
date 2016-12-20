@@ -20,7 +20,7 @@ Target users are the students and teachers of Metropolia AMK to begin with. We b
 
 ##School website article##
 Our application was featured in an article on our school's website:
-[https://drive.google.com/file/d/0Bxww918WATbTYWl5dVliZ2R2ZE0/view?usp=sharing](Link URL)
+[https://drive.google.com/file/d/0Bxww918WATbTYWl5dVliZ2R2ZE0/view?usp=sharing](https://drive.google.com/file/d/0Bxww918WATbTYWl5dVliZ2R2ZE0/view?usp=sharing)
 
 
 ##License##
